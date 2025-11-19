@@ -27,6 +27,7 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       padding: 0.7rem 2rem;
       z-index: 10;
+      flex-wrap: wrap;
     }
 
     .navbar .logo img {
@@ -39,25 +40,27 @@
       gap: 1.3rem;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
     }
 
     .navbar ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
+      transition: color 0.2s, background-color 0.2s;
       padding: 0.4rem 1rem;
       border-radius: 20px;
-      transition: 0.2s;
     }
 
     .navbar ul li a:hover,
     .navbar ul li a.active {
       background-color: #007bff;
+      color: #fff;
     }
 
-    /* Products Section */
+    /* Product Section */
     .products-section {
-      padding: 130px 40px 60px;
+      padding: 140px 60px 60px;
       text-align: center;
       background-color: #fff;
     }
@@ -70,8 +73,8 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
     .product-card {
@@ -79,6 +82,10 @@
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
     }
 
     .product-card:hover {
@@ -87,26 +94,32 @@
 
     .product-card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: contain;
-      background: #fff;
+      background-color: #fff;
+      display: block;
     }
 
     .product-info {
       padding: 20px;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
     }
 
     .product-info h3 {
       font-size: 1.3rem;
-      color: #007bff;
       margin-bottom: 10px;
+      color: #007bff;
     }
 
     .product-info p {
       color: #555;
       font-size: 0.95rem;
       line-height: 1.5;
+      margin-bottom: auto;
       min-height: 60px;
     }
 
@@ -118,7 +131,9 @@
       border-radius: 25px;
       text-decoration: none;
       font-weight: 500;
+      transition: background-color 0.3s;
       margin-top: 15px;
+      align-self: flex-start;
     }
 
     .btn:hover {
@@ -132,14 +147,14 @@
       padding: 50px 20px;
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
       justify-content: space-around;
+      gap: 30px;
       border-top: 4px solid #007bff;
       margin-top: 40px;
     }
 
     footer .footer-section {
-      max-width: 280px;
+      max-width: 300px;
     }
 
     footer h3 {
@@ -147,8 +162,7 @@
       margin-bottom: 15px;
     }
 
-    footer p,
-    footer a {
+    footer p, footer a {
       color: #bbb;
       font-size: 0.95rem;
       line-height: 1.6;
@@ -159,65 +173,97 @@
       color: #007bff;
     }
 
-    .social-icons {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
     .footer-bottom {
-      background: #000;
       text-align: center;
+      background: #000;
       padding: 15px;
       color: #777;
       font-size: 0.9rem;
     }
 
-    /* Full MOBILE RESPONSIVE */
-    @media (max-width: 768px) {
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      justify-content: center;
+    }
+
+    .social-icons a svg {
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover svg {
+      fill: #007bff;
+      transform: scale(1.1);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 992px) {
+      .products-section {
+        padding: 120px 30px 60px;
+      }
+
       .navbar {
+        flex-direction: column;
+        gap: 10px;
         padding: 0.7rem 1rem;
       }
 
       .navbar ul {
-        gap: 0.5rem;
-      }
-
-      .navbar ul li a {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.85rem;
-      }
-
-      .products-section {
-        padding: 140px 20px 50px;
+        justify-content: center;
+        gap: 10px;
       }
     }
 
-    @media (max-width: 480px) {
-      .navbar {
-        flex-direction: column;
-        gap: 10px;
-        padding: 0.8rem 1rem;
-      }
-
-      .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
+    @media (max-width: 768px) {
+      .products-section {
+        padding: 100px 20px 40px;
       }
 
       .products-section h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
 
       .product-card img {
         height: 180px;
+      }
+
+      .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-section {
+        padding: 80px 10px 30px;
+      }
+
+      .products-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .product-card img {
+        height: 150px;
+      }
+
+      .product-info h3 {
+        font-size: 1.1rem;
+      }
+
+      .product-info p {
+        font-size: 0.85rem;
+      }
+
+      .btn {
+        padding: 6px 12px;
+        font-size: 13px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
@@ -235,14 +281,89 @@
   <!-- Products Section -->
   <section class="products-section">
     <h2>Our Featured Products</h2>
-
     <div class="product-grid">
-      <!-- Product Cards (unchanged) -->
-      <!-- ...your product cards remain exactly the same... -->
-      <!-- I kept them unchanged as requested -->
-      
-      <!-- Your product cards continue here ... -->
-      <!-- (unchanged from your code, omitted for space) -->
+
+      <div class="product-card">
+        <img src="router.jpg" alt="Network Router" />
+        <div class="product-info">
+          <h3>Network Routers</h3>
+          <p>High-performance routers for businesses and homes ensuring fast, secure, and reliable connectivity.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="CTV.jpg" alt="CCTV Camera" />
+        <div class="product-info">
+          <h3>CCTV Cameras</h3>
+          <p>Advanced CCTV systems providing 24/7 surveillance for your safety and property monitoring.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="ethernet.jpg" alt="Ethernet Cables" />
+        <div class="product-info">
+          <h3>Ethernet Cables</h3>
+          <p>Reliable cables designed to provide fast and stable data transmission for any setup.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="wireless.jpg" alt="Wireless Mouse" />
+        <div class="product-info">
+          <h3>Wired and Wireless Mouse</h3>
+          <p>Durable, precise, and ergonomic mouse options suitable for all your computing needs.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="Smart b.jpg" alt="Smart Board" />
+        <div class="product-info">
+          <h3>Smart Board</h3>
+          <p>Interactive boards that enhance presentations, collaboration, and modern learning experiences.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="phones.jpg" alt="Smart Phones" />
+        <div class="product-info">
+          <h3>Smart Phones</h3>
+          <p>High-quality, affordable smartphones for your business and personal use.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dahua.jpg" alt="Dahua Access point" />
+        <div class="product-info">
+          <h3>Dahua Access point</h3>
+          <p>Reliable, high-speed wireless access points for seamless network connectivity.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="sm.jpg" alt="Smoke Detectors" />
+        <div class="product-info">
+          <h3>Smoke Detectors</h3>
+          <p>Smoke detectors are essential safety devices that provide early warnings of fire by sensing.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="starlink.jpg" alt="Starlink" />
+        <div class="product-info">
+          <h3>Starlink</h3>
+          <p>Starlink delivers high-speed, low-latency satellite internet across the globe.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -262,39 +383,10 @@
 
     <div class="footer-section">
       <h3>About Airnet Ghana</h3>
-      <p>Airnet Ghana provides innovative IT, networking, and security solutions.</p>
-
+      <p>Airnet Ghana provides innovative IT, networking, and security solutions tailored for businesses and homes across the country.</p>
       <h3>Follow Us</h3>
       <div class="social-icons">
-
-        <!-- Facebook -->
-        <a href="#">
-          <svg width="28" height="28" fill="#bbb">
-            <path d="M22 0H6C2.7...Z"/>
-          </svg>
-        </a>
-
-        <!-- Instagram -->
-        <a href="#">
-          <svg width="28" height="28" fill="#bbb">
-            <path d="M14 7...Z"/>
-          </svg>
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="#">
-          <svg width="28" height="28" fill="#bbb">
-            <path d="M4 4...Z"/>
-          </svg>
-        </a>
-
-        <!-- X/Twitter -->
-        <a href="#">
-          <svg width="28" height="28" fill="#bbb">
-            <path d="M22.46...Z"/>
-          </svg>
-        </a>
-
+        <!-- Add social icons SVGs here -->
       </div>
     </div>
   </footer>
