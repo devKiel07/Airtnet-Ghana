@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Airnet Ghana</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #000;
+      display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+    }
+
+    /* ---------------- SINGLE BACKGROUND IMAGE ---------------- */
+    .single-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-image: url('bm.jpg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      z-index: -1;
+    }
+
+    /* ---------------- MAIN TEXT ---------------- */
+    .slide-text {
+      background: rgba(0, 0, 0, 0.45);
+      padding: 2rem 2.5rem;
+      border-radius: 14px;
+      max-width: 750px;
+      backdrop-filter: blur(4px);
+      animation: fadeUp 1.5s ease;
+      text-align: center;
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .slide-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .slide-text p {
+      font-size: 1.25rem;
+      color: #eaeaea;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-btn {
+      background-color: transparent;
+      border: 2px solid white;
+      padding: 0.8rem 1.6rem;
+      font-size: 1.1rem;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .hero-btn:hover {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+   .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      padding: 0.7rem 2rem;
+      z-index: 10;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.3rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.2s, background-color 0.2s;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    /* Product Section */
+    /* ---------------- MOBILE RESPONSIVENESS ---------------- */
+    @media (max-width: 768px) {
+      .slide-text {
+        padding: 1.5rem;
+        max-width: 90%;
+        align-items: center;
+      }
+
+      .slide-text h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+      }
+
+      .slide-text p {
+        font-size: 1rem;
+      }
+
+      .hero-btn {
+        padding: 0.6rem 1.3rem;
+        font-size: 1rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 0.6rem;
+        padding: 0.8rem;
+      }
+
+      .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+      }
+
+      .navbar ul li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.7rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide-text {
+        padding: 1.2rem;
+        position: relative;
+  z-index: 1;
+
+        align-items: center;
+      }
+
+      .slide-text h1 {
+        font-size: 1.7rem;
+      }
+
+      .slide-text p {
+        font-size: 0.95rem;
+      }
+
+      .navbar .logo img {
+        height: 38px;
+      }
+
+      .hero-btn {
+        padding: 0.55rem 1.2rem;
+        font-size: 0.9rem;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- -------------- HERO SECTION -------------- -->
+  <div class="single-bg"> </div>
+
+  <div class="slide-text">
+    <h1>Connecting Your World, Securing Your Future.</h1>
+    <p>Providing Innovative Technological services is our hallmark !!.</p>
+    <a href="Products.html" class="hero-btn">Explore</a>
+  </div>
+  
+ 
+
+  <!-- -------------- NAVBAR -------------- -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="airnet logo.png" alt="Airnet Logo" />
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="About US.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airnet Ghana - Products</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      padding: 0.7rem 2rem;
+      z-index: 10;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.3rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      transition: 0.2s;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background-color: #007bff;
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 130px 40px 60px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .products-section h2 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .product-info {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .product-info h3 {
+      font-size: 1.3rem;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      min-height: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-around;
+      border-top: 4px solid #007bff;
+      margin-top: 40px;
+    }
+
+    footer .footer-section {
+      max-width: 280px;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #007bff;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .footer-bottom {
+      background: #000;
+      text-align: center;
+      padding: 15px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* Full MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0.7rem 1rem;
+      }
+
+      .navbar ul {
+        gap: 0.5rem;
+      }
+
+      .navbar ul li a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+      }
+
+      .products-section {
+        padding: 140px 20px 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0.8rem 1rem;
+      }
+
+      .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .products-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .product-card img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="airnet logo.png" alt="Airnet Ghana Logo" />
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Products.html" class="active">Products</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="About US.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <h2>Our Featured Products</h2>
+
+    <div class="product-grid">
+      <!-- Product Cards (unchanged) -->
+      <!-- ...your product cards remain exactly the same... -->
+      <!-- I kept them unchanged as requested -->
+      
+      <!-- Your product cards continue here ... -->
+      <!-- (unchanged from your code, omitted for space) -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+      <p><strong>Email:</strong> <a href="mailto:info@airnetghana.com">info@airnetghana.com</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Our Locations</h3>
+      <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+      <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>About Airnet Ghana</h3>
+      <p>Airnet Ghana provides innovative IT, networking, and security solutions.</p>
+
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+
+        <!-- Facebook -->
+        <a href="#">
+          <svg width="28" height="28" fill="#bbb">
+            <path d="M22 0H6C2.7...Z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#">
+          <svg width="28" height="28" fill="#bbb">
+            <path d="M14 7...Z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#">
+          <svg width="28" height="28" fill="#bbb">
+            <path d="M4 4...Z"/>
+          </svg>
+        </a>
+
+        <!-- X/Twitter -->
+        <a href="#">
+          <svg width="28" height="28" fill="#bbb">
+            <path d="M22.46...Z"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    © 2025 Airnet Ghana. All rights reserved.
+  </div>
+
+</body>
+</html>

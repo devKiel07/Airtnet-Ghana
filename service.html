@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FurniDecor - Services</title>
+  <style>
+    /* === GENERAL PAGE STYLES === */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* === NAVBAR === */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      padding: 0.7rem 2rem;
+      z-index: 10;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.3rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      position: relative;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.2s, background-color 0.2s;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    /* === DROPDOWN MENU === */
+   
+
+
+    /* === SERVICE SECTION === */
+    .services-section {
+      margin-top: 30px;
+      padding: 60px 10%;
+    }
+
+    .service {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 50px;
+      padding: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .service img {
+      width: 45%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 300px;
+    }
+
+    .service-text {
+      flex: 1;
+    }
+
+    .service-text h2 {
+      color: #007bff;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .service-text p {
+      color: #333;
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+ .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+      margin-top: 15px;
+      align-self: flex-start;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+   
+    /* Alternate layout for every second service */
+    .service:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .service {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .service img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    h1 {
+      text-align: center;
+      margin-top: 100px;
+      color: #333;
+      
+    }
+     footer {
+      background: #111;
+      color: #ddd;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      border-top: 4px solid #007bff;
+      margin-top: 40px;
+    }
+
+    footer .footer-section {
+      max-width: 300px;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    footer p, footer a {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #007bff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background: #000;
+      padding: 15px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+     
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="airnet logo.png" alt="FurniDecor Logo">
+    </div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li>
+        <a href="service.html">Services </a>
+        
+      </li>
+      <li><a href="About US.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <div >
+  <h1>Our Services</h1>
+</div>
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <div class="service">
+      <img src="im.png" alt="Networking Solutions">
+      <div class="service-text">
+        <h2>Networking Solutions</h2>
+        <p>
+          Our networking services are designed to meet the ever-growing connectivity demands of modern businesses.
+          We provide comprehensive solutions including LAN/WAN design, wireless deployment, fiber optics installation, 
+          and enterprise network security systems. Whether you're a small business or a large enterprise, we ensure 
+          that your communication infrastructure is reliable, scalable, and secure.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="service">
+      <img src="hvac repair.jpg" alt="HVAC Solutions">
+      <div class="service-text">
+        <h2>HVAC Solutions</h2>
+        <p>
+          , aWe provide complete HVAC systems that ensure optimal indoor air quality, comfort and energy efficiency.
+          Our team handles installation, maintenance, and repair for both commercial and residential spaces, using
+          eco-friendly systems that save energy and reduce costs while maintaining top performance and reliability.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="service">
+      <img src="camera.png" alt="CCTV & Security Systems">
+      <div class="service-text">
+        <h2>CCTV & Security Systems</h2>
+        <p>
+          Keep your property safe and secure with our advanced surveillance and security systems. 
+          We design and install CCTV networks, access control systems, and motion detection setups that
+          provide peace of mind and real-time monitoring for your business or home, 24 hours a day.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="service">
+      <img src="consultation.jpg" alt="IT Consulting">
+      <div class="service-text">
+        <h2>IT Consulting</h2>
+        <p>
+          Our IT consulting services empower businesses to achieve efficiency and growth through technology. 
+          From digital transformation strategies to cloud migration, cybersecurity planning, and IT audits, 
+          we provide expert guidance to align your technology goals with your business objectives.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+    <p><strong>Email:</strong> <a href="mailto:info@airnetghana.com">info@airnetghana.com</a></p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>
+      Airnet Ghana provides innovative IT, networking, and security solutions 
+      tailored for businesses and homes across the country.
+    </p>
+
+    <h3>Follow Us</h3>
+    <div class="social-icons">
+
+      <!-- Facebook -->
+      <a href="" target="_blank">
+        <svg width="28" height="28" fill="#bbb">
+          <path d="M22 0H6C2.7 0 0 2.7 0 6V22C0 25.3 2.7 28 6 28H22C25.3 28 28 25.3 28 22V6C28 2.7 25.3 0 22 0ZM20 8H18C16.9 8 16 8.5 16 10V12H20L19.5 16H16V28H12V16H10V12H12V9C12 6.2 13.8 4 17 4H20V8Z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="" target="_blank">
+        <svg width="28" height="28" fill="#bbb">
+          <path d="M14 7C17.9 7 21 10.1 21 14C21 17.9 17.9 21 14 21C10.1 21 7 17.9 7 14C7 10.1 10.1 7 14 7M14 5C9 5 5 9 5 14C5 19 9 23 14 23C19 23 23 19 23 14C23 9 19 5 14 5M22 9.5C22.8 9.5 23.5 8.8 23.5 8C23.5 7.2 22.8 6.5 22 6.5C21.2 6.5 20.5 7.2 20.5 8C20.5 8.8 21.2 9.5 22 9.5Z"/>
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="" target="_blank">
+        <svg width="28" height="28" fill="#bbb">
+          <path d="M4 4C2.9 4 2 4.9 2 6C2 7.1 2.9 8 4 8C5.1 8 6 7.1 6 6C6 4.9 5.1 4 4 4M2 10H6V24H2V10M10 10H14V12.3C14.6 11.2 16 10 18.5 10C22.4 10 24 12.6 24 16.5V24H20V17.5C20 15.5 19.4 14 17.5 14C15.6 14 14.7 15.5 14.7 17.5V24H10V10Z"/>
+        </svg>
+      </a>
+
+      <!-- X (Twitter) -->
+      <a href="" target="_blank">
+        <svg width="28" height="28" fill="#bbb">
+          <path d="M22.46 6.003C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.8 20.13 5.15 19.16 5.34C18.37 4.5 17.26 4 16 4C13.65 4 11.75 5.9 11.75 8.25C11.75 8.59 11.79 8.92 11.86 9.24C8.28 9.06 5.11 7.38 2.97 4.9C2.6 5.5 2.38 6.19 2.38 6.93C2.38 8.34 3.11 9.58 4.22 10.31C3.51 10.29 2.84 10.1 2.25 9.8V9.85C2.25 11.89 3.71 13.57 5.62 13.94C5.25 14.04 4.85 14.09 4.44 14.09C4.15 14.09 3.87 14.06 3.59 14C4.17 15.65 5.73 16.85 7.57 16.88C6.14 17.98 4.33 18.63 2.38 18.63C2 18.63 1.63 18.61 1.25 18.57C3.11 19.74 5.29 20.38 7.62 20.38C16 20.38 20.75 14.16 20.75 8.75C20.75 8.58 20.75 8.41 20.74 8.25C21.58 7.65 22.31 6.88 22.94 6.03L22.46 6.003Z"/>
+        </svg>
+      </a>
+
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2025 Airnet Ghana. All rights reserved.
+</div>
+
+
+</body>
+</html>
