@@ -12,17 +12,16 @@
       background-color: #fff;
     }
 
-    /* Navbar */
+    /* Navbar like service.html */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%; /* Full width like index.html */
-      max-width: 1200px; /* Match index.html container width */
-      margin: 1rem auto; /* Center horizontally */
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
       background-color: rgba(0, 0, 0, 0.95);
       border-radius: 20px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
@@ -39,7 +38,6 @@
       gap: 1.3rem;
       margin: 0;
       padding: 0;
-      flex-wrap: wrap;
       transition: max-height 0.3s ease-in-out;
     }
 
@@ -53,10 +51,7 @@
     }
 
     .navbar ul li a:hover,
-    .navbar ul li a.active {
-      background-color: #007bff;
-      color: #fff;
-    }
+    .navbar ul li a.active { background-color: #007bff; color: #fff; }
 
     /* Hamburger */
     .hamburger {
@@ -119,7 +114,6 @@
     }
 
     .product-info h3 { color: #007bff; margin-bottom: 10px; }
-
     .product-info p { font-size: 0.95rem; color: #555; min-height: 60px; margin-bottom: auto; }
 
     .btn {
@@ -154,13 +148,7 @@
     footer p, footer a { color: #bbb; text-decoration: none; font-size: 0.95rem; line-height: 1.6; }
     footer a:hover { color: #007bff; }
 
-    .footer-bottom {
-      text-align: center;
-      background: #000;
-      padding: 15px;
-      color: #777;
-      font-size: 0.9rem;
-    }
+    .footer-bottom { text-align: center; background: #000; padding: 15px; color: #777; font-size: 0.9rem; }
 
     .social-icons { display: flex; gap: 15px; justify-content: center; margin-top: 10px; }
     .social-icons a svg { transition: 0.3s; }
@@ -170,7 +158,6 @@
     @media (max-width: 992px) {
       .products-section { padding: 120px 30px 60px; }
       .product-grid { grid-template-columns: repeat(2, 1fr); }
-      .navbar { padding: 0.7rem 1rem; }
     }
 
     @media (max-width: 768px) {
@@ -179,8 +166,9 @@
       .product-card img { height: 180px; }
       .btn { padding: 8px 16px; font-size: 14px; }
 
+      /* Hamburger menu */
       .hamburger { display: flex; }
-      .navbar ul { flex-direction: column; max-height: 0; overflow: hidden; margin-top: 10px; background-color: rgba(0,0,0,0.95); border-radius: 10px; transition: max-height 0.3s ease-in-out; }
+      .navbar ul { flex-direction: column; max-height: 0; overflow: hidden; margin-top: 10px; background-color: rgba(0,0,0,0.95); border-radius: 20px; transition: max-height 0.3s ease-in-out; }
       .navbar ul.show { max-height: 500px; }
       .navbar ul li a { padding: 12px; }
     }
@@ -197,7 +185,7 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Navbar like service.html -->
   <nav class="navbar">
     <div class="logo"><img src="airnet logo.png" alt="Airnet Ghana Logo"></div>
     <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
@@ -214,10 +202,11 @@
   <section class="products-section">
     <h2>Our Featured Products</h2>
     <div class="product-grid">
-      <!-- All product cards remain the same -->
+      <!-- Desktop 3 per row, mobile 1 per row -->
       <div class="product-card"><img src="router.jpg" alt="Network Router"><div class="product-info"><h3>Network Routers</h3><p>High-performance routers for businesses and homes ensuring fast, secure, and reliable connectivity.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
       <div class="product-card"><img src="CTV.jpg" alt="CCTV Camera"><div class="product-info"><h3>CCTV Cameras</h3><p>Advanced CCTV systems providing 24/7 surveillance for your safety and property monitoring.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
       <div class="product-card"><img src="ethernet.jpg" alt="Ethernet Cables"><div class="product-info"><h3>Ethernet Cables</h3><p>Reliable cables designed to provide fast and stable data transmission for any setup.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+
       <div class="product-card"><img src="aircondition.jpg" alt="Air Conditioners"><div class="product-info"><h3>Air Conditioners</h3><p>Energy-efficient air conditioners to keep your office and home cool and comfortable.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
       <div class="product-card"><img src="laptop.jpg" alt="Laptops"><div class="product-info"><h3>Laptops</h3><p>High-performance laptops suitable for work, gaming, and personal use.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
       <div class="product-card"><img src="phone-accessories.jpg" alt="Mobile Phone Accessories"><div class="product-info"><h3>Mobile Phone Accessories</h3><p>Chargers, cases, headphones, and other essential accessories for phones.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
@@ -241,6 +230,7 @@
       <p>Airnet Ghana provides innovative IT, networking, and security solutions tailored for businesses and homes across the country.</p>
       <h3>Follow Us</h3>
       <div class="social-icons">
+        !-- Facebook -->
         <a href="#"><svg width="28" height="28" fill="#bbb" viewBox="0 0 28 28">
           <path d="M22 0H6C2.7 0 0 2.7 0 6V22C0 25.3 2.7 28 6 28H22C25.3 28 28 25.3 28 22V6C28 2.7 25.3 0 22 0ZM20 8H18C16.9 8 16 8.5 16 10V12H20L19.5 16H16V28H12V16H10V12H12V9C12 6.2 13.8 4 17 4H20V8Z"/>
         </svg></a>
@@ -258,6 +248,11 @@
         </svg></a>
       </div>
     </div>
+  
+
+ <
+      </div>
+    </div>
   </footer>
 
   <div class="footer-bottom">
@@ -267,9 +262,8 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
   </script>
+
 </body>
 </html>
