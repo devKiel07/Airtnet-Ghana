@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Airnet Ghana - Products</title>
+  <title>Airnet Ghana - Services</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== GENERAL STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -29,15 +34,17 @@
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
-      background-color: rgba(0,0,0,0.95);
+      background-color: rgba(0, 0, 0, 0.95);
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       padding: 0.7rem 2rem;
       z-index: 10;
       flex-wrap: wrap;
     }
 
-    .navbar .logo img { height: 40px; }
+    .navbar .logo img {
+      height: 40px;
+    }
 
     .navbar ul {
       list-style: none;
@@ -58,19 +65,33 @@
     }
 
     .navbar ul li a:hover,
-    .navbar ul li a.active { background-color: #007bff; color: #fff; }
+    .navbar ul li a.active {
+      background-color: #007bff;
+      color: #fff;
+    }
 
+    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
       gap: 5px;
     }
-    .hamburger div { width: 25px; height: 3px; background-color: #fff; transition: all 0.3s ease; }
 
-    /* ===== PRODUCTS SECTION (like services layout) ===== */
-    .products-section { margin-top: 30px; padding: 60px 10%; }
-    .product {
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services-section {
+      margin-top: 30px;
+      padding: 60px 10%;
+    }
+
+    .service {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
@@ -82,23 +103,58 @@
       padding: 30px;
       transition: transform 0.3s ease;
     }
-    .product:hover { transform: translateY(-5px); }
 
-    .product img {
-      width: 100%;
-      max-width: 45%;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
+    .service:hover {
+      transform: translateY(-5px);
     }
 
-    .product-text { flex: 1; }
-    .product-text h2 { color: #007bff; margin-bottom: 15px; font-size: 1.8rem; }
-    .product-text p { color: #333; line-height: 1.8; font-size: 1rem; margin-bottom: 20px; text-align: justify; }
-    .btn { display: inline-block; background-color: #007bff; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background-color 0.3s; margin-top: 15px; }
-    .btn:hover { background-color: #0056b3; }
+    .service img {
+      width: 100%;
+      max-width: 45%;
+      height: 250px;        /* Set uniform height for all images */
+      border-radius: 10px;
+      object-fit: cover;    /* Ensures the image fills the container without distortion */
+    }
 
-    .product:nth-child(even) { flex-direction: row-reverse; }
+    .service-text {
+      flex: 1;
+    }
+
+    .service-text h2 {
+      color: #007bff;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .service-text p {
+      color: #333;
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+      margin-top: 15px;
+      align-self: flex-start;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Alternate layout for even services */
+    .service:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
     /* ===== FOOTER ===== */
     footer {
@@ -112,25 +168,92 @@
       border-top: 4px solid #007bff;
       margin-top: 40px;
     }
-    footer .footer-section { max-width: 300px; }
-    footer h3 { color: #fff; margin-bottom: 15px; }
-    footer p, footer a { color: #bbb; font-size: 0.95rem; line-height: 1.6; text-decoration: none; }
-    footer a:hover { color: #007bff; }
-    .footer-bottom { text-align:center; background:#000; padding:15px; color:#777; font-size:0.9rem; }
 
-    .social-icons { display:flex; gap:15px; margin-top:10px; justify-content:center; }
+    footer .footer-section {
+      max-width: 300px;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    footer p, footer a {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #007bff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background: #000;
+      padding: 15px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      justify-content: center;
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .hamburger { display:flex; }
-      .navbar ul { flex-direction: column; width: 100%; max-height: 0; overflow: hidden; margin-top: 10px; background-color: rgba(0,0,0,0.95); border-radius: 15px; padding: 0; }
-      .navbar ul.show { max-height: 500px; }
-      .navbar ul li a { display: block; padding: 12px; text-align: center; width: 100%; }
+      .hamburger {
+        display: flex;
+      }
 
-      .product { flex-direction: column; text-align: center; }
-      .product img { width: 100% !important; max-width: 100% !important; height: 260px !important; object-fit: cover; border-radius: 12px; }
+      .navbar {
+        width: 90%;
+        border-radius: 20px;
+      }
 
-      footer { flex-direction: column; text-align: center; }
+      .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 10px;
+        background-color: rgba(0,0,0,0.95);
+        border-radius: 15px;
+        padding: 0;
+      }
+
+      .navbar ul.show {
+        max-height: 500px;
+      }
+
+      .navbar ul li a {
+        display: block;
+        padding: 12px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .service {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .service img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 260px !important;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -138,70 +261,70 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="logo"><img src="airnet logo.png" alt="Airnet Logo"></div>
-    <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+    <div class="logo">
+      <img src="airnet logo.png" alt="Airnet Logo">
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="Products.html" class="active">Products</a></li>
-      <li><a href="service.html">Services</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="service.html" class="active">Services</a></li>
       <li><a href="About US.html">About Us</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </nav>
 
-  <h1>Our Products</h1>
+  <h1>Our Services</h1>
 
-  <section class="products-section">
-    <div class="product">
-      <img src="router.jpg" alt="Network Router">
-      <div class="product-text">
-        <h2>Network Routers</h2>
-        <p>High-performance routers for fast, secure, and reliable connectivity.</p>
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <div class="service">
+      <img src="im.png" alt="Networking Solutions">
+      <div class="service-text">
+        <h2>Networking Solutions</h2>
+        <p>
+          Our networking services are designed to meet the ever-growing connectivity demands of modern businesses.
+          We provide LAN/WAN design, wireless deployment, fiber optics installation, and enterprise network security.
+        </p>
         <a href="quote.html" class="btn">Request a Quote</a>
       </div>
     </div>
 
-    <div class="product">
-      <img src="cctv.jpg" alt="CCTV Camera">
-      <div class="product-text">
-        <h2>CCTV Cameras</h2>
-        <p>Advanced CCTV systems providing 24/7 surveillance for safety and monitoring.</p>
+    <div class="service">
+      <img src="hvac repair.jpg" alt="HVAC Solutions">
+      <div class="service-text">
+        <h2>HVAC Solutions</h2>
+        <p>
+          We provide complete HVAC systems that ensure optimal indoor air quality, comfort and energy efficiency.
+        </p>
         <a href="quote.html" class="btn">Request a Quote</a>
       </div>
     </div>
 
-    <div class="product">
-      <img src="ethernet.jpg" alt="Ethernet Cable">
-      <div class="product-text">
-        <h2>Ethernet Cables</h2>
-        <p>Reliable cables ensuring fast and stable data transmission for your network.</p>
+    <div class="service">
+      <img src="camera.png" alt="CCTV & Security Systems">
+      <div class="service-text">
+        <h2>CCTV & Security Systems</h2>
+        <p>
+          Keep your property safe and secure with advanced surveillance and monitoring solutions.
+        </p>
         <a href="quote.html" class="btn">Request a Quote</a>
       </div>
     </div>
 
-    <div class="product">
-      <img src="aircondition.jpg" alt="Air Conditioner">
-      <div class="product-text">
-        <h2>Air Conditioners</h2>
-        <p>Energy-efficient air conditioning systems that keep your space cool and comfortable.</p>
-        <a href="quote.html" class="btn">Request a Quote</a>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="laptop.jpg" alt="Laptop">
-      <div class="product-text">
-        <h2>Laptops</h2>
-        <p>High-performance laptops suitable for business, education, and personal use.</p>
-        <a href="quote.html" class="btn">Request a Quote</a>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="phoneaccessories.jpg" alt="Phone Accessories">
-      <div class="product-text">
-        <h2>Phone Accessories</h2>
-        <p>Chargers, cables, cases, and more for all your smartphone needs.</p>
+    <div class="service">
+      <img src="consultation.jpg" alt="IT Consulting">
+      <div class="service-text">
+        <h2>IT Consulting</h2>
+        <p>
+          Our IT consulting services empower businesses to achieve efficiency and growth through advanced technology.
+        </p>
         <a href="quote.html" class="btn">Request a Quote</a>
       </div>
     </div>
@@ -223,19 +346,30 @@
 
     <div class="footer-section">
       <h3>About Airnet Ghana</h3>
-      <p>Airnet Ghana provides innovative IT, networking, and security solutions for homes and businesses.</p>
+      <p>
+        Airnet Ghana provides innovative IT, networking, and security solutions tailored for homes and businesses.
+      </p>
+
       <h3>Follow Us</h3>
       <div class="social-icons">
-        <!-- Add SVG icons here like in service.html -->
+        <!-- Social icons here -->
       </div>
     </div>
   </footer>
-  <div class="footer-bottom">© 2025 Airnet Ghana. All rights reserved.</div>
 
+  <div class="footer-bottom">
+    © 2025 Airnet Ghana. All rights reserved.
+  </div>
+
+  <!-- Hamburger JS -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
   </script>
+
 </body>
 </html>
