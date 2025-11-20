@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services | Airnet Ghana</title>
-
+  <title>Airnet Ghana - Services</title>
   <style>
+    /* ===== GENERAL STYLES ===== */
     * {
       margin: 0;
       padding: 0;
@@ -14,12 +14,17 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: #fff;
-      padding-top: 100px;
+      background-color: #f8f8f8;
+      color: #333;
     }
 
-    /* ---------------- NAVBAR (Same as index.html) ---------------- */
+    h1 {
+      text-align: center;
+      margin-top: 100px;
+      color: #333;
+    }
+
+    /* ===== NAVBAR ===== */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -45,6 +50,8 @@
       list-style: none;
       display: flex;
       gap: 1.3rem;
+      margin: 0;
+      padding: 0;
       transition: max-height 0.3s ease-in-out;
     }
 
@@ -52,9 +59,9 @@
       text-decoration: none;
       color: #fff;
       font-weight: 500;
+      transition: color 0.2s, background-color 0.2s;
       padding: 0.4rem 1rem;
       border-radius: 20px;
-      transition: 0.3s;
     }
 
     .navbar ul li a:hover,
@@ -75,83 +82,138 @@
       width: 25px;
       height: 3px;
       background-color: #fff;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
 
-    /* ---------------- SERVICE SECTION ---------------- */
+    /* ===== SERVICES SECTION ===== */
     .services-section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .services-title {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      font-weight: 700;
+      margin-top: 30px;
+      padding: 60px 10%;
     }
 
     .service {
       display: flex;
-      align-items: center;
-      gap: 20px;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 20px;
-      border-radius: 16px;
-      margin-bottom: 25px;
-      backdrop-filter: blur(3px);
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 50px;
+      padding: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
     }
 
     .service img {
-      width: 45%;
-      border-radius: 12px;
+      width: 100%;
+      max-width: 45%;
+      height: auto;
+      border-radius: 10px;
       object-fit: cover;
-      height: 250px;
     }
 
-    .service-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-weight: bold;
+    .service-text {
+      flex: 1;
     }
 
-    .service-content p {
-      color: #e2e2e2;
-      line-height: 1.6;
+    .service-text h2 {
+      color: #007bff;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .service-text p {
+      color: #333;
+      line-height: 1.8;
       font-size: 1rem;
+      margin-bottom: 20px;
+      text-align: justify;
     }
 
-    /* ---------------- FOOTER ---------------- */
-    footer {
-      background: #000;
-      padding: 40px 20px;
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .social-links a {
-      margin: 0 10px;
+    .btn {
       display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+      margin-top: 15px;
+      align-self: flex-start;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Alternate layout for even services */
+    .service:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      border-top: 4px solid #007bff;
+      margin-top: 40px;
+    }
+
+    footer .footer-section {
+      max-width: 300px;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    footer p, footer a {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.6;
       text-decoration: none;
     }
 
-    .social-links svg {
-      width: 32px;
-      height: 32px;
-      fill: #fff;
-      transition: 0.3s;
+    footer a:hover {
+      color: #007bff;
     }
 
-    .social-links svg:hover {
-      fill: #007bff;
+    .footer-bottom {
+      text-align: center;
+      background: #000;
+      padding: 15px;
+      color: #777;
+      font-size: 0.9rem;
     }
 
-    /* ---------------- MOBILE RESPONSIVENESS ---------------- */
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      justify-content: center;
+    }
+
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      /* Navbar Mobile */
       .hamburger {
         display: flex;
+      }
+
+      /* Navbar adjustments for mobile */
+      .navbar {
+        width: 90%;
+        border-radius: 20px;
       }
 
       .navbar ul {
@@ -160,8 +222,9 @@
         max-height: 0;
         overflow: hidden;
         margin-top: 10px;
-        background-color: rgba(0, 0, 0, 0.95);
-        border-radius: 10px;
+        background-color: rgba(0,0,0,0.95);
+        border-radius: 15px;
+        padding: 0;
       }
 
       .navbar ul.show {
@@ -172,30 +235,36 @@
         display: block;
         padding: 12px;
         text-align: center;
+        width: 100%;
       }
 
-      /* Services mobile */
       .service {
         flex-direction: column;
+        text-align: center;
       }
 
+      /* Bigger images for mobile */
       .service img {
-        width: 100%;
-        max-width: 100%;
-        height: 260px;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 260px !important;
         object-fit: cover;
+        border-radius: 12px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
-
 </head>
-
 <body>
 
-  <!-- ---------------- NAVBAR ---------------- -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">
-      <img src="airnet logo.png" alt="Airnet Logo" />
+      <img src="airnet logo.png" alt="Airnet Logo">
     </div>
 
     <div class="hamburger" id="hamburger">
@@ -213,54 +282,97 @@
     </ul>
   </nav>
 
-  <!-- ---------------- SERVICES SECTION ---------------- -->
-  <div class="services-section">
-    <h2 class="services-title">Our Professional Services</h2>
+  <h1>Our Services</h1>
 
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
     <div class="service">
-      <img src="install1.jpg" alt="Service Image">
-      <div class="service-content">
-        <h3>Network Cable Installation</h3>
-        <p>We offer professional UTP, CAT6, CAT7, and fiber optic cable installation with clean and durable finishing.</p>
+      <img src="im.png" alt="Networking Solutions">
+      <div class="service-text">
+        <h2>Networking Solutions</h2>
+        <p>
+          Our networking services are designed to meet the ever-growing connectivity demands of modern businesses.
+          We provide LAN/WAN design, wireless deployment, fiber optics installation, and enterprise network security.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
       </div>
     </div>
 
     <div class="service">
-      <img src="cctv1.jpg" alt="CCTV Image">
-      <div class="service-content">
-        <h3>CCTV Camera Installation</h3>
-        <p>Secure your home and business with high-quality CCTV installation and remote monitoring setup.</p>
+      <img src="hvac repair.jpg" alt="HVAC Solutions">
+      <div class="service-text">
+        <h2>HVAC Solutions</h2>
+        <p>
+          We provide complete HVAC systems that ensure optimal indoor air quality, comfort and energy efficiency.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
       </div>
     </div>
 
     <div class="service">
-      <img src="wifi1.jpg" alt="Access Point Install">
-      <div class="service-content">
-        <h3>Access Point Setup</h3>
-        <p>Professional ceiling-mount and indoor/outdoor access point installation for strong and reliable Wi-Fi.</p>
+      <img src="camera.png" alt="CCTV & Security Systems">
+      <div class="service-text">
+        <h2>CCTV & Security Systems</h2>
+        <p>
+          Keep your property safe and secure with advanced surveillance and monitoring solutions.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
       </div>
     </div>
-  </div>
 
-  <!-- ---------------- FOOTER ---------------- -->
+    <div class="service">
+      <img src="consultation.jpg" alt="IT Consulting">
+      <div class="service-text">
+        <h2>IT Consulting</h2>
+        <p>
+          Our IT consulting services empower businesses to achieve efficiency and growth through advanced technology.
+        </p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>Follow us on:</p>
-
-    <div class="social-links">
-      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 0 1 3.7-3.9c1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12H18l-.5 3h-2.8v7A10 10 0 0 0 22 12"/></svg></a>
-      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm10 3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm-5 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm6-2a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/></svg></a>
-      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.5.6-2.3.7.8-.5 1.4-1.2 1.7-2.1-.8.5-1.6.9-2.5 1.1C18.4 4.6 17.3 4 16 4a4 4 0 0 0-4 4c0 .3 0 .5.1.8-3.3-.2-6.3-1.7-8.2-4.2-.3.5-.5 1.2-.5 1.9 0 1.3.7 2.4 1.7 3-.6 0-1.1-.2-1.6-.4v.1c0 2 1.4 3.6 3.2 4-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.7 2 3 3.8 3A8 8 0 0 1 2 18.6C3.8 19.7 6 20 8 20c7.3 0 11.3-6 11.3-11.3v-.5c.8-.6 1.5-1.2 2.1-2z"/></svg></a>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+      <p><strong>Email:</strong> <a href="mailto:info@airnetghana.com">info@airnetghana.com</a></p>
     </div>
 
-    <p style="margin-top:20px; font-size:0.9rem;">© 2025 Airnet Ghana. All Rights Reserved.</p>
+    <div class="footer-section">
+      <h3>Our Locations</h3>
+      <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+      <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>About Airnet Ghana</h3>
+      <p>
+        Airnet Ghana provides innovative IT, networking, and security solutions tailored for homes and businesses.
+      </p>
+
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><img src="facebook.svg" alt="Facebook" width="28"></a>
+        <a href="#"><img src="instagram.svg" alt="Instagram" width="28"></a>
+        <a href="#"><img src="linkedin.svg" alt="LinkedIn" width="28"></a>
+        <a href="#"><img src="twitter.svg" alt="Twitter" width="28"></a>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
+  <div class="footer-bottom">
+    © 2025 Airnet Ghana. All rights reserved.
+  </div>
 
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
+  <!-- Hamburger JS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
     });
   </script>
 
