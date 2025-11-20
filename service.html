@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Airnet Ghana - Services</title>
+  <title>Our Services | Airnet Ghana</title>
+
   <style>
-    /* === GENERAL PAGE STYLES === */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f8f8;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    h1 {
-      text-align: center;
-      margin-top: 110px;
-      color: #333;
-      font-size: 2.3rem;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+      padding-top: 100px;
     }
 
-    /* === NAVBAR === */
+    /* ---------------- NAVBAR (Same as index.html) ---------------- */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -46,8 +45,6 @@
       list-style: none;
       display: flex;
       gap: 1.3rem;
-      margin: 0;
-      padding: 0;
       transition: max-height 0.3s ease-in-out;
     }
 
@@ -55,9 +52,9 @@
       text-decoration: none;
       color: #fff;
       font-weight: 500;
-      transition: color 0.2s, background-color 0.2s;
       padding: 0.4rem 1rem;
       border-radius: 20px;
+      transition: 0.3s;
     }
 
     .navbar ul li a:hover,
@@ -78,128 +75,81 @@
       width: 25px;
       height: 3px;
       background-color: #fff;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
     }
 
-    /* === SERVICE SECTION === */
+    /* ---------------- SERVICE SECTION ---------------- */
     .services-section {
-      margin-top: 40px;
-      padding: 60px 10%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .services-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .service {
       display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 40px;
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin-bottom: 50px;
-      padding: 30px;
-      transition: transform 0.3s ease;
-    }
-
-    .service:hover {
-      transform: translateY(-5px);
+      align-items: center;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(3px);
     }
 
     .service img {
-      width: 100%;
-      max-width: 45%;
-      height: auto;
-      border-radius: 10px;
+      width: 45%;
+      border-radius: 12px;
       object-fit: cover;
+      height: 250px;
     }
 
-    .service-text {
-      flex: 1;
+    .service-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
 
-    .service-text h2 {
-      color: #007bff;
-      margin-bottom: 15px;
-      font-size: 1.7rem;
-    }
-
-    .service-text p {
-      color: #333;
-      line-height: 1.8;
-      font-size: 1rem;
-      margin-bottom: 20px;
-      text-align: justify;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s;
-      margin-top: 15px;
-    }
-
-    .btn:hover {
-      background-color: #0056b3;
-    }
-
-    /* Alternate layout */
-    .service:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    /* === FOOTER === */
-    footer {
-      background: #111;
-      color: #ddd;
-      padding: 55px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 30px;
-      border-top: 4px solid #007bff;
-      margin-top: 50px;
-    }
-
-    footer .footer-section {
-      max-width: 320px;
-    }
-
-    footer h3 {
-      color: #fff;
-      margin-bottom: 15px;
-    }
-
-    footer p, footer a {
-      color: #bbb;
-      font-size: 0.95rem;
+    .service-content p {
+      color: #e2e2e2;
       line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      background: #000;
+      padding: 40px 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      display: inline-block;
       text-decoration: none;
     }
 
-    footer a:hover {
-      color: #007bff;
+    .social-links svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+      transition: 0.3s;
     }
 
-    .footer-bottom {
-      text-align: center;
-      background: #000;
-      padding: 15px;
-      color: #777;
-      font-size: 0.9rem;
+    .social-links svg:hover {
+      fill: #007bff;
     }
 
-    .social-icons {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    /* ---------------- RESPONSIVE ---------------- */
+    /* ---------------- MOBILE RESPONSIVENESS ---------------- */
     @media (max-width: 768px) {
+      /* Navbar Mobile */
       .hamburger {
         display: flex;
       }
@@ -210,7 +160,7 @@
         max-height: 0;
         overflow: hidden;
         margin-top: 10px;
-        background-color: rgba(0,0,0,0.95);
+        background-color: rgba(0, 0, 0, 0.95);
         border-radius: 10px;
       }
 
@@ -224,33 +174,28 @@
         text-align: center;
       }
 
+      /* Services mobile */
       .service {
         flex-direction: column;
-        text-align: center;
       }
 
-      /* ⭐ MOBILE IMAGE FIX — matches index.html feel */
       .service img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 260px !important;
+        width: 100%;
+        max-width: 100%;
+        height: 260px;
         object-fit: cover;
-        border-radius: 12px;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
       }
     }
   </style>
+
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+  <!-- ---------------- NAVBAR ---------------- -->
   <nav class="navbar">
     <div class="logo">
-      <img src="airnet logo.png" alt="Airnet Logo">
+      <img src="airnet logo.png" alt="Airnet Logo" />
     </div>
 
     <div class="hamburger" id="hamburger">
@@ -268,99 +213,54 @@
     </ul>
   </nav>
 
-  <h1>Our Services</h1>
-
-  <!-- SERVICES SECTION -->
-  <section class="services-section">
+  <!-- ---------------- SERVICES SECTION ---------------- -->
+  <div class="services-section">
+    <h2 class="services-title">Our Professional Services</h2>
 
     <div class="service">
-      <img src="im.png" alt="Networking Solutions">
-      <div class="service-text">
-        <h2>Networking Solutions</h2>
-        <p>
-          We provide expert LAN/WAN setup, structured cabling, access points, router configuration,
-          and enterprise-grade networking for homes and businesses.
-        </p>
-        <a href="quote.html" class="btn">Request a Quote</a>
+      <img src="install1.jpg" alt="Service Image">
+      <div class="service-content">
+        <h3>Network Cable Installation</h3>
+        <p>We offer professional UTP, CAT6, CAT7, and fiber optic cable installation with clean and durable finishing.</p>
       </div>
     </div>
 
     <div class="service">
-      <img src="hvac repair.jpg" alt="HVAC Solutions">
-      <div class="service-text">
-        <h2>HVAC Solutions</h2>
-        <p>
-          Reliable cooling and ventilation systems designed to improve indoor comfort and efficiency.
-        </p>
-        <a href="quote.html" class="btn">Request a Quote</a>
+      <img src="cctv1.jpg" alt="CCTV Image">
+      <div class="service-content">
+        <h3>CCTV Camera Installation</h3>
+        <p>Secure your home and business with high-quality CCTV installation and remote monitoring setup.</p>
       </div>
     </div>
 
     <div class="service">
-      <img src="camera.png" alt="CCTV & Security Systems">
-      <div class="service-text">
-        <h2>CCTV & Security Systems</h2>
-        <p>
-          Monitor and protect your premises with high-quality surveillance and security solutions.
-        </p>
-        <a href="quote.html" class="btn">Request a Quote</a>
+      <img src="wifi1.jpg" alt="Access Point Install">
+      <div class="service-content">
+        <h3>Access Point Setup</h3>
+        <p>Professional ceiling-mount and indoor/outdoor access point installation for strong and reliable Wi-Fi.</p>
       </div>
     </div>
-
-    <div class="service">
-      <img src="consultation.jpg" alt="IT Consulting">
-      <div class="service-text">
-        <h2>IT Consulting</h2>
-        <p>
-          We guide businesses in finding the best technology solutions for growth and security.
-        </p>
-        <a href="quote.html" class="btn">Request a Quote</a>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-      <p><strong>Email:</strong> <a href="mailto:info@airnetghana.com">info@airnetghana.com</a></p>
-    </div>
-
-    <div class="footer-section">
-      <h3>Our Locations</h3>
-      <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
-      <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
-    </div>
-
-    <div class="footer-section">
-      <h3>About Airnet Ghana</h3>
-      <p>
-        Airnet Ghana provides innovative IT, networking, and security solutions tailored for homes and businesses.
-      </p>
-
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M22 0H6C2.7 0 0 2.7 0 6V22C0 25.3 2.7 28 6 28H22C25.3 28 28 25.3 28 22V6C28 2.7 25.3 0 22 0ZM20 8H18C16.9 8 16 8.5 16 10V12H20L19.5 16H16V28H12V16H10V12H12V9C12 6.2 13.8 4 17 4H20V8Z"/></svg></a>
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M14 7C17.9 7 21 10.1 21 14C21 17.9 17.9 21 14 21C10.1 21 7 17.9 7 14C7 10.1 10.1 7 14 7M14 5C9 5 5 9 5 14C5 19 9 23 14 23C19 23 23 19 23 14C23 9 19 5 14 5M22 9.5C22.8 9.5 23.5 8.8 23.5 8C23.5 7.2 22.8 6.5 22 6.5C21.2 6.5 20.5 7.2 20.5 8C20.5 8.8 21.2 9.5 22 9.5Z"/></svg></a>
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M4 4C2.9 4 2 4.9 2 6C2 7.1 2.9 8 4 8C5.1 8 6 7.1 6 6C6 4.9 5.1 4 4 4M2 10H6V24H2V10M10 10H14V12.3C14.6 11.2 16 10 18.5 10C22.4 10 24 12.6 24 16.5V24H20V17.5C20 15.5 19.4 14 17.5 14C15.6 14 14.7 15.5 14.7 17.5V24H10V10Z"/></svg></a>
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M22.46 6.003C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.8 20.13 5.15 19.16 5.34C18.37 4.5 17.26 4 16 4C13.65 4 11.75 5.9 11.75 8.25C11.75 8.59 11.79 8.92 11.86 9.24C8.28 9.06 5.11 7.38 2.97 4.9C2.6 5.5 2.38 6.19 2.38 6.93C2.38 8.34 3.11 9.58 4.22 10.31C3.51 10.29 2.84 10.1 2.25 9.8V9.85C2.25 11.89 3.71 13.57 5.62 13.94C5.25 14.04 4.85 14.09 4.44 14.09C4.15 14.09 3.87 14.06 3.59 14C4.17 15.65 5.73 16.85 7.57 16.88C6.14 17.98 4.33 18.63 2.38 18.63C2 18.63 1.63 18.61 1.25 18.57C3.11 19.74 5.29 20.38 7.62 20.38C16 20.38 20.75 14.16 20.75 8.75C20.75 8.58 20.75 8.41 20.74 8.25C21.58 7.65 22.31 6.88 22.94 6.03L22.46 6.003Z"/></svg></a>
-      </div>
-    </div>
-  </footer>
-
-  <div class="footer-bottom">
-    © 2025 Airnet Ghana. All rights reserved.
   </div>
 
-  <!-- Hamburger JS -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+  <!-- ---------------- FOOTER ---------------- -->
+  <footer>
+    <p>Follow us on:</p>
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+    <div class="social-links">
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 0 1 3.7-3.9c1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12H18l-.5 3h-2.8v7A10 10 0 0 0 22 12"/></svg></a>
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm10 3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm-5 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm6-2a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/></svg></a>
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.5.6-2.3.7.8-.5 1.4-1.2 1.7-2.1-.8.5-1.6.9-2.5 1.1C18.4 4.6 17.3 4 16 4a4 4 0 0 0-4 4c0 .3 0 .5.1.8-3.3-.2-6.3-1.7-8.2-4.2-.3.5-.5 1.2-.5 1.9 0 1.3.7 2.4 1.7 3-.6 0-1.1-.2-1.6-.4v.1c0 2 1.4 3.6 3.2 4-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.7 2 3 3.8 3A8 8 0 0 1 2 18.6C3.8 19.7 6 20 8 20c7.3 0 11.3-6 11.3-11.3v-.5c.8-.6 1.5-1.2 2.1-2z"/></svg></a>
+    </div>
+
+    <p style="margin-top:20px; font-size:0.9rem;">© 2025 Airnet Ghana. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
     });
   </script>
 
