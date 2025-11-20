@@ -30,9 +30,7 @@
       flex-wrap: wrap;
     }
 
-    .navbar .logo img {
-      height: 40px;
-    }
+    .navbar .logo img { height: 40px; }
 
     .navbar ul {
       list-style: none;
@@ -58,7 +56,6 @@
       color: #fff;
     }
 
-    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -88,7 +85,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
       gap: 30px;
     }
 
@@ -103,9 +100,7 @@
       align-items: stretch;
     }
 
-    .product-card:hover {
-      transform: translateY(-8px);
-    }
+    .product-card:hover { transform: translateY(-8px); }
 
     .product-card img {
       width: 100%;
@@ -151,9 +146,7 @@
       align-self: flex-start;
     }
 
-    .btn:hover {
-      background-color: #0056b3;
-    }
+    .btn:hover { background-color: #0056b3; }
 
     /* Footer */
     footer {
@@ -168,14 +161,9 @@
       margin-top: 40px;
     }
 
-    footer .footer-section {
-      max-width: 300px;
-    }
+    footer .footer-section { max-width: 300px; }
 
-    footer h3 {
-      color: #fff;
-      margin-bottom: 15px;
-    }
+    footer h3 { color: #fff; margin-bottom: 15px; }
 
     footer p, footer a {
       color: #bbb;
@@ -184,9 +172,7 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      color: #007bff;
-    }
+    footer a:hover { color: #007bff; }
 
     .footer-bottom {
       text-align: center;
@@ -214,41 +200,17 @@
 
     /* Responsive */
     @media (max-width: 992px) {
-      .products-section {
-        padding: 120px 30px 60px;
-      }
-
-      .navbar {
-        padding: 0.7rem 1rem;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .products-section { padding: 120px 30px 60px; }
+      .navbar { padding: 0.7rem 1rem; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); } /* 2 per row tablets */
     }
 
     @media (max-width: 768px) {
-      .products-section {
-        padding: 100px 20px 40px;
-      }
-
-      .products-section h2 {
-        font-size: 1.8rem;
-      }
-
-      .product-card img {
-        height: 180px;
-      }
-
-      .btn {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
+      .products-section { padding: 100px 20px 40px; }
+      .products-section h2 { font-size: 1.8rem; }
+      .product-card img { height: 180px; }
+      .btn { padding: 8px 16px; font-size: 14px; }
+      .hamburger { display: flex; }
       .navbar ul {
         flex-direction: column;
         width: 100%;
@@ -259,46 +221,19 @@
         border-radius: 20px;
         transition: max-height 0.3s ease-in-out;
       }
-
-      .navbar ul.show {
-        max-height: 500px;
-      }
-
-      .navbar ul li a {
-        display: block;
-        padding: 12px;
-      }
+      .navbar ul.show { max-height: 500px; }
+      .navbar ul li a { display: block; padding: 12px; }
     }
 
     @media (max-width: 480px) {
-      .products-section {
-        padding: 80px 10px 30px;
-      }
-
-      .products-section h2 {
-        font-size: 1.5rem;
-      }
-
-      .product-card img {
-        height: 150px;
-      }
-
-      .product-info h3 {
-        font-size: 1.1rem;
-      }
-
-      .product-info p {
-        font-size: 0.85rem;
-      }
-
-      .btn {
-        padding: 6px 12px;
-        font-size: 13px;
-      }
-
-      .navbar {
-        border-radius: 20px;
-      }
+      .products-section { padding: 80px 10px 30px; }
+      .products-section h2 { font-size: 1.5rem; }
+      .product-grid { grid-template-columns: 1fr; } /* 1 per row mobile */
+      .product-card img { height: 150px; }
+      .product-info h3 { font-size: 1.1rem; }
+      .product-info p { font-size: 0.85rem; }
+      .btn { padding: 6px 12px; font-size: 13px; }
+      .navbar { border-radius: 20px; }
     }
   </style>
 </head>
@@ -315,7 +250,7 @@
     </div>
     <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="Products.html" class="active">Products</a></li>
+      <li><a href="Products.html">Products</a></li>
       <li><a href="service.html">Services</a></li>
       <li><a href="About US.html">About Us</a></li>
       <li><a href="contact.html">Contact Us</a></li>
@@ -327,115 +262,19 @@
     <h2>Our Featured Products</h2>
     <div class="product-grid">
       <!-- Existing Products -->
-      <div class="product-card">
-        <img src="router.jpg" alt="Network Router" />
-        <div class="product-info">
-          <h3>Network Routers</h3>
-          <p>High-performance routers for businesses and homes ensuring fast, secure, and reliable connectivity.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="CTV.jpg" alt="CCTV Camera" />
-        <div class="product-info">
-          <h3>CCTV Cameras</h3>
-          <p>Advanced CCTV systems providing 24/7 surveillance for your safety and property monitoring.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="ethernet.jpg" alt="Ethernet Cables" />
-        <div class="product-info">
-          <h3>Ethernet Cables</h3>
-          <p>Reliable cables designed to provide fast and stable data transmission for any setup.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="wireless.jpg" alt="Wireless Mouse" />
-        <div class="product-info">
-          <h3>Wired and Wireless Mouse</h3>
-          <p>Durable, precise, and ergonomic mouse options suitable for all your computing needs.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="Smart b.jpg" alt="Smart Board" />
-        <div class="product-info">
-          <h3>Smart Board</h3>
-          <p>Interactive boards that enhance presentations, collaboration, and modern learning experiences.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="phones.jpg" alt="Smart Phones" />
-        <div class="product-info">
-          <h3>Smart Phones</h3>
-          <p>High-quality, affordable smartphones for your business and personal use.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="dahua.jpg" alt="Dahua Access point" />
-        <div class="product-info">
-          <h3>Dahua Access point</h3>
-          <p>Reliable, high-speed wireless access points for seamless network connectivity.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="sm.jpg" alt="Smoke Detectors" />
-        <div class="product-info">
-          <h3>Smoke Detectors</h3>
-          <p>Smoke detectors are essential safety devices that provide early warnings of fire by sensing.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="starlink.jpg" alt="Starlink" />
-        <div class="product-info">
-          <h3>Starlink</h3>
-          <p>Starlink delivers high-speed, low-latency satellite internet across the globe.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
+      <div class="product-card"><img src="router.jpg" alt="Network Router" /><div class="product-info"><h3>Network Routers</h3><p>High-performance routers for businesses and homes ensuring fast, secure, and reliable connectivity.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="CTV.jpg" alt="CCTV Camera" /><div class="product-info"><h3>CCTV Cameras</h3><p>Advanced CCTV systems providing 24/7 surveillance for your safety and property monitoring.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="ethernet.jpg" alt="Ethernet Cables" /><div class="product-info"><h3>Ethernet Cables</h3><p>Reliable cables designed to provide fast and stable data transmission for any setup.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="wireless.jpg" alt="Wireless Mouse" /><div class="product-info"><h3>Wired and Wireless Mouse</h3><p>Durable, precise, and ergonomic mouse options suitable for all your computing needs.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="Smart b.jpg" alt="Smart Board" /><div class="product-info"><h3>Smart Board</h3><p>Interactive boards that enhance presentations, collaboration, and modern learning experiences.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="phones.jpg" alt="Smart Phones" /><div class="product-info"><h3>Smart Phones</h3><p>High-quality, affordable smartphones for your business and personal use.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="dahua.jpg" alt="Dahua Access point" /><div class="product-info"><h3>Dahua Access point</h3><p>Reliable, high-speed wireless access points for seamless network connectivity.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="sm.jpg" alt="Smoke Detectors" /><div class="product-info"><h3>Smoke Detectors</h3><p>Smoke detectors are essential safety devices that provide early warnings of fire by sensing.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="starlink.jpg" alt="Starlink" /><div class="product-info"><h3>Starlink</h3><p>Starlink delivers high-speed, low-latency satellite internet across the globe.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
       <!-- New Products -->
-      <div class="product-card">
-        <img src="aircondition.jpg" alt="Air Conditioners" />
-        <div class="product-info">
-          <h3>Air Conditioners</h3>
-          <p>Energy-efficient air conditioners to keep your office and home cool and comfortable.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="laptop.jpg" alt="Laptops" />
-        <div class="product-info">
-          <h3>Laptops</h3>
-          <p>High-performance laptops suitable for work, gaming, and personal use, with reliable performance.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="phone-accessories.jpg" alt="Mobile Phone Accessories" />
-        <div class="product-info">
-          <h3>Mobile Phone Accessories</h3>
-          <p>A wide range of phone accessories including chargers, cases, headphones, and more.</p>
-          <a href="quote.html" class="btn">Request a Quote</a>
-        </div>
-      </div>
-
+      <div class="product-card"><img src="aircondition.jpg" alt="Air Conditioners" /><div class="product-info"><h3>Air Conditioners</h3><p>Energy-efficient air conditioners to keep your office and home cool and comfortable.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="laptop.jpg" alt="Laptops" /><div class="product-info"><h3>Laptops</h3><p>High-performance laptops suitable for work, gaming, and personal use, with reliable performance.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="phone-accessories.jpg" alt="Mobile Phone Accessories" /><div class="product-info"><h3>Mobile Phone Accessories</h3><p>A wide range of phone accessories including chargers, cases, headphones, and more.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
     </div>
   </section>
 
@@ -456,7 +295,20 @@
       <p>Airnet Ghana provides innovative IT, networking, and security solutions tailored for businesses and homes across the country.</p>
       <h3>Follow Us</h3>
       <div class="social-icons">
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M22 0H6C2.7 0 0 2.7 0 6V22C0 25.3 2.7 28 6 28H22C25.3 28 28 25.3 28 22V6C28 2.7 25.3 0 22 0ZM20 8H18C16.9 8 16 8.5 16 10V12H20L19.5 16H16V28H12V16H10V12H12V9C12 6.2 13.8 4 17 4H20V8Z"/></svg></a>
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M14 7C17.9 7 21 10.1 21 14C21 17.9 17.9 21 14 21C10.1 21 7 17.9 7 14C7 10.1 10.1 7 14 7M14 5C9 5 5 9 5 14C5 19 9 23 14 23C19 23 23 19 23 14C23 9 19 5 14 5M22 9.5C22.8 9.5 23.5 8.8 23.5 8C23.5 7.2 22.8 6.5 22 6.5C21.2 6.5 20.5 7.2 20.5 8C20.5 8.8 21.2 9.5 22 9.5Z"/></svg></a>
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M4 4C2.9 4 2 4.9 2 6C2 7.1 2.9 8 4 8C5.1 8 6 7.1 6 6C6 4.9 5.1 4 4 4M2 10H6V24H2V10M10 10H14V12.3C14.6 11.2 16 10 18.5 10C22.4 10 24 12.6 24 16.5V24H20V17.5C20 15.5 19.4 14 17.5 14C15.6 14 14.7 15.5 14.7 17.5V24H10V10Z"/></svg></a>
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M22.46 6.003C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.8 20.13 5.15 19.16 5.34C18.37 4.5 17.26 4 16 4C13.65 4 11.75 5.9 11.75 8.25C11.75 8.59 11.79 8.92 11.86 9.24C8.28 9.06 5.11 7
+        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="..."/></svg></a>
+        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="..."/></svg></a>
+        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="..."/></svg></a>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">© 2025 Airnet Ghana. All rights reserved.</div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
