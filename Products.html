@@ -6,10 +6,10 @@
   <title>Airnet Ghana - Products</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff;
+      font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #fff;
     }
 
     /* Navbar */
@@ -24,7 +24,7 @@
       width: 90%;
       background-color: rgba(0, 0, 0, 0.95);
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       padding: 0.7rem 2rem;
       z-index: 10;
       flex-wrap: wrap;
@@ -38,6 +38,7 @@
       gap: 1.3rem;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
       transition: max-height 0.3s ease-in-out;
     }
 
@@ -56,6 +57,7 @@
       color: #fff;
     }
 
+    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -74,30 +76,27 @@
     .products-section {
       padding: 140px 60px 60px;
       text-align: center;
-      background-color: #fff;
     }
 
     .products-section h2 {
       font-size: 2.2rem;
-      color: #333;
       margin-bottom: 40px;
+      color: #333;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
 
     .product-card {
       background: #fff;
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
-      align-items: stretch;
+      transition: transform 0.3s;
     }
 
     .product-card:hover { transform: translateY(-8px); }
@@ -107,31 +106,20 @@
       height: 220px;
       object-fit: contain;
       background-color: #fff;
-      display: block;
     }
 
     .product-info {
       padding: 20px;
       text-align: left;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex-grow: 1;
     }
 
-    .product-info h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #007bff;
-    }
+    .product-info h3 { color: #007bff; margin-bottom: 10px; }
 
-    .product-info p {
-      color: #555;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: auto;
-      min-height: 60px;
-    }
+    .product-info p { font-size: 0.95rem; color: #555; min-height: 60px; margin-bottom: auto; }
 
     .btn {
       display: inline-block;
@@ -141,8 +129,8 @@
       border-radius: 25px;
       text-decoration: none;
       font-weight: 500;
-      transition: background-color 0.3s;
       margin-top: 15px;
+      transition: background-color 0.3s;
       align-self: flex-start;
     }
 
@@ -158,20 +146,11 @@
       justify-content: space-around;
       gap: 30px;
       border-top: 4px solid #007bff;
-      margin-top: 40px;
     }
 
     footer .footer-section { max-width: 300px; }
-
     footer h3 { color: #fff; margin-bottom: 15px; }
-
-    footer p, footer a {
-      color: #bbb;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      text-decoration: none;
-    }
-
+    footer p, footer a { color: #bbb; text-decoration: none; font-size: 0.95rem; line-height: 1.6; }
     footer a:hover { color: #007bff; }
 
     .footer-bottom {
@@ -182,27 +161,15 @@
       font-size: 0.9rem;
     }
 
-    .social-icons {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-      justify-content: center;
-    }
-
-    .social-icons a svg {
-      transition: 0.3s;
-    }
-
-    .social-icons a:hover svg {
-      fill: #007bff;
-      transform: scale(1.1);
-    }
+    .social-icons { display: flex; gap: 15px; justify-content: center; margin-top: 10px; }
+    .social-icons a svg { transition: 0.3s; }
+    .social-icons a:hover svg { transform: scale(1.1); fill: #007bff; }
 
     /* Responsive */
     @media (max-width: 992px) {
       .products-section { padding: 120px 30px 60px; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
       .navbar { padding: 0.7rem 1rem; }
-      .product-grid { grid-template-columns: repeat(2, 1fr); } /* 2 per row tablets */
     }
 
     @media (max-width: 768px) {
@@ -210,47 +177,33 @@
       .products-section h2 { font-size: 1.8rem; }
       .product-card img { height: 180px; }
       .btn { padding: 8px 16px; font-size: 14px; }
+
       .hamburger { display: flex; }
-      .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        margin-top: 10px;
-        background-color: rgba(0,0,0,0.95);
-        border-radius: 20px;
-        transition: max-height 0.3s ease-in-out;
-      }
+      .navbar ul { flex-direction: column; max-height: 0; overflow: hidden; margin-top: 10px; background-color: rgba(0,0,0,0.95); border-radius: 10px; transition: max-height 0.3s ease-in-out; }
       .navbar ul.show { max-height: 500px; }
-      .navbar ul li a { display: block; padding: 12px; }
+      .navbar ul li a { padding: 12px; }
     }
 
     @media (max-width: 480px) {
       .products-section { padding: 80px 10px 30px; }
-      .products-section h2 { font-size: 1.5rem; }
-      .product-grid { grid-template-columns: 1fr; } /* 1 per row mobile */
+      .product-grid { grid-template-columns: 1fr; }
       .product-card img { height: 150px; }
       .product-info h3 { font-size: 1.1rem; }
       .product-info p { font-size: 0.85rem; }
       .btn { padding: 6px 12px; font-size: 13px; }
-      .navbar { border-radius: 20px; }
     }
+
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">
-      <img src="airnet logo.png" alt="Airnet Ghana Logo" />
-    </div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <div class="logo"><img src="airnet logo.png" alt="Airnet Ghana Logo"></div>
+    <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
     <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="Products.html">Products</a></li>
+      <li><a href="Products.html" class="active">Products</a></li>
       <li><a href="service.html">Services</a></li>
       <li><a href="About US.html">About Us</a></li>
       <li><a href="contact.html">Contact Us</a></li>
@@ -261,20 +214,23 @@
   <section class="products-section">
     <h2>Our Featured Products</h2>
     <div class="product-grid">
+
       <!-- Existing Products -->
-      <div class="product-card"><img src="router.jpg" alt="Network Router" /><div class="product-info"><h3>Network Routers</h3><p>High-performance routers for businesses and homes ensuring fast, secure, and reliable connectivity.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="CTV.jpg" alt="CCTV Camera" /><div class="product-info"><h3>CCTV Cameras</h3><p>Advanced CCTV systems providing 24/7 surveillance for your safety and property monitoring.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="ethernet.jpg" alt="Ethernet Cables" /><div class="product-info"><h3>Ethernet Cables</h3><p>Reliable cables designed to provide fast and stable data transmission for any setup.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="wireless.jpg" alt="Wireless Mouse" /><div class="product-info"><h3>Wired and Wireless Mouse</h3><p>Durable, precise, and ergonomic mouse options suitable for all your computing needs.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="Smart b.jpg" alt="Smart Board" /><div class="product-info"><h3>Smart Board</h3><p>Interactive boards that enhance presentations, collaboration, and modern learning experiences.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="phones.jpg" alt="Smart Phones" /><div class="product-info"><h3>Smart Phones</h3><p>High-quality, affordable smartphones for your business and personal use.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="dahua.jpg" alt="Dahua Access point" /><div class="product-info"><h3>Dahua Access point</h3><p>Reliable, high-speed wireless access points for seamless network connectivity.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="sm.jpg" alt="Smoke Detectors" /><div class="product-info"><h3>Smoke Detectors</h3><p>Smoke detectors are essential safety devices that provide early warnings of fire by sensing.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="starlink.jpg" alt="Starlink" /><div class="product-info"><h3>Starlink</h3><p>Starlink delivers high-speed, low-latency satellite internet across the globe.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="router.jpg" alt="Network Router"><div class="product-info"><h3>Network Routers</h3><p>High-performance routers for businesses and homes ensuring fast, secure, and reliable connectivity.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="CTV.jpg" alt="CCTV Camera"><div class="product-info"><h3>CCTV Cameras</h3><p>Advanced CCTV systems providing 24/7 surveillance for your safety and property monitoring.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="ethernet.jpg" alt="Ethernet Cables"><div class="product-info"><h3>Ethernet Cables</h3><p>Reliable cables designed to provide fast and stable data transmission for any setup.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="wireless.jpg" alt="Wireless Mouse"><div class="product-info"><h3>Wired and Wireless Mouse</h3><p>Durable, precise, and ergonomic mouse options suitable for all your computing needs.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="Smart b.jpg" alt="Smart Board"><div class="product-info"><h3>Smart Board</h3><p>Interactive boards that enhance presentations, collaboration, and modern learning experiences.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="phones.jpg" alt="Smart Phones"><div class="product-info"><h3>Smart Phones</h3><p>High-quality, affordable smartphones for your business and personal use.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="dahua.jpg" alt="Dahua Access point"><div class="product-info"><h3>Dahua Access point</h3><p>Reliable, high-speed wireless access points for seamless network connectivity.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="sm.jpg" alt="Smoke Detectors"><div class="product-info"><h3>Smoke Detectors</h3><p>Smoke detectors are essential safety devices that provide early warnings of fire by sensing.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="starlink.jpg" alt="Starlink"><div class="product-info"><h3>Starlink</h3><p>Starlink delivers high-speed, low-latency satellite internet across the globe.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+
       <!-- New Products -->
-      <div class="product-card"><img src="aircondition.jpg" alt="Air Conditioners" /><div class="product-info"><h3>Air Conditioners</h3><p>Energy-efficient air conditioners to keep your office and home cool and comfortable.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="laptop.jpg" alt="Laptops" /><div class="product-info"><h3>Laptops</h3><p>High-performance laptops suitable for work, gaming, and personal use, with reliable performance.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-      <div class="product-card"><img src="phone-accessories.jpg" alt="Mobile Phone Accessories" /><div class="product-info"><h3>Mobile Phone Accessories</h3><p>A wide range of phone accessories including chargers, cases, headphones, and more.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="aircondition.jpg" alt="Air Conditioners"><div class="product-info"><h3>Air Conditioners</h3><p>Energy-efficient air conditioners to keep your office and home cool and comfortable.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="laptop.jpg" alt="Laptops"><div class="product-info"><h3>Laptops</h3><p>High-performance laptops suitable for work, gaming, and personal use.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+      <div class="product-card"><img src="phone-accessories.jpg" alt="Mobile Phone Accessories"><div class="product-info"><h3>Mobile Phone Accessories</h3><p>Chargers, cases, headphones, and other essential accessories for phones.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+
     </div>
   </section>
 
@@ -295,20 +251,21 @@
       <p>Airnet Ghana provides innovative IT, networking, and security solutions tailored for businesses and homes across the country.</p>
       <h3>Follow Us</h3>
       <div class="social-icons">
-        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="..."/></svg></a>
+          <a href="#"><svg width="28" height="28" fill="#bbb"><path d="..."/></svg></a>
         <a href="#"><svg width="28" height="28" fill="#bbb"><path d="..."/></svg></a>
         <a href="#"><svg width="28" height="28" fill="#bbb"><path d="..."/></svg></a>
       </div>
     </div>
   </footer>
-  <div class="footer-bottom">© 2025 Airnet Ghana. All rights reserved.</div>
+
+  <div class="footer-bottom">
+    © 2025 Airnet Ghana. All rights reserved.
+  </div>
 
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
   </script>
 </body>
 </html>
