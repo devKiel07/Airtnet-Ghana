@@ -73,7 +73,7 @@
       transition: all 0.3s ease;
     }
 
-    /* Product Section */
+    /* Products Section */
     .products-section {
       padding: 140px 60px 60px;
       text-align: center;
@@ -88,7 +88,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
 
@@ -212,7 +212,7 @@
       transform: scale(1.1);
     }
 
-    /* Mobile Responsiveness */
+    /* Responsive */
     @media (max-width: 992px) {
       .products-section {
         padding: 120px 30px 60px;
@@ -220,6 +220,10 @@
 
       .navbar {
         padding: 0.7rem 1rem;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -241,7 +245,6 @@
         font-size: 14px;
       }
 
-      /* Hamburger visible */
       .hamburger {
         display: flex;
       }
@@ -253,12 +256,12 @@
         overflow: hidden;
         margin-top: 10px;
         background-color: rgba(0,0,0,0.95);
-        border-radius: 10px;
+        border-radius: 20px;
         transition: max-height 0.3s ease-in-out;
       }
 
       .navbar ul.show {
-        max-height: 500px; /* enough to show all links */
+        max-height: 500px;
       }
 
       .navbar ul li a {
@@ -292,6 +295,10 @@
         padding: 6px 12px;
         font-size: 13px;
       }
+
+      .navbar {
+        border-radius: 20px;
+      }
     }
   </style>
 </head>
@@ -319,7 +326,7 @@
   <section class="products-section">
     <h2>Our Featured Products</h2>
     <div class="product-grid">
-      <!-- All your product cards remain the same -->
+      <!-- Existing Products -->
       <div class="product-card">
         <img src="router.jpg" alt="Network Router" />
         <div class="product-info">
@@ -328,6 +335,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="CTV.jpg" alt="CCTV Camera" />
         <div class="product-info">
@@ -336,6 +344,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="ethernet.jpg" alt="Ethernet Cables" />
         <div class="product-info">
@@ -344,6 +353,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="wireless.jpg" alt="Wireless Mouse" />
         <div class="product-info">
@@ -352,6 +362,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="Smart b.jpg" alt="Smart Board" />
         <div class="product-info">
@@ -360,6 +371,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="phones.jpg" alt="Smart Phones" />
         <div class="product-info">
@@ -368,6 +380,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="dahua.jpg" alt="Dahua Access point" />
         <div class="product-info">
@@ -376,6 +389,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="sm.jpg" alt="Smoke Detectors" />
         <div class="product-info">
@@ -384,6 +398,7 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="starlink.jpg" alt="Starlink" />
         <div class="product-info">
@@ -392,10 +407,39 @@
           <a href="quote.html" class="btn">Request a Quote</a>
         </div>
       </div>
+
+      <!-- New Products -->
+      <div class="product-card">
+        <img src="aircondition.jpg" alt="Air Conditioners" />
+        <div class="product-info">
+          <h3>Air Conditioners</h3>
+          <p>Energy-efficient air conditioners to keep your office and home cool and comfortable.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="laptop.jpg" alt="Laptops" />
+        <div class="product-info">
+          <h3>Laptops</h3>
+          <p>High-performance laptops suitable for work, gaming, and personal use, with reliable performance.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="phone-accessories.jpg" alt="Mobile Phone Accessories" />
+        <div class="product-info">
+          <h3>Mobile Phone Accessories</h3>
+          <p>A wide range of phone accessories including chargers, cases, headphones, and more.</p>
+          <a href="quote.html" class="btn">Request a Quote</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Footer (same as before) -->
+  <!-- Footer -->
   <footer>
     <div class="footer-section">
       <h3>Contact Us</h3>
@@ -411,20 +455,8 @@
       <h3>About Airnet Ghana</h3>
       <p>Airnet Ghana provides innovative IT, networking, and security solutions tailored for businesses and homes across the country.</p>
       <h3>Follow Us</h3>
-      <div class="social-icons"></div>
-    </div>
-  </footer>
-  <div class="footer-bottom">
-    © 2025 Airnet Ghana. All rights reserved.
-  </div>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  </script>
-</body>
-</html>
+      <div class="social-icons">
+        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M22 0H6C2.7 0 0 2.7 0 6V22C0 25.3 2.7 28 6 28H22C25.3 28 28 25.3 28 22V6C28 2.7 25.3 0 22 0ZM20 8H18C16.9 8 16 8.5 16 10V12H20L19.5 16H16V28H12V16H10V12H12V9C12 6.2 13.8 4 17 4H20V8Z"/></svg></a>
+        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M14 7C17.9 7 21 10.1 21 14C21 17.9 17.9 21 14 21C10.1 21 7 17.9 7 14C7 10.1 10.1 7 14 7M14 5C9 5 5 9 5 14C5 19 9 23 14 23C19 23 23 19 23 14C23 9 19 5 14 5M22 9.5C22.8 9.5 23.5 8.8 23.5 8C23.5 7.2 22.8 6.5 22 6.5C21.2 6.5 20.5 7.2 20.5 8C20.5 8.8 21.2 9.5 22 9.5Z"/></svg></a>
+        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M4 4C2.9 4 2 4.9 2 6C2 7.1 2.9 8 4 8C5.1 8 6 7.1 6 6C6 4.9 5.1 4 4 4M2 10H6V24H2V10M10 10H14V12.3C14.6 11.2 16 10 18.5 10C22.4 10 24 12.6 24 16.5V24H20V17.5C20 15.5 19.4 14 17.5 14C15.6 14 14.7 15.5 14.7 17.5V24H10V10Z"/></svg></a>
+        <a href="#"><svg width="28" height="28" fill="#bbb"><path d="M22.46 6.003C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.8 20.13 5.15 19.16 5.34C18.37 4.5 17.26 4 16 4C13.65 4 11.75 5.9 11.75 8.25C11.75 8.59 11.79 8.92 11.86 9.24C8.28 9.06 5.11 7
