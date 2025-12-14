@@ -22,24 +22,40 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      position: relative;
     }
 
-    /* ---------------- SINGLE BACKGROUND IMAGE ---------------- */
-    .single-bg {
+    /* ---------------- BACKGROUND SLIDER ---------------- */
+    .slider-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
-      background-image: url('bm.jpg'); 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      overflow: hidden;
       z-index: -1;
+    }
+
+    .slider-bg img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: slide 24s infinite;
+    }
+
+    .slider-bg img:nth-child(1) { animation-delay: 0s; }
+    .slider-bg img:nth-child(2) { animation-delay: 6s; }
+    .slider-bg img:nth-child(3) { animation-delay: 12s; }
+    .slider-bg img:nth-child(4) { animation-delay: 18s; }
+
+    @keyframes slide {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      25% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
     }
 
     /* ---------------- MAIN TEXT ---------------- */
@@ -51,7 +67,7 @@
       backdrop-filter: blur(4px);
       animation: fadeUp 1.5s ease;
       text-align: center;
-      z-index: 1;
+      z-index: 5;
     }
 
     @keyframes fadeUp {
@@ -105,7 +121,6 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       padding: 0.7rem 2rem;
       z-index: 10;
-      flex-wrap: wrap;
     }
 
     .navbar .logo img {
@@ -118,16 +133,19 @@
       gap: 1.3rem;
       margin: 0;
       padding: 0;
-      transition: max-height 0.3s ease-in-out;
+    }
+
+    .navbar ul li {
+      position: relative;
     }
 
     .navbar ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
-      transition: color 0.2s, background-color 0.2s;
       padding: 0.4rem 1rem;
       border-radius: 20px;
+      cursor: pointer;
     }
 
     .navbar ul li a:hover,
@@ -136,132 +154,136 @@
       color: #fff;
     }
 
-    /* Hamburger */
-    .hamburger {
+    /* ---------------- DROPDOWN (CLICK TO OPEN) ---------------- */
+    .dropdown-menu {
       display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      background: #000;
+      padding: 10px 0;
+      border-radius: 10px;
+      width: 180px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: fadeDown 0.25s ease;
     }
 
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      transition: all 0.3s ease;
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ---------------- MOBILE RESPONSIVENESS ---------------- */
+    .dropdown-menu a {
+      padding: 10px 15px;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+      background: #007bff;
+    }
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+    /* ---------------- RESPONSIVENESS ---------------- */
     @media (max-width: 768px) {
-      .slide-text {
-        padding: 1.5rem;
-        max-width: 90%;
-        align-items: center;
-      }
-
-      .slide-text h1 {
-        font-size: 2rem;
-        line-height: 1.3;
-      }
-
-      .slide-text p {
-        font-size: 1rem;
-      }
-
-      .hero-btn {
-        padding: 0.6rem 1.3rem;
-        font-size: 1rem;
-      }
-
-      /* Hamburger visible */
-      .hamburger {
-        display: flex;
+      .navbar {
+        flex-direction: column;
+        gap: 0.6rem;
       }
 
       .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        margin-top: 10px;
-        background-color: rgba(0, 0, 0, 0.95);
-        border-radius: 10px;
-      }
-
-      .navbar ul.show {
-        max-height: 500px; /* enough to show all links */
-      }
-
-      .navbar ul li a {
-        display: block;
-        padding: 12px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .slide-text {
-        padding: 1.2rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .slide-text h1 {
-        font-size: 1.7rem;
-      }
-
-      .slide-text p {
-        font-size: 0.95rem;
-      }
-
-      .navbar .logo img {
-        height: 38px;
-      }
-
-      .hero-btn {
-        padding: 0.55rem 1.2rem;
-        font-size: 0.9rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
 </head>
+
+
 <body>
 
-  <!-- -------------- HERO SECTION -------------- -->
-  <div class="single-bg"></div>
+  <!-- ---------- BACKGROUND SLIDER ---------- -->
+  <div class="slider-bg">
+    <img src="im.png">
+    <img src="hvac repair.jpg">
+    <img src="camera.png">
+    <img src="consultation.jpg">
+  </div>
 
+  <!-- ---------- HERO TEXT ---------- -->
   <div class="slide-text">
     <h1>Connecting Your World, Securing Your Future.</h1>
     <p>Providing Innovative Technological services is our hallmark !!.</p>
-    <a href="Products.html" class="hero-btn">Explore</a>
+    <a href="mobile.html" class="hero-btn">Explore</a>
   </div>
 
-  <!-- -------------- NAVBAR -------------- -->
+  <!-- ---------- NAVBAR ---------- -->
   <nav class="navbar">
     <div class="logo">
-      <img src="airnet logo.png" alt="Airnet Logo" />
+      <img src="airnet logo.png" alt="Airnet Ghana Logo">
     </div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul id="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="Products.html">Products</a></li>
-      <li><a href="service.html">Services</a></li>
-      <li><a href="About US.html">About Us</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    <ul>
+     <li><a href="index.html">Home</a></li>
+<li class="dropdown" id="productsDropdown">
+      <a href="#" class="dropdown-toggle">Products ▾</a>
+      <div class="dropdown-menu">
+        <a href="mobile.html">Mobile Phones</a>
+        <a href="networking.html">Networking Devices</a>
+        <a href="smartboards.html">Smart Boards</a>
+        <a href="cctv.html">CCTV</a>
+        <a href="ac.html">Air Conditioning</a>
+      </div>
+    </li>
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+    <li><a href="service.html">Services</a></li>
+
+    <!-- ABOUT US DROPDOWN -->
+    <li class="dropdown" id="aboutDropdown">
+      <a href="#" class="dropdown-toggle">About Us ▾</a>
+      <div class="dropdown-menu">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="Reason.html">Why Choose Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="partners.html">Partners</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+      
+  <!-- ---------- JS FOR CLICK DROPDOWN ---------- -->
+ <script>
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  dropdowns.forEach(drop => {
+    const toggle = drop.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      // Close other dropdowns first
+      dropdowns.forEach(d => {
+        if (d !== drop) d.classList.remove("active");
+      });   
+
+      // Toggle this dropdown
+      drop.classList.toggle("active");
     });
-  </script>
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function(e) {
+    if (![...dropdowns].some(d => d.contains(e.target))) {
+      dropdowns.forEach(d => d.classList.remove("active"));
+    }
+  });
+</script>
+
+
 </body>
 </html>
