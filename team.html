@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Airnet Ghana</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      padding: 0.7rem 2rem;
+      z-index: 1000;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.3rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background-color: #007bff;
+    }
+
+    /* ================= DROPDOWN ================= */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 120%;
+      left: 0;
+      background: #111;
+      border-radius: 12px;
+      min-width: 220px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      padding: 0.5rem 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .dropdown-menu a:hover {
+      background: #007bff;
+    }
+
+    /* Desktop hover */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* ================= HERO ================= */
+    .team-hero {
+      margin-top: 7rem;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('team-banner.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .team-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .team-hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    /* ================= TEAM ================= */
+    .team-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .team-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #007bff;
+    }
+
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      padding-bottom: 20px;
+      width: 260px;
+    }
+
+    .team-card img {
+      width: 150px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center 15%;
+      border-radius: 12px;
+      margin: 25px auto 15px auto;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background: #f2f2f2;
+    }
+
+    .team-info h3 {
+      margin: 10px 0 5px;
+      font-size: 1.1rem;
+    }
+
+    .team-info p {
+      color: #777;
+      font-size: 0.95rem;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      border-top: 4px solid #007bff;
+    }
+
+    footer .footer-section {
+      max-width: 300px;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: #bbb;
+      font-size: 22px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background: #000;
+      padding: 15px;
+      color: #777;
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        display: none;
+        border-radius: 15px;
+        padding: 1rem 0;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background: #111;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: none;
+      }
+
+      .team-hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="airnet logo.png" alt="Airnet Ghana Logo">
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a href="#">Products ▾</a>
+      <div class="dropdown-menu">
+        <a href="mobile.html">Mobile Phones</a>
+        <a href="networking.html">Networking Devices</a>
+        <a href="smartboards.html">Smart Boards</a>
+        <a href="cctv.html">CCTV</a>
+        <a href="airconditioning.html">Air Conditioning</a>
+      </div>
+    </li>
+
+    <li><a href="service.html">Services</a></li>
+
+    <li class="dropdown">
+      <a href="#" class="active">About Us ▾</a>
+      <div class="dropdown-menu">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="Reason.html">Why Choose Us</a>
+        <a href="our-team.html">Our Team</a>
+        <a href="partners.html">Partners</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="team-hero">
+  <h1>Meet Our Management Team</h1>
+  <p>Our leadership team drives innovation, excellence, and reliability across Ghana.</p>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="team-section">
+  <h2>Management</h2>
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="Wilberforce.jpeg" alt="Director">
+      <div class="team-info">
+        <h3>Mr. Wilberforce Botwe Bekoe</h3>
+        <p>Director</p>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="boss.jpg" alt="Director">
+      <div class="team-info">
+        <h3>Mr. Eric Anomah Bekoe</h3>
+        <p>Director</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+    <p><strong>Email:</strong> info@airnetghana.com</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+
+    <h3>Follow Us</h3>
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2025 Airnet Ghana. All rights reserved.
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+  const toggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("navMenu");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        link.parentElement.classList.toggle("open");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Airnet Ghana - Products</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(0,0,0,0.95);
+  border-radius: 20px;
+  padding: 0.7rem 2rem;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  transition: 0.3s;
+  display: block;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background: #007bff;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #000;
+  min-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.dropdown-menu a {
+  padding: 10px 15px;
+}
+
+.dropdown-menu a:hover {
+  background: #007bff;
+}
+
+/* Desktop hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ================= PRODUCTS ================= */
+.products-section {
+  padding: 140px 60px 60px;
+  text-align: center;
+}
+
+.products-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+}
+
+.product-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.product-info h3 {
+  color: #007bff;
+}
+
+.product-info p {
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #111;
+  color: #ddd;
+  padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  border-top: 4px solid #007bff;
+}
+
+footer h3 { color:#fff; }
+
+.social-icons a {
+  color: #bbb;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  background: #000;
+  padding: 15px;
+  color: #777;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:768px) {
+  .menu-toggle { display:block; }
+
+  .navbar ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    display: none;
+    border-radius: 15px;
+    padding: 1rem 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .products-section {
+    padding: 120px 20px 50px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="airnet logo.png" alt="Airnet Ghana Logo">
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a class="active">Products ▾</a>
+      <div class="dropdown-menu">
+        <a href="mobile.html">Mobile Devices & Accessories</a>
+        <a href="networking.html">Networking Devices</a>
+        <a href="smartboards.html">Smart Boards</a>
+        <a href="cctv.html">CCTV Cameras</a>
+        <a href="ac.html">Air-Conditioning</a>
+      </div>
+    </li>
+
+    <li><a href="service.html">Services</a></li>
+
+    <li class="dropdown">
+      <a>About Us ▾</a>
+      <div class="dropdown-menu">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="Reason.html">Why Choose Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="partners.html">Partners</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="products-section">
+  <h2>Our Featured Products</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="mbo.jpg">
+      <div class="product-info">
+        <h3>MBO Air Condition</h3>
+        <p>Delivers powerful cooling with energy efficiency for lasting comfort.</p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="hisense.jpg">
+      <div class="product-info">
+        <h3>Hisense Air Condition</h3>
+        <p>Reliable cooling with smart efficiency.</p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="lgAC.jpg">
+      <div class="product-info">
+        <h3>OLG Air Condition</h3>
+        <p>Dependable cooling with modern efficiency.</p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="media.jpg">
+      <div class="product-info">
+        <h3>Media Air Condition</h3>
+        <p>Fast cooling, quiet operation and energy saving.</p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="sigma.webp">
+      <div class="product-info">
+        <h3>Sigma Air Condition</h3>
+        <p>Strong cooling power with quiet operation.</p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="TCL.jpg">
+      <div class="product-info">
+        <h3>TCL Air Condition</h3>
+        <p>Energy efficient cooling with reliability.</p>
+        <a href="quote.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div>
+    <h3>Contact Us</h3>
+    <p>+233 2433 45504<br>+233 20630 0038</p>
+    <p>info@airnetghana.com</p>
+  </div>
+
+  <div>
+    <h3>Our Locations</h3>
+    <p>Pokuase – Near Lorry Station</p>
+    <p>Kokomlemle – Opposite King David Hotel</p>
+  </div>
+
+  <div>
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking & security solutions.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2025 Airnet Ghana. All rights reserved.
+</div>
+
+<script>
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("show");
+});
+
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

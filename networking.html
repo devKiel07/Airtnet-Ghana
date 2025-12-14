@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airnet Ghana - Products</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:#fff;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  position:fixed;
+  top:1rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  background:#000;
+  padding:.8rem 1.5rem;
+  border-radius:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+.logo img{height:40px}
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  padding:0;
+  margin:0;
+}
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  padding:.4rem 1rem;
+  border-radius:20px;
+}
+.navbar a:hover,.navbar a.active{background:#007bff}
+
+/* Dropdown */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  background:#000;
+  top:45px;
+  left:0;
+  width:200px;
+  border-radius:10px;
+}
+.dropdown-menu a{
+  display:block;
+  padding:10px;
+}
+.dropdown-menu a:hover{background:#007bff}
+
+/* ================= PRODUCTS ================= */
+.products-section{
+  padding:140px 20px 60px;
+  text-align:center;
+}
+.products-section h2{margin-bottom:40px}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.product-card{
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  overflow:hidden;
+  transition:.3s;
+}
+.product-card:hover{transform:translateY(-6px)}
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+}
+.product-info{
+  padding:20px;
+  text-align:left;
+}
+.product-info h3{color:#007bff}
+.product-info p{font-size:.95rem;color:#555}
+
+.btn{
+  display:inline-block;
+  background:#007bff;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:25px;
+  text-decoration:none;
+  margin-top:10px;
+}
+.btn:hover{background:#0056b3}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ddd;
+  padding:50px 20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  gap:30px;
+  border-top:4px solid #007bff;
+}
+.footer-section{max-width:300px}
+footer h3{color:#fff}
+footer p,footer a{color:#bbb;text-decoration:none}
+.social-icons{display:flex;gap:15px;margin-top:10px}
+.social-icons i{font-size:22px}
+
+.footer-bottom{
+  background:#000;
+  color:#777;
+  text-align:center;
+  padding:15px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .navbar ul{flex-direction:column;text-align:center}
+  .dropdown-menu{position:relative;width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="airnet logo.png" alt="Airnet Ghana Logo">
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+
+    <li>
+      <a id="productToggle" class="active">Products ▾</a>
+      <div class="dropdown-menu" id="productMenu">
+        <a href="mobile.html">Mobile Devices & Accessories</a>
+        <a href="networking.html">Networking Devices</a>
+        <a href="smartboards.html">Smart Boards</a>
+        <a href="cctv.html">CCTV Cameras</a>
+        <a href="ac.html">Air Conditioning</a>
+      </div>
+    </li>
+
+    <li><a href="service.html">Services</a></li>
+
+    <li>
+      <a id="aboutToggle">About Us ▾</a>
+      <div class="dropdown-menu" id="aboutMenu">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="Reason.html">Why Choose Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="partners.html">Partners</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="products-section">
+<h2>Our Featured Products</h2>
+
+<div class="product-grid">
+
+<!-- ALL PRODUCTS (UNCHANGED) -->
+<div class="product-card">
+<img src="router.jpg">
+<div class="product-info">
+<h3>Network Routers</h3>
+<p>High-performance routers for fast and reliable connectivity.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="POE Switch 24 port.jpg">
+<div class="product-info">
+<h3>POE Switch 24 Port</h3>
+<p>Provides twenty-four Ethernet ports for efficient LAN communication.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="dahua.jpg">
+<div class="product-info">
+<h3>Dahua Access Point</h3>
+<p>Reliable, high-speed wireless access points.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="usb A to ethernet adapter.jpg">
+<div class="product-info">
+<h3>USB Ethernet Adapter</h3>
+<p>Allows USB devices to connect to wired Ethernet networks.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="mifi.jpg">
+<div class="product-info">
+<h3>Mifi</h3>
+<p>Portable and durable wireless connectivity.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="OPS.jpg">
+<div class="product-info">
+<h3>OPS</h3>
+<p>Modular high-performance OPS PCs for smart workspaces.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="starlink.jpg">
+<div class="product-info">
+<h3>Starlink</h3>
+<p>High-speed, low-latency satellite internet connection.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="ethernet.jpg">
+<div class="product-info">
+<h3>Ethernet Cable</h3>
+<p>Reliable cables for stable data transmission.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="fiber.jpg">
+<div class="product-info">
+<h3>Fiber Optic Cable</h3>
+<p>High-speed and stable fiber optic connectivity.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+<div class="footer-section">
+<h3>Contact Us</h3>
+<p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+<p><strong>Email:</strong><br>info@airnetghana.com</p>
+</div>
+
+<div class="footer-section">
+<h3>Our Locations</h3>
+<p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+<p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+</div>
+
+<div class="footer-section">
+<h3>About Airnet Ghana</h3>
+<p>Providing innovative IT, networking, and security solutions across Ghana.</p>
+
+<h3>Follow Us</h3>
+<div class="social-icons">
+<a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
+<a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</footer>
+
+<div class="footer-bottom">
+© 2025 Airnet Ghana. All rights reserved.
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+const productToggle=document.getElementById("productToggle");
+const productMenu=document.getElementById("productMenu");
+const aboutToggle=document.getElementById("aboutToggle");
+const aboutMenu=document.getElementById("aboutMenu");
+
+productToggle.onclick=e=>{
+e.stopPropagation();
+productMenu.style.display=productMenu.style.display==="block"?"none":"block";
+};
+aboutToggle.onclick=e=>{
+e.stopPropagation();
+aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
+};
+document.onclick=()=>{
+productMenu.style.display="none";
+aboutMenu.style.display="none";
+};
+</script>
+
+</body>
+</html>

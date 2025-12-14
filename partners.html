@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Partners | Airnet Ghana</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; background-color:#f4f4f4; color:#000; }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      background-color: rgba(0,0,0,0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      padding: 0.7rem 2rem;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    .navbar .logo img { height:40px; }
+    .navbar ul { list-style:none; display:flex; gap:1.3rem; margin:0; padding:0; flex-wrap:wrap; }
+    .navbar ul li { position: relative; }
+    .navbar ul li a {
+      text-decoration:none;
+      color:#fff;
+      font-weight:500;
+      padding:0.4rem 1rem;
+      border-radius:20px;
+      cursor:pointer;
+      display:block;
+    }
+    .navbar ul li a:hover, .navbar ul li a.active { background:#007bff; color:#fff; }
+
+    /* ================= DROPDOWN ================= */
+    .dropdown-menu {
+      display:none;
+      position:absolute;
+      top:45px;
+      left:0;
+      background:#000;
+      padding:10px 0;
+      border-radius:10px;
+      width:180px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      animation: fadeDown 0.25s ease;
+      z-index: 2000;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-10px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .dropdown-menu a { display:block; padding:10px 15px; color:#fff; text-decoration:none; }
+    .dropdown-menu a:hover { background:#007bff; }
+
+    /* ================= HEADER ================= */
+    .header {
+      width: 100%;
+      height: 400px; /* taller for more impact */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color:#fff;
+
+      /* High-res background image */
+      background-image: url('partner-highres.jpg'); /* replace with high-res image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    .header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      background: rgba(0,0,0,0.5);
+      padding: 15px 30px;
+      border-radius: 8px;
+    }
+
+    /* ================= CONTENT ================= */
+    .heading {
+      max-width: 800px;
+      margin: 60px auto;
+      text-align:center;
+      padding:0 20px;
+    }
+    .heading h2 { font-size:2.5rem; margin-bottom:20px; }
+    .heading p { font-size:1rem; color:#555; }
+
+    /* Partners Grid */
+    .product-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:30px;
+      padding:20px 40px;
+    }
+    .product-card {
+      background:#fff;
+      border-radius:15px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      padding:15px;
+      transition:0.3s;
+      overflow:hidden;
+      text-align:center;
+    }
+    .product-card:hover { transform:translateY(-8px); }
+    .product-card img { width:100%; height:180px; object-fit:contain; background:#fff; }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      border-top: 4px solid #007bff;
+    }
+    .footer-section { max-width: 300px; }
+    footer h3 { color:#fff; margin-bottom:10px; }
+    .social-icons { display:flex; gap:15px; margin-top:10px; }
+    .footer-bottom { background:#000; text-align:center; padding:15px; color:#777; }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:1024px) { .product-grid { grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:768px) {
+      .navbar { flex-direction:column; gap:0.6rem; }
+      .navbar ul { flex-direction:column; align-items:center; width:100%; }
+      .product-grid { grid-template-columns:repeat(2,1fr); padding:20px; }
+      .header h1 { font-size:2.5rem; padding:10px 20px; }
+    }
+    @media(max-width:500px) {
+      .product-grid { grid-template-columns:1fr; padding:15px; }
+      .header h1 { font-size:2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="logo"><img src="airnet logo.png" alt="Airnet Ghana Logo"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+
+      <!-- Products Dropdown -->
+      <li class="dropdown">
+        <a id="productsDropdown">Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="mobile.html">Mobile Phones</a>
+          <a href="networking.html">Networking Devices</a>
+          <a href="smartboards.html">Smart Boards</a>
+          <a href="cctv.html">CCTV</a>
+          <a href="ac.html">Air Conditioning</a>
+        </div>
+      </li>
+
+      <li><a href="service.html">Services</a></li>
+
+      <!-- About Us Dropdown -->
+      <li class="dropdown">
+        <a id="aboutDropdown">About Us ▾</a>
+        <div class="dropdown-menu">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="Reason.html">Why Choose Us</a>
+          <a href="team.html">Our Team</a>
+          <a href="partners.html" class="active">Partners</a>
+        </div>
+      </li>
+
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= HEADER ================= -->
+  <div class="header">
+    <h1>Our Partners</h1>
+  </div>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <div class="heading">
+    <h2>Airnet Partners</h2>
+    <p>
+      Airnet Ghana Limited has strong international alliances including distributorship,
+      partnerships, and authorized reseller agreements with Samsung, LG, Dahua,
+      Valuestek, and more — delivering modern technology nationwide.
+    </p>
+  </div>
+
+  <!-- ================= PARTNERS GRID ================= -->
+  <div class="product-grid">
+    <div class="product-card"><img src="valuestek.png" alt="Valuestek"></div>
+    <div class="product-card"><img src="samsung.jpg" alt="Samsung"></div>
+    <div class="product-card"><img src="LG.jpg" alt="LG"></div>
+    <div class="product-card"><img src="Dahua T.jpg" alt="Dahua"></div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+      <p><strong>Email:</strong> info@airnetghana.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Our Locations</h3>
+      <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+      <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>About Airnet Ghana</h3>
+      <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram" style="color:#bbb; font-size:22px;"></i></a>
+        <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin" style="color:#bbb; font-size:22px;"></i></a>
+        <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok" style="color:#bbb; font-size:22px;"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">© 2025 Airnet Ghana. All rights reserved.</div>
+
+  <!-- ================= JS DROPDOWN ================= -->
+  <script>
+    // Products dropdown
+    const productsDropdown = document.getElementById('productsDropdown');
+    const productMenu = productsDropdown.querySelector('.dropdown-menu');
+    productsDropdown.addEventListener('click', e => {
+      e.stopPropagation();
+      productMenu.style.display = productMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // About Us dropdown
+    const aboutDropdown = document.getElementById('aboutDropdown');
+    const aboutMenu = aboutDropdown.querySelector('.dropdown-menu');
+    aboutDropdown.addEventListener('click', e => {
+      e.stopPropagation();
+      aboutMenu.style.display = aboutMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close dropdowns on click outside
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
+    });
+  </script>
+
+</body>
+</html>

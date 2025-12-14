@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Airnet Ghana - Products</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:#fff;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:1rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  background:rgba(0,0,0,0.95);
+  border-radius:20px;
+  padding:0.7rem 1.5rem;
+  z-index:1000;
+  flex-wrap:wrap;
+}
+
+.navbar .logo img{
+  height:40px;
+}
+
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.navbar ul li{
+  position:relative;
+}
+
+.navbar ul li a{
+  color:#fff;
+  text-decoration:none;
+  padding:0.4rem 1rem;
+  border-radius:20px;
+  display:block;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active{
+  background:#007bff;
+}
+
+/* Dropdown */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:45px;
+  left:0;
+  background:#000;
+  border-radius:10px;
+  width:200px;
+  overflow:hidden;
+}
+
+.dropdown-menu a{
+  padding:10px 15px;
+  color:#fff;
+}
+
+.dropdown-menu a:hover{
+  background:#007bff;
+}
+
+/* ================= PRODUCTS ================= */
+.products-section{
+  padding:140px 20px 60px;
+  text-align:center;
+}
+
+.products-section h2{
+  font-size:2rem;
+  margin-bottom:30px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.product-card{
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-6px);
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+}
+
+.product-info{
+  padding:20px;
+  text-align:left;
+}
+
+.product-info h3{
+  color:#007bff;
+}
+
+.product-info p{
+  font-size:0.95rem;
+  color:#555;
+  margin:10px 0;
+}
+
+.btn{
+  display:inline-block;
+  background:#007bff;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:25px;
+  text-decoration:none;
+}
+
+.btn:hover{
+  background:#0056b3;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ddd;
+  padding:40px 20px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:space-around;
+}
+
+.footer-section{
+  max-width:300px;
+}
+
+footer h3{
+  color:#fff;
+  margin-bottom:15px;
+}
+
+footer p, footer a{
+  color:#bbb;
+  line-height:1.6;
+  text-decoration:none;
+}
+
+.social-icons{
+  display:flex;
+  gap:15px;
+}
+
+.footer-bottom{
+  background:#000;
+  color:#777;
+  text-align:center;
+  padding:15px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .navbar ul{
+    width:100%;
+    justify-content:center;
+  }
+
+  .dropdown-menu{
+    position:relative;
+    top:0;
+    width:100%;
+  }
+
+  .products-section h2{
+    font-size:1.7rem;
+  }
+
+  .product-card img{
+    height:170px;
+  }
+
+  footer{
+    text-align:center;
+  }
+
+  .social-icons{
+    justify-content:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="airnet logo.png">
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+
+    <li>
+      <a id="productToggle" class="active">Products ▾</a>
+      <div class="dropdown-menu" id="productMenu">
+        <a href="mobile.html">Mobile Phones & Accessories</a>
+        <a href="networking.html">Networking Devices</a>
+        <a href="smartboards.html">Smart Boards</a>
+        <a href="cctv.html">CCTV Cameras</a>
+        <a href="ac.html">Air-Conditioning</a>
+      </div>
+    </li>
+
+    <li><a href="service.html">Services</a></li>
+
+    <li>
+      <a id="aboutToggle">About Us ▾</a>
+      <div class="dropdown-menu" id="aboutMenu">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="Reason.html">Why Choose Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="partners.html">Partners</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+<h2>Our Featured Products</h2>
+
+<div class="product-grid">
+
+<!-- SAME PRODUCT CARDS (UNCHANGED) -->
+<div class="product-card">
+<img src="headphones.jpg">
+<div class="product-info">
+<h3>Headphones</h3>
+<p>High-performance headphones for fast and reliable connectivity.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="iphone charger.jpg">
+<div class="product-info">
+<h3>IPhone Charger</h3>
+<p>Reliable and fast battery chargers.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="type c andriod.jpg">
+<div class="product-info">
+<h3>Android Charger</h3>
+<p>Affordable and reliable charger that last long.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="wireless.jpg">
+<div class="product-info">
+<h3>Wired & Wireless Mouse</h3>
+<p>Durable and ergonomic mouse options for all computing needs.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="smart phones.jpg">
+<div class="product-info">
+<h3>Smart Phones</h3>
+<p>Affordable and high-quality smartphones for all uses.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="phone case.webp">
+<div class="product-info">
+<h3>Phone Cases</h3>
+<p>Durable and affordable phone cases that last long.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+</div>
+
+<!-- NEW ARRIVALS -->
+<h2 style="margin-top:50px;">New Arrivals</h2>
+<div class="product-grid">
+
+<div class="product-card">
+<img src="videobar.webp">
+<div class="product-info">
+<h3>Videobar</h3>
+<p>4K camera + wireless MIC + speakers for smart conferencing.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="wirelessmic.webp">
+<div class="product-info">
+<h3>Wireless Mic</h3>
+<p>Omnidirectional microphone with noise reduction.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-section">
+<h3>Contact Us</h3>
+<p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+<p><strong>Email:</strong> info@airnetghana.com</p>
+</div>
+
+<div class="footer-section">
+<h3>Our Locations</h3>
+<p>Pokuase – Near Lorry Station</p>
+<p>Kokomlemle – Opposite King David Hotel</p>
+</div>
+
+<div class="footer-section">
+<h3>About Airnet Ghana</h3>
+<p>Providing innovative IT, networking, and security solutions nationwide.</p>
+<div class="social-icons">
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</footer>
+
+<div class="footer-bottom">
+© 2025 Airnet Ghana. All rights reserved.
+</div>
+
+<script>
+const productToggle=document.getElementById("productToggle");
+const productMenu=document.getElementById("productMenu");
+const aboutToggle=document.getElementById("aboutToggle");
+const aboutMenu=document.getElementById("aboutMenu");
+
+productToggle.onclick=(e)=>{
+e.stopPropagation();
+productMenu.style.display=productMenu.style.display==="block"?"none":"block";
+};
+
+aboutToggle.onclick=(e)=>{
+e.stopPropagation();
+aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
+};
+
+document.onclick=()=>{
+productMenu.style.display="none";
+aboutMenu.style.display="none";
+};
+</script>
+
+</body>
+</html>

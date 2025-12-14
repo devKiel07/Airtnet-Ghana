@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio | Airnet Ghana</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(0,0,0,0.95);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  padding: 0.7rem 2rem;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  transition: 0.3s;
+  display: block;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background: #007bff;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #000;
+  border-radius: 12px;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.dropdown-menu a {
+  padding: 10px 15px;
+}
+
+.dropdown-menu a:hover {
+  background: #007bff;
+}
+
+/* Desktop hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ================= HEADER ================= */
+.header {
+  width: 100%;
+  height: 400px; /* taller for more impact */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  /* High-resolution background image */
+  background-image: url('kaggle.jpg'); /* replace with your high-res image */
+  background-size: cover;       /* ensures it covers entire header */
+  background-position: center;  /* centers the image */
+  background-repeat: no-repeat; /* no tiling */
+}
+
+.header h1 {
+  color: #fff;
+  font-size: 48px;
+  background: rgba(0,0,0,0.5); /* semi-transparent overlay for readability */
+  padding: 15px 30px;
+  border-radius: 8px;
+}
+
+/* ================= PORTFOLIO ================= */
+.portfolio-section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.portfolio-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.portfolio-item h3 {
+  padding: 15px;
+  font-size: 20px;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  margin-top: 60px;
+  background: #111;
+  color: #ddd;
+  padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  border-top: 4px solid #007bff;
+}
+
+footer .footer-section {
+  max-width: 300px;
+}
+
+footer h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+footer p, footer a {
+  color: #bbb;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #bbb;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  background: #000;
+  padding: 15px;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+
+  .navbar ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    display: none;
+    border-radius: 15px;
+    padding: 1rem 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="airnet logo.png" alt="Airnet Ghana Logo">
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a>Products ▾</a>
+      <div class="dropdown-menu">
+        <a href="mobile.html">Mobile Phones & Accessories</a>
+        <a href="networking.html">Networking Devices</a>
+        <a href="smartboards.html">Smart Boards</a>
+        <a href="cctv.html">CCTV Cameras</a>
+        <a href="ac.html">Air-Conditioning</a>
+      </div>
+    </li>
+
+    <li><a href="service.html">Services</a></li>
+
+    <li class="dropdown">
+      <a class="active">About Us ▾</a>
+      <div class="dropdown-menu">
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="Reason.html">Why Choose Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="partners.html">Partners</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HEADER ================= -->
+<div class="header">
+  <h1>Our Portfolio</h1>
+</div>
+
+<!-- ================= PORTFOLIO ================= -->
+<section class="portfolio-section">
+  <h2>Recent Projects</h2>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-item">
+      <img src="kaggle.jpg" alt="Project 1">
+      <h3>Fiber internet setup at Cargill</h3>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="mining.jpg" alt="Project 2">
+      <h3>Fiber Internet Setup for Ams Idariema Mining</h3>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="brainy - bain.jpg" alt="Project 3">
+      <h3>VoIP Phones & Networking — Brainy Bairn</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+    <p><strong>Email:</strong> info@airnetghana.com</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+
+    <h3>Follow Us</h3>
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2025 Airnet Ghana. All rights reserved.
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("show");
+});
+
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
