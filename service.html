@@ -26,7 +26,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 92%;
-  max-width: 1200px; /* match index.html */
+  max-width: 1200px; 
   background-color: rgba(0,0,0,0.95);
   border-radius: 20px;
   padding: 10px 20px;
@@ -231,27 +231,56 @@ footer a:hover {
   .menu-toggle {
     display: block;
   }
+
   .navbar ul {
     flex-direction: column;
     display: none;
     width: 100%;
     margin-top: 10px;
   }
+
   .navbar ul.show {
     display: flex;
   }
+
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li a {
+    padding: 12px;
+  }
+
   .dropdown-menu {
     position: relative;
     width: 100%;
     top: 0;
+    box-shadow: none;
+    border-radius: 10px;
   }
+
   .service {
     flex-direction: column;
     text-align: center;
   }
+
   .service img {
     width: 100%;
     height: auto;
+  }
+
+  .service-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-text p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 }
 </style>
