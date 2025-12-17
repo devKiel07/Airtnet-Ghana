@@ -8,11 +8,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
   background:#fff;
-  margin:0;
 }
 
 /* ================= NAVBAR ================= */
@@ -21,26 +20,34 @@ body{
   justify-content:space-between;
   align-items:center;
   position:fixed;
-  top:1rem;
+  top:10px;
   left:50%;
   transform:translateX(-50%);
-  width:90%;
-  background:rgba(0,0,0,.95);
+  width:92%;
+  background:rgba(0,0,0,0.95);
   border-radius:20px;
   padding:.7rem 2rem;
   z-index:1000;
   flex-wrap:wrap;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
+
 .logo img{height:40px}
+
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
+}
 
 .navbar ul{
   list-style:none;
   display:flex;
   gap:1.3rem;
-  padding:0;
-  margin:0;
   flex-wrap:wrap;
 }
+
 .navbar li{position:relative}
 
 .navbar a{
@@ -50,8 +57,8 @@ body{
   border-radius:20px;
   display:block;
 }
-.navbar a:hover,
-.navbar a.active{background:#007bff}
+
+.navbar a:hover,.navbar a.active{background:#007bff}
 
 /* Dropdown */
 .dropdown-menu{
@@ -60,18 +67,22 @@ body{
   top:45px;
   left:0;
   background:#000;
-  width:190px;
+  width:200px;
   border-radius:10px;
   padding:10px 0;
+  z-index:1000;
 }
+
 .dropdown-menu a{
+  display:block;
   padding:10px 15px;
 }
+
 .dropdown-menu a:hover{background:#007bff}
 
 /* ================= PRODUCTS ================= */
 .products-section{
-  padding:140px 60px 60px;
+  padding:140px 20px 60px;
   text-align:center;
 }
 .products-section h2{
@@ -119,7 +130,7 @@ body{
   display:inline-block;
   background:#007bff;
   color:#fff;
-  padding:10px 20px;
+  padding:10px 40px;
   border-radius:25px;
   text-decoration:none;
   margin-top:10px;
@@ -166,13 +177,20 @@ footer p,footer a{color:#bbb;font-size:.95rem;text-decoration:none}
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-  .products-section{padding:120px 20px 50px}
-  .navbar ul{flex-direction:column;text-align:center}
+  .menu-toggle{display:block}
+  .navbar ul{
+    flex-direction:column;
+    width:100%;
+    display:none;
+    margin-top:10px;
+  }
+  .navbar ul.show{display:flex}
   .dropdown-menu{
     position:relative;
-    top:0;
     width:100%;
+    top:0;
   }
+  .products-section{padding:120px 20px 50px}
 }
 </style>
 </head>
@@ -184,7 +202,12 @@ footer p,footer a{color:#bbb;font-size:.95rem;text-decoration:none}
   <div class="logo">
     <img src="airnet logo.png" alt="Airnet Ghana Logo">
   </div>
-  <ul>
+
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="navMenu">
     <li><a href="index.html">Home</a></li>
 
     <li>
@@ -283,23 +306,24 @@ footer p,footer a{color:#bbb;font-size:.95rem;text-decoration:none}
 
 <!-- ================= SCRIPT ================= -->
 <script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+menuToggle.onclick = () => navMenu.classList.toggle("show");
+
 const productToggle=document.getElementById("productToggle");
 const productMenu=document.getElementById("productMenu");
 const aboutToggle=document.getElementById("aboutToggle");
 const aboutMenu=document.getElementById("aboutMenu");
 
 productToggle.onclick=e=>{
-e.stopPropagation();
-productMenu.style.display=productMenu.style.display==="block"?"none":"block";
+  e.stopPropagation();
+  productMenu.style.display=productMenu.style.display==="block"?"none":"block";
 };
 aboutToggle.onclick=e=>{
-e.stopPropagation();
-aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
+  e.stopPropagation();
+  aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
 };
-document.onclick=()=>{
-productMenu.style.display="none";
-aboutMenu.style.display="none";
-};
+document.onclick=()=>{productMenu.style.display="none";aboutMenu.style.display="none";}
 </script>
 
 </body>
