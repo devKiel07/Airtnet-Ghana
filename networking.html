@@ -8,79 +8,85 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:#fff;
-}
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#fff; }
 
 /* ================= NAVBAR ================= */
-.navbar{
-  position:fixed;
-  top:1rem;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  background:#000;
-  padding:.8rem 1.5rem;
-  border-radius:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
+.navbar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1200px;
+  background: rgba(0,0,0,0.95);
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3000;
+  flex-wrap: wrap;
 }
-.logo img{height:40px}
-.navbar ul{
-  list-style:none;
-  display:flex;
-  gap:1rem;
-  padding:0;
-  margin:0;
+
+.navbar .logo img { height: 40px; }
+
+.menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; }
+
+/* Desktop menu */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
+  flex-wrap: wrap;
 }
-.navbar a{
-  color:#fff;
-  text-decoration:none;
-  padding:.4rem 1rem;
-  border-radius:20px;
+
+.navbar ul li { position: relative; }
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  display: block;
 }
-.navbar a:hover,.navbar a.active{background:#007bff}
+
+.navbar ul li a:hover,
+.navbar ul li a.active { background:#007bff; }
 
 /* Dropdown */
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  background:#000;
-  top:45px;
-  left:0;
-  width:200px;
-  border-radius:10px;
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #000;
+  border-radius: 10px;
+  width: 180px;
+  z-index: 4000;
 }
-.dropdown-menu a{
-  display:block;
-  padding:10px;
-}
-.dropdown-menu a:hover{background:#007bff}
+
+.dropdown-menu a { display:block; padding:10px 15px; color:#fff; }
+.dropdown-menu a:hover { background:#007bff; }
 
 /* ================= PRODUCTS ================= */
-.products-section{
-  padding:140px 20px 60px;
-  text-align:center;
-}
-.products-section h2{margin-bottom:40px}
+.products-section { padding:140px 20px 60px; text-align:center; }
+.products-section h2 { margin-bottom:40px; }
 
-.product-grid{
+.product-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
 }
 
-.product-card{
+.product-card {
   background:#fff;
   border-radius:15px;
   box-shadow:0 4px 12px rgba(0,0,0,.1);
   overflow:hidden;
   transition:.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .product-card:hover{transform:translateY(-6px)}
 .product-card img{
@@ -91,6 +97,10 @@ body{
 .product-info{
   padding:20px;
   text-align:left;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 .product-info h3{color:#007bff}
 .product-info p{font-size:.95rem;color:#555}
@@ -102,7 +112,7 @@ body{
   padding:10px 18px;
   border-radius:25px;
   text-decoration:none;
-  margin-top:10px;
+  margin-top:auto;
 }
 .btn:hover{background:#0056b3}
 
@@ -113,14 +123,15 @@ footer{
   padding:50px 20px;
   display:flex;
   flex-wrap:wrap;
-  justify-content:space-around;
+  justify-content:center;
   gap:30px;
+  text-align:center;
   border-top:4px solid #007bff;
 }
 .footer-section{max-width:300px}
 footer h3{color:#fff}
 footer p,footer a{color:#bbb;text-decoration:none}
-.social-icons{display:flex;gap:15px;margin-top:10px}
+.social-icons{display:flex;justify-content:center;gap:15px;margin-top:10px}
 .social-icons i{font-size:22px}
 
 .footer-bottom{
@@ -132,8 +143,37 @@ footer p,footer a{color:#bbb;text-decoration:none}
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-  .navbar ul{flex-direction:column;text-align:center}
-  .dropdown-menu{position:relative;width:100%}
+  .menu-toggle { display:block; }
+  .navbar ul {
+    flex-direction: column;
+    display: none;
+    width: 92%;
+    background: rgba(0,0,0,0.95);
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 20px 0;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
+  }
+  .navbar ul.show { display: flex; }
+  .navbar ul li { width: 100%; text-align:center; }
+  .navbar ul li a { padding: 12px 0; }
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    text-align:center;
+  }
+  .dropdown-menu a { padding: 10px 0; }
+  .products-section h2 { font-size:1.7rem; }
+  .product-card img { height:170px; }
 }
 </style>
 </head>
@@ -145,11 +185,16 @@ footer p,footer a{color:#bbb;text-decoration:none}
   <div class="logo">
     <img src="airnet logo.png" alt="Airnet Ghana Logo">
   </div>
-  <ul>
+
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="navMenu">
     <li><a href="index.html">Home</a></li>
 
     <li>
-      <a id="productToggle" class="active">Products ▾</a>
+      <a id="productToggle">Products ▾</a>
       <div class="dropdown-menu" id="productMenu">
         <a href="mobile.html">Mobile Devices & Accessories</a>
         <a href="networking.html">Networking Devices</a>
@@ -162,7 +207,7 @@ footer p,footer a{color:#bbb;text-decoration:none}
     <li><a href="service.html">Services</a></li>
 
     <li>
-      <a id="aboutToggle">About Us ▾</a>
+      <a id="aboutToggle" class="active">About Us ▾</a>
       <div class="dropdown-menu" id="aboutMenu">
         <a href="portfolio.html">Portfolio</a>
         <a href="Reason.html">Why Choose Us</a>
@@ -178,91 +223,43 @@ footer p,footer a{color:#bbb;text-decoration:none}
 <!-- ================= PRODUCTS ================= -->
 <section class="products-section">
 <h2>Our Featured Products</h2>
-
 <div class="product-grid">
+  <!-- Product Cards -->
+  <div class="product-card">
+    <img src="router.jpg" alt="Network Router">
+    <div class="product-info">
+      <h3>Network Routers</h3>
+      <p>High-performance routers for fast and reliable connectivity.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
-<!-- ALL PRODUCTS (UNCHANGED) -->
-<div class="product-card">
-<img src="router.jpg">
-<div class="product-info">
-<h3>Network Routers</h3>
-<p>High-performance routers for fast and reliable connectivity.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
+  <div class="product-card">
+    <img src="POE Switch 24 port.jpg" alt="POE Switch 24 Port">
+    <div class="product-info">
+      <h3>POE Switch 24 Port</h3>
+      <p>Provides twenty-four Ethernet ports for efficient LAN communication.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
-<div class="product-card">
-<img src="POE Switch 24 port.jpg">
-<div class="product-info">
-<h3>POE Switch 24 Port</h3>
-<p>Provides twenty-four Ethernet ports for efficient LAN communication.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
+  <div class="product-card">
+    <img src="dahua.jpg" alt="Dahua Access Point">
+    <div class="product-info">
+      <h3>Dahua Access Point</h3>
+      <p>Reliable, high-speed wireless access points.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
-<div class="product-card">
-<img src="dahua.jpg">
-<div class="product-info">
-<h3>Dahua Access Point</h3>
-<p>Reliable, high-speed wireless access points.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="usb A to ethernet adapter.jpg">
-<div class="product-info">
-<h3>USB Ethernet Adapter</h3>
-<p>Allows USB devices to connect to wired Ethernet networks.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="mifi.jpg">
-<div class="product-info">
-<h3>Mifi</h3>
-<p>Portable and durable wireless connectivity.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="OPS.jpg">
-<div class="product-info">
-<h3>OPS</h3>
-<p>Modular high-performance OPS PCs for smart workspaces.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="starlink.jpg">
-<div class="product-info">
-<h3>Starlink</h3>
-<p>High-speed, low-latency satellite internet connection.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="ethernet.jpg">
-<div class="product-info">
-<h3>Ethernet Cable</h3>
-<p>Reliable cables for stable data transmission.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="fiber.jpg">
-<div class="product-info">
-<h3>Fiber Optic Cable</h3>
-<p>High-speed and stable fiber optic connectivity.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
-
+  <div class="product-card">
+    <img src="usb A to ethernet adapter.jpg" alt="USB Ethernet Adapter">
+    <div class="product-info">
+      <h3>USB Ethernet Adapter</h3>
+      <p>Allows USB devices to connect to wired Ethernet networks.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -283,8 +280,6 @@ footer p,footer a{color:#bbb;text-decoration:none}
 <div class="footer-section">
 <h3>About Airnet Ghana</h3>
 <p>Providing innovative IT, networking, and security solutions across Ghana.</p>
-
-<h3>Follow Us</h3>
 <div class="social-icons">
 <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
 <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
@@ -297,24 +292,32 @@ footer p,footer a{color:#bbb;text-decoration:none}
 © 2025 Airnet Ghana. All rights reserved.
 </div>
 
-<!-- ================= SCRIPT ================= -->
 <script>
-const productToggle=document.getElementById("productToggle");
-const productMenu=document.getElementById("productMenu");
-const aboutToggle=document.getElementById("aboutToggle");
-const aboutMenu=document.getElementById("aboutMenu");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const productToggle = document.getElementById("productToggle");
+const productMenu = document.getElementById("productMenu");
+const aboutToggle = document.getElementById("aboutToggle");
+const aboutMenu = document.getElementById("aboutMenu");
 
-productToggle.onclick=e=>{
-e.stopPropagation();
-productMenu.style.display=productMenu.style.display==="block"?"none":"block";
+menuToggle.onclick = () => navMenu.classList.toggle("show");
+
+productToggle.onclick = e => {
+  e.stopPropagation();
+  productMenu.style.display = productMenu.style.display === "block" ? "none" : "block";
 };
-aboutToggle.onclick=e=>{
-e.stopPropagation();
-aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
+
+aboutToggle.onclick = e => {
+  e.stopPropagation();
+  aboutMenu.style.display = aboutMenu.style.display === "block" ? "none" : "block";
 };
-document.onclick=()=>{
-productMenu.style.display="none";
-aboutMenu.style.display="none";
+
+document.onclick = e => {
+  if (!e.target.closest(".navbar")) {
+    productMenu.style.display = "none";
+    aboutMenu.style.display = "none";
+    navMenu.classList.remove("show");
+  }
 };
 </script>
 
