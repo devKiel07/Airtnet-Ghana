@@ -58,7 +58,7 @@
       100% { opacity: 0; }
     }
 
-    /* ---------------- MAIN TEXT ---------------- */
+    /* ---------------- HERO TEXT ---------------- */
     .slide-text {
       background: rgba(0, 0, 0, 0.45);
       padding: 2rem 2.5rem;
@@ -79,12 +79,10 @@
       font-size: 3rem;
       margin-bottom: 1rem;
       font-weight: 700;
-      text-shadow: 2px 2px 8px #000;
     }
 
     .slide-text p {
       font-size: 1.25rem;
-      color: #eaeaea;
       line-height: 1.6;
       margin-bottom: 1.2rem;
     }
@@ -97,8 +95,8 @@
       color: white;
       border-radius: 30px;
       cursor: pointer;
-      transition: 0.3s;
       text-decoration: none;
+      transition: 0.3s;
     }
 
     .hero-btn:hover {
@@ -118,21 +116,19 @@
       width: 90%;
       background-color: rgba(0, 0, 0, 0.95);
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       padding: 0.7rem 2rem;
       z-index: 10;
     }
 
-    .navbar .logo img {
+    .logo img {
       height: 40px;
     }
 
+    /* -------- DESKTOP MENU -------- */
     .navbar ul {
       list-style: none;
       display: flex;
       gap: 1.3rem;
-      margin: 0;
-      padding: 0;
     }
 
     .navbar ul li {
@@ -142,40 +138,28 @@
     .navbar ul li a {
       text-decoration: none;
       color: #fff;
-      font-weight: 500;
       padding: 0.4rem 1rem;
       border-radius: 20px;
-      cursor: pointer;
     }
 
-    .navbar ul li a:hover,
-    .navbar ul li a.active {
-      background-color: #007bff;
-      color: #fff;
+    .navbar ul li a:hover {
+      background: #007bff;
     }
 
-    /* ---------------- DROPDOWN (CLICK TO OPEN) ---------------- */
+    /* -------- DROPDOWN -------- */
     .dropdown-menu {
       display: none;
       position: absolute;
       top: 45px;
       left: 0;
       background: #000;
-      padding: 10px 0;
-      border-radius: 10px;
       width: 180px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      animation: fadeDown 0.25s ease;
-    }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      border-radius: 10px;
     }
 
     .dropdown-menu a {
-      padding: 10px 15px;
       display: block;
+      padding: 10px 15px;
       color: #fff;
       text-decoration: none;
     }
@@ -183,28 +167,70 @@
     .dropdown-menu a:hover {
       background: #007bff;
     }
-.dropdown.active .dropdown-menu {
-  display: block;
-}
-    /* ---------------- RESPONSIVENESS ---------------- */
+
+    .dropdown.active .dropdown-menu {
+      display: block;
+    }
+
+    /* -------- HAMBURGER -------- */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 3px;
+    }
+
+    /* ---------------- MOBILE ---------------- */
     @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
       .navbar {
         flex-direction: column;
-        gap: 0.6rem;
+        align-items: center;
       }
 
       .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        align-items: center;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .navbar ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .navbar ul li a {
+        display: block;
+        padding: 0.8rem;
+      }
+
+      .dropdown-menu {
+        position: static;
+        width: 100%;
       }
     }
   </style>
 </head>
 
-
 <body>
 
-  <!-- ---------- BACKGROUND SLIDER ---------- -->
+  <!-- BACKGROUND -->
   <div class="slider-bg">
     <img src="im.png">
     <img src="hvac repair.jpg">
@@ -212,78 +238,78 @@
     <img src="consultation.jpg">
   </div>
 
-  <!-- ---------- HERO TEXT ---------- -->
+  <!-- HERO -->
   <div class="slide-text">
     <h1>Connecting Your World, Securing Your Future.</h1>
-    <p>Providing Innovative Technological services is our hallmark !!.</p>
+    <p>Providing Innovative Technological services is our hallmark.</p>
     <a href="mobile.html" class="hero-btn">Explore</a>
   </div>
 
-  <!-- ---------- NAVBAR ---------- -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">
       <img src="airnet logo.png" alt="Airnet Ghana Logo">
     </div>
 
-    <ul>
-     <li><a href="index.html">Home</a></li>
-<li class="dropdown" id="productsDropdown">
-      <a href="#" class="dropdown-toggle">Products ▾</a>
-      <div class="dropdown-menu">
-        <a href="mobile.html">Mobile Phones</a>
-        <a href="networking.html">Networking Devices</a>
-        <a href="smartboards.html">Smart Boards</a>
-        <a href="cctv.html">CCTV</a>
-        <a href="ac.html">Air Conditioning</a>
-      </div>
-    </li>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-    <li><a href="service.html">Services</a></li>
+    <ul id="navMenu">
+      <li><a href="index.html">Home</a></li>
 
-    <!-- ABOUT US DROPDOWN -->
-    <li class="dropdown" id="aboutDropdown">
-      <a href="#" class="dropdown-toggle">About Us ▾</a>
-      <div class="dropdown-menu">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="Reason.html">Why Choose Us</a>
-        <a href="team.html">Our Team</a>
-        <a href="partners.html">Partners</a>
-      </div>
-    </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="mobile.html">Mobile Phones</a>
+          <a href="networking.html">Networking Devices</a>
+          <a href="smartboards.html">Smart Boards</a>
+          <a href="cctv.html">CCTV</a>
+          <a href="ac.html">Air Conditioning</a>
+        </div>
+      </li>
 
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+      <li><a href="service.html">Services</a></li>
 
-      
-  <!-- ---------- JS FOR CLICK DROPDOWN ---------- -->
- <script>
-  const dropdowns = document.querySelectorAll(".dropdown");
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">About Us ▾</a>
+        <div class="dropdown-menu">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="Reason.html">Why Choose Us</a>
+          <a href="team.html">Our Team</a>
+          <a href="partners.html">Partners</a>
+        </div>
+      </li>
 
-  dropdowns.forEach(drop => {
-    const toggle = drop.querySelector(".dropdown-toggle");
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
 
-    toggle.addEventListener("click", function(e) {
-      e.preventDefault();
+  <!-- JS -->
+  <script>
+    const dropdowns = document.querySelectorAll(".dropdown");
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
 
-      // Close other dropdowns first
-      dropdowns.forEach(d => {
-        if (d !== drop) d.classList.remove("active");
-      });   
-
-      // Toggle this dropdown
-      drop.classList.toggle("active");
+    dropdowns.forEach(drop => {
+      drop.querySelector(".dropdown-toggle").addEventListener("click", e => {
+        e.preventDefault();
+        drop.classList.toggle("active");
+      });
     });
-  });
 
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", function(e) {
-    if (![...dropdowns].some(d => d.contains(e.target))) {
-      dropdowns.forEach(d => d.classList.remove("active"));
-    }
-  });
-</script>
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
 
+    document.addEventListener("click", e => {
+      if (!e.target.closest(".navbar")) {
+        dropdowns.forEach(d => d.classList.remove("active"));
+      }
+    });
+  </script>
 
 </body>
 </html>
