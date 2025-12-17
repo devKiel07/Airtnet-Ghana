@@ -83,14 +83,13 @@ body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#fff;
   border-radius:15px;
   box-shadow:0 4px 12px rgba(0,0,0,0.1);
   overflow:hidden;
-  transition:0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.product-card:hover { transform: translateY(-6px); }
-
 .product-card img { width:100%; height:200px; object-fit:contain; }
-
-.product-info { padding:20px; text-align:left; }
+.product-info { padding:20px; text-align:left; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
 .product-info h3 { color:#007bff; }
 .product-info p { font-size:0.95rem; color:#555; margin:10px 0; }
 
@@ -101,6 +100,8 @@ body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#fff;
   padding:10px 20px;
   border-radius:25px;
   text-decoration:none;
+  text-align:center;
+  margin-top: auto;
 }
 .btn:hover { background:#0056b3; }
 
@@ -217,37 +218,111 @@ footer p, footer a { color:#bbb; line-height:1.6; text-decoration:none; }
 <section class="products-section">
 <h2>Our Featured Products</h2>
 <div class="product-grid">
-  <!-- Product cards here (same as previous) -->
+  <!-- Product Cards -->
+  <div class="product-card">
+    <img src="headphones.jpg" alt="Headphones">
+    <div class="product-info">
+      <h3>Headphones</h3>
+      <p>High-performance headphones for fast and reliable connectivity.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="iphone charger.jpg" alt="iPhone Charger">
+    <div class="product-info">
+      <h3>IPhone Charger</h3>
+      <p>Reliable and fast battery chargers.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="type c andriod.jpg" alt="Android Charger">
+    <div class="product-info">
+      <h3>Android Charger</h3>
+      <p>Affordable and reliable charger that lasts long.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="wireless.jpg" alt="Wired & Wireless Mouse">
+    <div class="product-info">
+      <h3>Wired & Wireless Mouse</h3>
+      <p>Durable and ergonomic mouse options for all computing needs.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="smart phones.jpg" alt="Smart Phones">
+    <div class="product-info">
+      <h3>Smart Phones</h3>
+      <p>Affordable and high-quality smartphones for all uses.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="phone case.webp" alt="Phone Cases">
+    <div class="product-info">
+      <h3>Phone Cases</h3>
+      <p>Durable and affordable phone cases that last long.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
+</div>
+
+<h2 style="margin-top:50px;">New Arrivals</h2>
+<div class="product-grid">
+  <div class="product-card">
+    <img src="videobar.webp" alt="Videobar">
+    <div class="product-info">
+      <h3>Videobar</h3>
+      <p>4K camera + wireless MIC + speakers for smart conferencing.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="wirelessmic.webp" alt="Wireless Mic">
+    <div class="product-info">
+      <h3>Wireless Mic</h3>
+      <p>Omnidirectional microphone with noise reduction.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<div class="footer-section">
-<h3>Contact Us</h3>
-<p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-<p><strong>Email:</strong> info@airnetghana.com</p>
-</div>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+    <p><strong>Email:</strong> info@airnetghana.com</p>
+  </div>
 
-<div class="footer-section">
-<h3>Our Locations</h3>
-<p>Pokuase – Near Lorry Station</p>
-<p>Kokomlemle – Opposite King David Hotel</p>
-</div>
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p>Pokuase – Near Lorry Station</p>
+    <p>Kokomlemle – Opposite King David Hotel</p>
+  </div>
 
-<div class="footer-section">
-<h3>About Airnet Ghana</h3>
-<p>Providing innovative IT, networking, and security solutions nationwide.</p>
-<div class="social-icons">
-  <a href="#"><i class="fab fa-instagram"></i></a>
-  <a href="#"><i class="fab fa-linkedin"></i></a>
-  <a href="#"><i class="fab fa-tiktok"></i></a>
-</div>
-</div>
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
 </footer>
 
 <div class="footer-bottom">
-© 2025 Airnet Ghana. All rights reserved.
+  © 2025 Airnet Ghana. All rights reserved.
 </div>
 
 <script>
