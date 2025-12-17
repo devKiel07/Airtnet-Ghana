@@ -33,7 +33,6 @@ body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#fff;
 
 .menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; }
 
-/* Desktop menu */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -86,38 +85,49 @@ body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#fff;
   transition:.3s;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: stretch;
 }
-.product-card:hover{transform:translateY(-6px)}
-.product-card img{
+
+.product-card:hover { transform: translateY(-6px); }
+
+.product-card img {
   width:100%;
   height:200px;
-  object-fit:contain;
+  object-fit: contain;
 }
-.product-info{
-  padding:20px;
-  text-align:left;
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.product-info h3{color:#007bff}
-.product-info p{font-size:.95rem;color:#555}
 
-.btn{
-  display:inline-block;
-  background:#007bff;
-  color:#fff;
-  padding:10px 18px;
-  border-radius:25px;
-  text-decoration:none;
-  margin-top:auto;
+.product-info {
+  padding:20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
-.btn:hover{background:#0056b3}
+
+.product-info h3 { color:#007bff; margin-bottom:10px; }
+.product-info p { font-size:.95rem; color:#555; flex: 1; }
+
+.btn {
+  display: block;          /* Make button span full width */
+  width: 100%;             /* Full width of its container */
+  background: #007bff;
+  color: #fff;
+  padding: 12px 0;         /* Adjust padding for consistent height */
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
 
 /* ================= FOOTER ================= */
-footer{
+footer {
   background:#111;
   color:#ddd;
   padding:50px 20px;
@@ -128,21 +138,16 @@ footer{
   text-align:center;
   border-top:4px solid #007bff;
 }
-.footer-section{max-width:300px}
-footer h3{color:#fff}
-footer p,footer a{color:#bbb;text-decoration:none}
-.social-icons{display:flex;justify-content:center;gap:15px;margin-top:10px}
-.social-icons i{font-size:22px}
+.footer-section { max-width:300px; }
+footer h3 { color:#fff; }
+footer p, footer a { color:#bbb; text-decoration:none; }
+.social-icons { display:flex; justify-content:center; gap:15px; margin-top:10px; }
+.social-icons i { font-size:22px; }
 
-.footer-bottom{
-  background:#000;
-  color:#777;
-  text-align:center;
-  padding:15px;
-}
+.footer-bottom { background:#000; color:#777; text-align:center; padding:15px; }
 
 /* ================= MOBILE ================= */
-@media(max-width:768px){
+@media(max-width:768px) {
   .menu-toggle { display:block; }
   .navbar ul {
     flex-direction: column;
@@ -194,7 +199,7 @@ footer p,footer a{color:#bbb;text-decoration:none}
     <li><a href="index.html">Home</a></li>
 
     <li>
-      <a id="productToggle">Products ▾</a>
+      <a id="productToggle" class="active">Products ▾</a>
       <div class="dropdown-menu" id="productMenu">
         <a href="mobile.html">Mobile Devices & Accessories</a>
         <a href="networking.html">Networking Devices</a>
@@ -207,7 +212,7 @@ footer p,footer a{color:#bbb;text-decoration:none}
     <li><a href="service.html">Services</a></li>
 
     <li>
-      <a id="aboutToggle" class="active">About Us ▾</a>
+      <a id="aboutToggle">About Us ▾</a>
       <div class="dropdown-menu" id="aboutMenu">
         <a href="portfolio.html">Portfolio</a>
         <a href="Reason.html">Why Choose Us</a>
@@ -224,7 +229,6 @@ footer p,footer a{color:#bbb;text-decoration:none}
 <section class="products-section">
 <h2>Our Featured Products</h2>
 <div class="product-grid">
-  <!-- Product Cards -->
   <div class="product-card">
     <img src="router.jpg" alt="Network Router">
     <div class="product-info">
