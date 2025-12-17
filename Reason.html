@@ -1,202 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Why Choose Us | Airnet Ghana</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Choose Us | Airnet Ghana</title>
 
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  text-align: center; /* Center default text */
-}
+    /* ================= NAVBAR ================= */
+    .navbar {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1200px;
+      background: rgba(0,0,0,0.95);
+      border-radius: 20px;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
 
-/* ---------------- NAVBAR ---------------- */
-.navbar {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 1200px;
-  background: rgba(0,0,0,.95);
-  border-radius: 20px;
-  padding: 0.7rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
+    .logo img { height: 40px; }
 
-.logo img { height: 40px; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
 
-/* -------- DESKTOP MENU -------- */
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.3rem;
-}
+    .hamburger span { width: 26px; height: 3px; background: white; }
 
-.navbar ul li { position: relative; }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.3rem;
+      margin: 0;
+      padding: 0;
+    }
 
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  display: block;
-}
+    .navbar ul li { position: relative; }
 
-.navbar ul li a:hover,
-.navbar ul li a.active { background: #007bff; }
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      display: block;
+    }
 
-/* -------- DROPDOWN -------- */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  background: #000;
-  width: 180px;
-  border-radius: 10px;
-  z-index: 2000;
-}
+    .navbar ul li a:hover,
+    .navbar ul li a.active { background: #007bff; }
 
-.dropdown-menu a { display: block; padding: 10px 15px; color: #fff; }
-.dropdown-menu a:hover { background: #007bff; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      background: #000;
+      width: 180px;
+      border-radius: 10px;
+      z-index: 2000;
+    }
 
-/* -------- HAMBURGER -------- */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+    }
 
-.hamburger span { width: 26px; height: 3px; background: white; }
+    .dropdown-menu a:hover { background: #007bff; }
 
-/* ---------------- HEADER ---------------- */
-.header {
-  background: url('why.jpg') center/cover no-repeat;
-  padding: 150px 20px;
-  color: #fff;
-}
+    /* ================= HEADER ================= */
+    .header {
+      background: url('why.jpg') center/cover no-repeat;
+      padding: 150px 20px;
+      text-align: center;
+      color: #fff;
+      margin-top: 0;
+    }
 
-.header h1 { font-size: 3rem; margin-top: 40px; }
+    .header h1 { font-size: 3rem; margin-top: 40px; }
 
-/* ---------------- MISSION & VISION ---------------- */
-.mission-vision {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    h2 {
+      text-align: center;
+      color: #004aad;
+      margin: 50px 0 20px;
+    }
 
-.mv-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  flex: 1 1 300px;
-  text-align: center;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
+    /* ================= MISSION & VISION ================= */
+    .mission-vision {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-.mv-card h3 { color: #007bff; }
+    .mv-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      flex: 1 1 300px;
+      text-align: center;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
 
-/* ---------------- WHY CHOOSE US ---------------- */
-h2 {
-  color: #004aad;
-  margin: 50px 0 20px;
-  text-align: center;
-}
+    .mv-card h3 { color: #007bff; }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
+    /* ================= WHY CHOOSE US ================= */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
 
-.card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
 
-.card i {
-  font-size: 3rem;
-  color: #007bff;
-  margin-bottom: 10px;
-}
+    .card i {
+      font-size: 3rem;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
 
-/* ---------------- FOOTER ---------------- */
-footer {
-  background: #111;
-  color: #ddd;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center all footer content */
-  gap: 20px;
-  border-top: 4px solid #007bff;
-  margin-top: 50px;
-}
+    /* ================= FOOTER ================= */
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      border-top: 4px solid #007bff;
+      text-align: center;
+    }
 
-footer h3 { color:#fff; margin-bottom:10px; }
-footer p, footer a { color:#bbb; text-decoration:none; line-height:1.6; }
-footer a:hover { color:#007bff; }
+    footer h3 { color: #fff; }
 
-.social-icons { display:flex; gap:15px; justify-content: center; }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
 
-.footer-bottom {
-  background: #000;
-  text-align: center;
-  padding: 15px;
-  color: #777;
-}
+    .footer-bottom {
+      background: #000;
+      text-align: center;
+      padding: 15px;
+      color: #777;
+    }
 
-/* ---------------- MOBILE ---------------- */
-@media (max-width: 768px) {
-  .hamburger { display: flex; }
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
 
-  .navbar ul {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background: rgba(0,0,0,0.97);
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.6rem;
-    z-index: 2000;
-  }
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        background: rgba(0,0,0,0.95);
+        border-radius: 20px;
+        padding: 1rem 0;
+        gap: 0.5rem;
+        z-index: 1000;
+      }
 
-  .navbar ul.show { display: flex; }
+      .navbar ul.show { display: flex; }
 
-  .navbar ul li a { font-size: 1.2rem; }
+      .navbar ul li a { padding: 0.8rem 1rem; }
 
-  .dropdown-menu { position: static; width: 100%; background: transparent; box-shadow: none; text-align: center; }
+      .dropdown-menu {
+        position: static;
+        width: 100%;
+        border-radius: 10px;
+      }
 
-  .header h1 { font-size: 2.2rem; }
-}
-</style>
+      .header h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
 
 <body>
@@ -217,8 +229,8 @@ footer a:hover { color:#007bff; }
     <li><a href="index.html">Home</a></li>
 
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle">Products ▾</a>
-      <div class="dropdown-menu">
+      <a href="#" class="dropdown-toggle" id="productToggle">Products ▾</a>
+      <div class="dropdown-menu" id="productMenu">
         <a href="mobile.html">Mobile Phones & Accessories</a>
         <a href="networking.html">Networking Devices</a>
         <a href="smartboards.html">Smart Boards</a>
@@ -230,8 +242,8 @@ footer a:hover { color:#007bff; }
     <li><a href="service.html">Services</a></li>
 
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle active">About Us ▾</a>
-      <div class="dropdown-menu">
+      <a href="#" class="dropdown-toggle active" id="aboutToggle">About Us ▾</a>
+      <div class="dropdown-menu" id="aboutMenu">
         <a href="portfolio.html">Portfolio</a>
         <a href="Reason.html">Why Choose Us</a>
         <a href="team.html">Our Team</a>
