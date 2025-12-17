@@ -30,8 +30,7 @@
       background-color: rgba(0,0,0,0.95);
       border-radius: 20px;
       padding: 10px 20px;
-      z-index: 1000;
-      flex-wrap: wrap;
+      z-index: 3000;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
 
@@ -65,7 +64,6 @@
       padding: 8px 14px;
       border-radius: 20px;
       display: block;
-      transition: 0.2s ease;
     }
 
     .navbar ul li a:hover,
@@ -84,7 +82,7 @@
       border-radius: 12px;
       padding: 10px 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      z-index: 2000;
+      z-index: 4000;
     }
 
     .dropdown-menu a {
@@ -118,7 +116,6 @@
     }
 
     .contact-form h2 {
-      text-align: left;
       color: #004aad;
       margin-bottom: 20px;
       font-size: 1.7rem;
@@ -130,12 +127,6 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       margin-bottom: 15px;
-      font-size: 14px;
-      outline: none;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #004aad;
     }
 
     button {
@@ -147,20 +138,13 @@
       color: #fff;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #00337f;
     }
 
     /* ---------------- MAP ---------------- */
     .map-section {
-      margin-top: 40px;
+      margin: 40px auto;
       width: 90%;
       max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .map-section iframe {
@@ -180,32 +164,6 @@
       justify-content: space-around;
       gap: 30px;
       border-top: 4px solid #007bff;
-      margin-top: 40px;
-    }
-
-    footer .footer-section {
-      max-width: 300px;
-    }
-
-    footer h3 {
-      color: #fff;
-      margin-bottom: 15px;
-    }
-
-    footer p, footer a {
-      color: #bbb;
-      text-decoration: none;
-      line-height: 1.6;
-    }
-
-    footer a:hover {
-      color: #007bff;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
     }
 
     .footer-bottom {
@@ -215,27 +173,44 @@
       color: #777;
     }
 
-    /* ---------------- MOBILE ---------------- */
+    /* ---------------- MOBILE FULLSCREEN MENU ---------------- */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
 
       .navbar ul {
-        flex-direction: column;
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
         width: 100%;
-        margin-top: 10px;
+        background: rgba(0,0,0,0.97);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
+        z-index: 2000;
       }
 
       .navbar ul.show {
         display: flex;
       }
 
+      .navbar ul li a {
+        font-size: 1.2rem;
+      }
+
       .dropdown-menu {
         position: relative;
         width: 100%;
-        top: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .dropdown-menu a {
+        text-align: center;
       }
     }
   </style>
@@ -243,123 +218,92 @@
 
 <body>
 
-  <!-- ---------------- NAVBAR ---------------- -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="airnet logo.png" alt="Airnet Ghana Logo">
-    </div>
-
-    <div class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </div>
-
-    <ul id="navMenu">
-      <li><a href="index.html">Home</a></li>
-
-      <li>
-        <a id="productToggle">Products ▾</a>
-        <div class="dropdown-menu" id="productMenu">
-          <a href="mobile.html">Mobile Phones</a>
-          <a href="networking.html">Networking Devices</a>
-          <a href="smartboards.html">Smart Boards</a>
-          <a href="cctv.html">CCTV</a>
-          <a href="#">Air Conditioning</a>
-        </div>
-      </li>
-
-      <li><a href="service.html">Services</a></li>
-
-      <li>
-        <a id="aboutToggle">About Us ▾</a>
-        <div class="dropdown-menu" id="aboutMenu">
-          <a href="portfolio.html">Portfolio</a>
-          <a href="Reason.html">Why Choose Us</a>
-          <a href="team.html">Our Team</a>
-          <a href="partners.html">Partners</a>
-        </div>
-      </li>
-
-      <li><a href="contact.html" class="active">Contact Us</a></li>
-    </ul>
-  </nav>
-
-  <!-- ---------------- CONTACT FORM ---------------- -->
-  <div class="contact-wrapper">
-    <div class="contact-form">
-      <h2>Send Us a Message</h2>
-      <form action="https://formspree.io/f/xblwynqn" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+<!-- ---------------- NAVBAR ---------------- -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="airnet logo.png" alt="Airnet Ghana Logo">
   </div>
 
-  <!-- ---------------- MAP SECTION ---------------- -->
-  <div class="map-section">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.061957415346!2d-0.3167725241355178!3d5.696003494300628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf787c3a94d14f%3A0xd96e5dd5c63b1e0!2sPokuase%20Station!5e0!3m2!1sen!2sgh!4v1708700000000"
-      allowfullscreen="" loading="lazy"></iframe>
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
   </div>
 
-  <!-- ---------------- FOOTER ---------------- -->
-  <footer>
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-      <p><strong>Email:</strong> <a href="mailto:info@airnetghana.com">info@airnetghana.com</a></p>
-    </div>
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
 
-    <div class="footer-section">
-      <h3>Our Locations</h3>
-      <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
-      <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
-    </div>
-
-    <div class="footer-section">
-      <h3>About Airnet Ghana</h3>
-      <p>Providing innovative IT, networking, and security solutions nationwide.</p>
-
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <li>
+      <a id="productToggle">Products ▾</a>
+      <div class="dropdown-menu" id="productMenu">
+        <a href="mobile.html">Mobile Phones</a>
+        <a href="networking.html">Networking Devices</a>
+        <a href="smartboards.html">Smart Boards</a>
+        <a href="cctv.html">CCTV</a>
+        <a href="#">Air Conditioning</a>
       </div>
-    </div>
-  </footer>
+    </li>
 
-  <div class="footer-bottom">
-    © 2025 Airnet Ghana. All rights reserved.
+    <li><a href="service.html">Services</a></li>
+
+    <li>
+      <a id="aboutToggle">About Us ▾</a>
+      <div class="dropdown-menu" id="aboutMenu">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="Reason.html">Why Choose Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="partners.html">Partners</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html" class="active">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ---------------- CONTACT FORM ---------------- -->
+<div class="contact-wrapper">
+  <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form action="https://formspree.io/f/xblwynqn" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
+</div>
 
-  <!-- ---------------- DROPDOWN SCRIPT ---------------- -->
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
-    menuToggle.onclick = () => navMenu.classList.toggle("show");
+<div class="map-section">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+</div>
 
-    const productToggle = document.getElementById("productToggle");
-    const productMenu = document.getElementById("productMenu");
-    const aboutToggle = document.getElementById("aboutToggle");
-    const aboutMenu = document.getElementById("aboutMenu");
+<footer>
+  <p>© 2025 Airnet Ghana. All rights reserved.</p>
+</footer>
 
-    productToggle.onclick = e => {
-      e.stopPropagation();
-      productMenu.style.display = productMenu.style.display === "block" ? "none" : "block";
-    };
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  menuToggle.onclick = () => navMenu.classList.toggle("show");
 
-    aboutToggle.onclick = e => {
-      e.stopPropagation();
-      aboutMenu.style.display = aboutMenu.style.display === "block" ? "none" : "block";
-    };
+  const productToggle = document.getElementById("productToggle");
+  const productMenu = document.getElementById("productMenu");
+  const aboutToggle = document.getElementById("aboutToggle");
+  const aboutMenu = document.getElementById("aboutMenu");
 
-    document.onclick = () => {
-      productMenu.style.display = "none";
-      aboutMenu.style.display = "none";
-    };
-  </script>
+  productToggle.onclick = e => {
+    e.stopPropagation();
+    productMenu.style.display = productMenu.style.display === "block" ? "none" : "block";
+  };
+
+  aboutToggle.onclick = e => {
+    e.stopPropagation();
+    aboutMenu.style.display = aboutMenu.style.display === "block" ? "none" : "block";
+  };
+
+  document.onclick = () => {
+    productMenu.style.display = "none";
+    aboutMenu.style.display = "none";
+  };
+</script>
 
 </body>
 </html>
