@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Our Team | Airnet Ghana</title>
 
+<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+  background: #f4f4f4;
+  color: #333;
 }
 
 /* ================= NAVBAR ================= */
@@ -65,6 +67,7 @@ body {
 .navbar ul li a:hover,
 .navbar ul li a.active { background: #007bff; }
 
+/* Dropdown menu */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -88,14 +91,19 @@ body {
 .team-hero {
   margin-top: 7rem;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-             url('team-banner.jpg') center/cover no-repeat;
+              url('team.jpg') center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
 }
 
 .team-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-.team-hero p { max-width: 700px; margin: auto; font-size: 1.1rem; }
+
+.team-hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+}
 
 /* ================= TEAM ================= */
 .team-section {
@@ -139,8 +147,15 @@ body {
   background: #f2f2f2;
 }
 
-.team-info h3 { margin: 10px 0 5px; font-size: 1.1rem; }
-.team-info p { color: #777; font-size: 0.95rem; }
+.team-info h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.team-info p {
+  color: #777;
+  font-size: 0.95rem;
+}
 
 /* ================= FOOTER ================= */
 footer {
@@ -154,8 +169,14 @@ footer {
   border-top: 4px solid #007bff;
 }
 
-footer h3 { color: #fff; margin-bottom: 15px; }
-footer p { color: #bbb; line-height: 1.6; }
+footer .footer-section {
+  max-width: 300px;
+}
+
+footer h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
 
 .social-icons {
   display: flex;
@@ -169,11 +190,14 @@ footer p { color: #bbb; line-height: 1.6; }
   transition: 0.3s;
 }
 
-.social-icons a:hover { color: #007bff; transform: scale(1.1); }
+.social-icons a:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
 
 .footer-bottom {
-  background: #000;
   text-align: center;
+  background: #000;
   padding: 15px;
   color: #777;
 }
@@ -201,13 +225,7 @@ footer p { color: #bbb; line-height: 1.6; }
 
   .navbar ul li a { padding: 0.8rem 1rem; }
 
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  .team-hero h1 { font-size: 2.2rem; }
+  .dropdown-menu { position: static; width: 100%; border-radius: 10px; }
 }
 </style>
 </head>
@@ -217,7 +235,7 @@ footer p { color: #bbb; line-height: 1.6; }
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar">
   <div class="logo">
-    <img src="airnet logo.png" alt="Airnet Ghana">
+    <img src="airnet logo.png" alt="Airnet Ghana Logo">
   </div>
 
   <div class="hamburger" id="hamburger">
@@ -230,8 +248,8 @@ footer p { color: #bbb; line-height: 1.6; }
     <li><a href="index.html">Home</a></li>
 
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" id="productToggle">Products ▾</a>
-      <div class="dropdown-menu" id="productMenu">
+      <a href="#" class="dropdown-toggle">Products ▾</a>
+      <div class="dropdown-menu">
         <a href="mobile.html">Mobile Phones & Accessories</a>
         <a href="networking.html">Networking Devices</a>
         <a href="smartboards.html">Smart Boards</a>
@@ -243,8 +261,8 @@ footer p { color: #bbb; line-height: 1.6; }
     <li><a href="service.html">Services</a></li>
 
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle active" id="aboutToggle">About Us ▾</a>
-      <div class="dropdown-menu" id="aboutMenu">
+      <a href="#" class="dropdown-toggle active">About Us ▾</a>
+      <div class="dropdown-menu">
         <a href="portfolio.html">Portfolio</a>
         <a href="Reason.html">Why Choose Us</a>
         <a href="our-team.html" class="active">Our Team</a>
@@ -266,7 +284,6 @@ footer p { color: #bbb; line-height: 1.6; }
 <section class="team-section">
   <h2>Management</h2>
   <div class="team-grid">
-
     <div class="team-card">
       <img src="Wilberforce.jpeg" alt="Director">
       <div class="team-info">
@@ -282,31 +299,32 @@ footer p { color: #bbb; line-height: 1.6; }
         <p>Director</p>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <div>
+  <div class="footer-section">
     <h3>Contact Us</h3>
-    <p>+233 2433 45504<br>+233 20630 0038</p>
-    <p>info@airnetghana.com</p>
+    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+    <p><strong>Email:</strong> info@airnetghana.com</p>
   </div>
 
-  <div>
+  <div class="footer-section">
     <h3>Our Locations</h3>
-    <p>Pokuase – Near Lorry Station</p>
-    <p>Kokomlemle – Opposite King David Hotel</p>
+    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
   </div>
 
-  <div>
+  <div class="footer-section">
     <h3>About Airnet Ghana</h3>
     <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+
+    <h3>Follow Us</h3>
     <div class="social-icons">
       <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
       <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
   </div>
 </footer>
@@ -315,6 +333,7 @@ footer p { color: #bbb; line-height: 1.6; }
   © 2025 Airnet Ghana. All rights reserved.
 </div>
 
+<!-- ================= JS ================= -->
 <script>
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
