@@ -1,309 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Our Partners | Airnet Ghana</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Partners | Airnet Ghana</title>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f4f4f4;color:#000;}
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; background-color:#f4f4f4; color:#000; }
 
-/* ================= NAVBAR ================= */
-.navbar{
-  position:fixed;
-  top:10px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  max-width:1200px;
-  background:rgba(0,0,0,0.95);
-  border-radius:20px;
-  padding:.7rem 1.5rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  z-index:3000;
-  box-shadow:0 4px 15px rgba(0,0,0,.4);
-}
-.navbar .logo img{height:40px;}
-.menu-toggle{
-  display:none;
-  font-size:28px;
-  color:#fff;
-  cursor:pointer;
-}
-.navbar ul{
-  list-style:none;
-  display:flex;
-  gap:1.3rem;
-  flex-wrap:wrap;
-  justify-content:center; /* center content horizontally */
-}
-.navbar li{position:relative;}
-.navbar a{
-  color:#fff;
-  text-decoration:none;
-  padding:.4rem 1rem;
-  border-radius:20px;
-  display:block;
-}
-.navbar a:hover,
-.navbar a.active{background:#007bff;color:#fff;}
+    /* ================= NAVBAR ================= */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      max-width: 1200px;
+      background-color: rgba(0,0,0,0.95);
+      border-radius: 20px;
+      padding: 0.7rem 1.5rem;
+      z-index: 3000;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .navbar .logo img { height:40px; }
 
-/* ================= DROPDOWN ================= */
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:45px;
-  left:0;
-  background:#000;
-  width:200px;
-  border-radius:10px;
-  z-index:4000;
-}
-.dropdown-menu a{
-  display:block;
-  padding:10px 15px;
-  color:#fff;
-  text-decoration:none;
-}
-.dropdown-menu a:hover{background:#007bff;}
+    .menu-toggle{
+      display:none;
+      font-size:28px;
+      color:#fff;
+      cursor:pointer;
+    }
 
-/* Space fix when dropdown opens */
-.navbar li.products-open{margin-bottom:180px;}
-.navbar li.about-open{margin-bottom:140px;}
-@media(min-width:769px){
-  .navbar li.products-open,
-  .navbar li.about-open{margin-bottom:0;}
-}
+    .navbar ul{
+      list-style:none;
+      display:flex;
+      gap:1.3rem;
+      flex-wrap:wrap;
+    }
+    .navbar ul li { position: relative; }
+    .navbar ul li a {
+      text-decoration:none;
+      color:#fff;
+      font-weight:500;
+      padding:0.4rem 1rem;
+      border-radius:20px;
+      cursor:pointer;
+      display:block;
+    }
+    .navbar ul li a:hover, .navbar ul li a.active { background:#007bff; color:#fff; }
 
-/* ================= HEADER ================= */
-.header{
-  width:100%;
-  height:400px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background-image:url('partner.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-.header h1{
-  font-size:3rem;
-  font-weight:bold;
-  background:rgba(0,0,0,0.5);
-  padding:15px 30px;
-  border-radius:8px;
-}
+    /* ================= DROPDOWN ================= */
+    .dropdown-menu {
+      display:none;
+      position:absolute;
+      top:45px;
+      left:0;
+      background:#000;
+      padding:10px 0;
+      border-radius:10px;
+      width:200px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      z-index: 2000;
+    }
+    .dropdown-menu a {
+      display:block;
+      padding:10px 15px;
+      color:#fff;
+      text-decoration:none;
+    }
+    .dropdown-menu a:hover { background:#007bff; }
 
-/* ================= CONTENT ================= */
-.heading{
-  max-width:800px;
-  margin:60px auto;
-  text-align:center;
-  padding:0 20px;
-}
-.heading h2{font-size:2.5rem;margin-bottom:20px;}
-.heading p{font-size:1rem;color:#555;}
+    /* ================= HEADER ================= */
+    .header{
+      width:100%;
+      height:400px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('partner.jpeg');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+    .header h1{
+      font-size:3rem;
+      font-weight:bold;
+      padding:15px 30px;
+      border-radius:8px;
+    }
 
-/* Partners Grid */
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:30px;
-  padding:20px 40px;
-}
-.product-card{
-  background:#fff;
-  border-radius:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  padding:15px;
-  transition:0.3s;
-  overflow:hidden;
-  text-align:center;
-}
-.product-card:hover{transform:translateY(-8px);}
-.product-card img{width:100%; height:180px; object-fit:contain; background:#fff;}
+    /* ================= CONTENT ================= */
+    .heading {
+      max-width: 800px;
+      margin: 60px auto;
+      text-align:center;
+      padding:0 20px;
+    }
+    .heading h2 { font-size:2.5rem; margin-bottom:20px; }
+    .heading p { font-size:1rem; color:#555; }
 
-/* ================= FOOTER ================= */
-footer{
-  background:#111;
-  color:#ddd;
-  padding:50px 20px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-around;
-  gap:30px;
-  border-top:4px solid #007bff;
-}
-.footer-section{max-width:300px;}
-footer h3{color:#fff;margin-bottom:10px;}
-.social-icons{display:flex;gap:15px;margin-top:10px;}
-.footer-bottom{background:#000;text-align:center;padding:15px;color:#777;}
+    /* Partners Grid */
+    .product-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:30px;
+      padding:20px 40px;
+    }
+    .product-card {
+      background:#fff;
+      border-radius:15px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      padding:15px;
+      transition:0.3s;
+      overflow:hidden;
+      text-align:center;
+    }
+    .product-card:hover { transform:translateY(-8px); }
+    .product-card img { width:100%; height:180px; object-fit:contain; background:#fff; }
 
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  .menu-toggle{display:block;}
-  .navbar ul{
-    display:none;
-    flex-direction:column;
-    align-items:center;
-    width:90%;
-    background:rgba(0,0,0,0.95);
-    border-radius:20px;
-    padding:1rem 0;
-    position:absolute;
-    top:100%;
-    left:50%;
-    transform:translateX(-50%);
-    gap:0.5rem;
-    text-align:center;
-  }
-  .navbar ul.show{display:flex;}
-  .navbar ul li{width:100%;}
-  .dropdown-menu{
-    position:relative;
-    width:100%;
-    background:transparent;
-    text-align:center;
-  }
-  .product-grid{grid-template-columns:repeat(2,1fr); padding:20px;}
-}
-@media(max-width:500px){
-  .product-grid{grid-template-columns:1fr; padding:15px;}
-  .header h1{font-size:2rem;}
-}
-</style>
+    /* ================= FOOTER ================= */
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      border-top: 4px solid #007bff;
+    }
+    .footer-section { max-width: 300px; }
+    footer h3 { color:#fff; margin-bottom:10px; }
+    .social-icons { display:flex; gap:15px; margin-top:10px; }
+    .footer-bottom { background:#000; text-align:center; padding:15px; color:#777; }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:1024px) { .product-grid { grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:768px){
+      .menu-toggle{display:block;}
+      .navbar ul{
+        flex-direction:column;
+        display:none;
+        width:90%;
+        background:rgba(0,0,0,0.95);
+        border-radius:20px;
+        margin-top:10px;
+        padding:20px 0;
+        position:absolute;
+        top:100%;
+        left:50%;
+        transform:translateX(-50%);
+      }
+      .navbar ul.show{display:flex;}
+      .navbar ul li{
+        width:100%;
+        text-align:center;
+      }
+      .dropdown-menu{
+        position:relative;
+        width:100%;
+        background:transparent;
+      }
+      .product-grid { grid-template-columns:repeat(2,1fr); padding:20px; }
+      .header h1{ font-size:2.5rem; padding:10px 20px; }
+    }
+    @media(max-width:500px){
+      .product-grid { grid-template-columns:1fr; padding:15px; }
+      .header h1{ font-size:2rem; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-  <div class="logo"><img src="airnet logo.png" alt="Airnet Ghana Logo"></div>
-  <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
-  <ul id="navMenu">
-    <li><a href="index.html">Home</a></li>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="logo"><img src="airnet logo.png" alt="Airnet Ghana Logo"></div>
+    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+    <ul id="navMenu">
+      <li><a href="index.html">Home</a></li>
 
-    <li>
-      <a href="#" id="productToggle">Products ▾</a>
-      <div class="dropdown-menu" id="productMenu">
-        <a href="mobile.html">Mobile Phones</a>
-        <a href="networking.html">Networking Devices</a>
-        <a href="smartboards.html">Smart Boards</a>
-        <a href="cctv.html">CCTV</a>
-        <a href="ac.html">Air Conditioning</a>
-      </div>
-    </li>
+      <!-- Products Dropdown -->
+      <li class="dropdown">
+        <a id="productsDropdown">Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="mobile.html">Mobile Phones</a>
+          <a href="networking.html">Networking Devices</a>
+          <a href="smartboards.html">Smart Boards</a>
+          <a href="cctv.html">CCTV</a>
+          <a href="ac.html">Air Conditioning</a>
+        </div>
+      </li>
 
-    <li><a href="service.html">Services</a></li>
+      <li><a href="service.html">Services</a></li>
 
-    <li>
-      <a href="#" id="aboutToggle" class="active">About Us ▾</a>
-      <div class="dropdown-menu" id="aboutMenu">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="Reason.html">Why Choose Us</a>
-        <a href="team.html">Our Team</a>
-        <a href="partners.html" class="active">Partners</a>
-      </div>
-    </li>
+      <!-- About Us Dropdown -->
+      <li class="dropdown">
+        <a id="aboutDropdown" class="active">About Us ▾</a>
+        <div class="dropdown-menu">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="Reason.html">Why Choose Us</a>
+          <a href="team.html">Our Team</a>
+          <a href="partners.html" class="active">Partners</a>
+        </div>
+      </li>
 
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
 
-<!-- ================= HEADER ================= -->
-<div class="header">
-  <h1>Our Partners</h1>
-</div>
-
-<!-- ================= MAIN CONTENT ================= -->
-<div class="heading">
-  <h2>Airnet Partners</h2>
-  <p>Airnet Ghana Limited has strong international alliances including distributorship, partnerships, and authorized reseller agreements with Samsung, LG, Dahua, Valuestek, and more — delivering modern technology nationwide.</p>
-</div>
-
-<!-- ================= PARTNERS GRID ================= -->
-<div class="product-grid">
-  <div class="product-card"><img src="valuestek.png" alt="Valuestek"></div>
-  <div class="product-card"><img src="samsung.jpg" alt="Samsung"></div>
-  <div class="product-card"><img src="LG.jpg" alt="LG"></div>
-  <div class="product-card"><img src="Dahua T.jpg" alt="Dahua"></div>
-</div>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="footer-section">
-    <h3>Contact Us</h3>
-    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-    <p><strong>Email:</strong> info@airnetghana.com</p>
+  <!-- ================= HEADER ================= -->
+  <div class="header">
+    <h1>Our Partners</h1>
   </div>
-  <div class="footer-section">
-    <h3>Our Locations</h3>
-    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
-    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <div class="heading">
+    <h2>Airnet Partners</h2>
+    <p>
+      Airnet Ghana Limited has strong international alliances including distributorship,
+      partnerships, and authorized reseller agreements with Samsung, LG, Dahua,
+      Valuestek, and more — delivering modern technology nationwide.
+    </p>
   </div>
-  <div class="footer-section">
-    <h3>About Airnet Ghana</h3>
-    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
-    <div class="social-icons">
-      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+  <!-- ================= PARTNERS GRID ================= -->
+  <div class="product-grid">
+    <div class="product-card"><img src="valuestek.png" alt="Valuestek"></div>
+    <div class="product-card"><img src="samsung.jpg" alt="Samsung"></div>
+    <div class="product-card"><img src="LG.jpg" alt="LG"></div>
+    <div class="product-card"><img src="Dahua T.jpg" alt="Dahua"></div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+      <p><strong>Email:</strong> info@airnetghana.com</p>
     </div>
-  </div>
-</footer>
 
-<div class="footer-bottom">© 2025 Airnet Ghana. All rights reserved.</div>
+    <div class="footer-section">
+      <h3>Our Locations</h3>
+      <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+      <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+    </div>
 
-<!-- ================= JS NAVBAR DROPDOWNS ================= -->
-<script>
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-const productToggle = document.getElementById('productToggle');
-const productMenu = document.getElementById('productMenu');
-const aboutToggle = document.getElementById('aboutToggle');
-const aboutMenu = document.getElementById('aboutMenu');
+    <div class="footer-section">
+      <h3>About Airnet Ghana</h3>
+      <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram" style="color:#bbb; font-size:22px;"></i></a>
+        <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin" style="color:#bbb; font-size:22px;"></i></a>
+        <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok" style="color:#bbb; font-size:22px;"></i></a>
+      </div>
+    </div>
+  </footer>
 
-// Hamburger toggle
-menuToggle.onclick = () => navMenu.classList.toggle('show');
+  <div class="footer-bottom">© 2025 Airnet Ghana. All rights reserved.</div>
 
-// Products dropdown
-productToggle.onclick = e => {
-  e.stopPropagation();
-  const parentLi = productToggle.parentElement;
-  const isOpen = productMenu.style.display === 'block';
-  productMenu.style.display = isOpen ? 'none' : 'block';
-  parentLi.classList.toggle('products-open', !isOpen);
-};
+  <!-- ================= JS DROPDOWN ================= -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const productsDropdown = document.getElementById("productsDropdown");
+    const aboutDropdown = document.getElementById("aboutDropdown");
 
-// About Us dropdown
-aboutToggle.onclick = e => {
-  e.stopPropagation();
-  const parentLi = aboutToggle.parentElement;
-  const isOpen = aboutMenu.style.display === 'block';
-  aboutMenu.style.display = isOpen ? 'none' : 'block';
-  parentLi.classList.toggle('about-open', !isOpen);
-};
+    menuToggle.onclick = () => navMenu.classList.toggle("show");
 
-// Close dropdowns if clicked outside
-document.addEventListener('click', e => {
-  if(!e.target.closest('.navbar')){
-    productMenu.style.display = 'none';
-    aboutMenu.style.display = 'none';
-    productToggle.parentElement.classList.remove('products-open');
-    aboutToggle.parentElement.classList.remove('about-open');
-    navMenu.classList.remove('show');
-  }
-});
-</script>
+    // Products Dropdown
+    const productMenu = productsDropdown.nextElementSibling;
+    productsDropdown.onclick = e => {
+      e.stopPropagation();
+      const isOpen = productMenu.style.display === "block";
+      productMenu.style.display = isOpen ? "none" : "block";
+    };
+
+    // About Dropdown
+    const aboutMenu = aboutDropdown.nextElementSibling;
+    aboutDropdown.onclick = e => {
+      e.stopPropagation();
+      const isOpen = aboutMenu.style.display === "block";
+      aboutMenu.style.display = isOpen ? "none" : "block";
+    };
+
+    // Close dropdowns on click outside
+    document.onclick = () => {
+      productMenu.style.display = "none";
+      aboutMenu.style.display = "none";
+      navMenu.classList.remove("show");
+    };
+  </script>
 
 </body>
 </html>
