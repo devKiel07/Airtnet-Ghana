@@ -15,7 +15,7 @@ body{
   background:#fff;
 }
 
-/* ================= NAVBAR (EXACT SAME AS PREVIOUS) ================= */
+/* ================= NAVBAR ================= */
 .navbar{
   position:fixed;
   top:10px;
@@ -65,7 +65,7 @@ body{
   background:#007bff;
 }
 
-/* Dropdown */
+/* ================= DROPDOWN ================= */
 .dropdown-menu{
   display:none;
   position:absolute;
@@ -83,6 +83,18 @@ body{
 
 .dropdown-menu a:hover{
   background:#007bff;
+}
+
+/* 👉 SPACE FIX WHEN PRODUCTS DROPDOWN OPENS */
+.navbar li.products-open{
+  margin-bottom:180px;
+}
+
+/* Desktop keeps original look */
+@media(min-width:769px){
+  .navbar li.products-open{
+    margin-bottom:0;
+  }
 }
 
 /* ================= PRODUCTS ================= */
@@ -297,32 +309,6 @@ footer h3{color:#fff;margin-bottom:10px}
 <a href="quote.html" class="btn">Request a Quote</a>
 </div>
 </div>
-  <div class="product-card">
-      <img src="media.jpg">
-      <div class="product-info">
-        <h3>Media Air Condition</h3>
-        <p>Fast cooling, quiet operation and energy saving.</p>
-        <a href="quote.html" class="btn">Request a Quote</a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="sigma.webp">
-      <div class="product-info">
-        <h3>Sigma Air Condition</h3>
-        <p>Strong cooling power with quiet operation.</p>
-        <a href="quote.html" class="btn">Request a Quote</a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="TCL.jpg">
-      <div class="product-info">
-        <h3>TCL Air Condition</h3>
-        <p>Energy efficient cooling with reliability.</p>
-        <a href="quote.html" class="btn">Request a Quote</a>
-      </div>
-    </div>
 
 </div>
 </section>
@@ -345,9 +331,9 @@ footer h3{color:#fff;margin-bottom:10px}
 <h3>About Airnet Ghana</h3>
 <p>Providing innovative IT, networking & security solutions.</p>
 <div class="social-icons">
-<a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
-<a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-<a href=""https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
 </div>
 </div>
 </footer>
@@ -358,31 +344,35 @@ footer h3{color:#fff;margin-bottom:10px}
 
 <!-- ================= SCRIPT ================= -->
 <script>
-const menuToggle=document.getElementById("menuToggle");
-const navMenu=document.getElementById("navMenu");
-const productToggle=document.getElementById("productToggle");
-const productMenu=document.getElementById("productMenu");
-const aboutToggle=document.getElementById("aboutToggle");
-const aboutMenu=document.getElementById("aboutMenu");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const productToggle = document.getElementById("productToggle");
+const productMenu = document.getElementById("productMenu");
+const aboutToggle = document.getElementById("aboutToggle");
+const aboutMenu = document.getElementById("aboutMenu");
 
-menuToggle.onclick=()=>navMenu.classList.toggle("show");
+menuToggle.onclick = () => navMenu.classList.toggle("show");
 
-productToggle.onclick=e=>{
+productToggle.onclick = e => {
   e.stopPropagation();
-  productMenu.style.display=
-    productMenu.style.display==="block"?"none":"block";
+  const parentLi = productToggle.parentElement;
+
+  const isOpen = productMenu.style.display === "block";
+  productMenu.style.display = isOpen ? "none" : "block";
+  parentLi.classList.toggle("products-open", !isOpen);
 };
 
-aboutToggle.onclick=e=>{
+aboutToggle.onclick = e => {
   e.stopPropagation();
-  aboutMenu.style.display=
-    aboutMenu.style.display==="block"?"none":"block";
+  aboutMenu.style.display =
+    aboutMenu.style.display === "block" ? "none" : "block";
 };
 
-document.onclick=e=>{
-  if(!e.target.closest(".navbar")){
-    productMenu.style.display="none";
-    aboutMenu.style.display="none";
+document.onclick = e => {
+  if (!e.target.closest(".navbar")) {
+    productMenu.style.display = "none";
+    aboutMenu.style.display = "none";
+    productToggle.parentElement.classList.remove("products-open");
     navMenu.classList.remove("show");
   }
 };
@@ -390,4 +380,3 @@ document.onclick=e=>{
 
 </body>
 </html>
-
