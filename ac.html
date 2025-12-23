@@ -16,20 +16,21 @@ body {
 /* ================= NAVBAR ================= */
 .navbar {
   position: fixed;
-  top: 10px;
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 92%;
-  max-width: 1200px;
+  width: 90%;              /* ✅ SAME LENGTH AS PREVIOUS */
   background: rgba(0,0,0,0.95);
   border-radius: 20px;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 2rem;    /* ✅ SAME INNER SPACING */
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 3000;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
+
+
 
 .logo img { height: 40px; }
 
@@ -385,3 +386,4 @@ document.querySelectorAll(".dropdown > a").forEach(link => {
 
 </body>
 </html>
+
