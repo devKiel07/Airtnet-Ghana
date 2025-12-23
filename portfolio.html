@@ -8,254 +8,242 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  color: #333;
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:#f7f7f7;
 }
 
 /* ================= NAVBAR ================= */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  background: rgba(0,0,0,0.95);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  padding: 0.7rem 2rem;
-  z-index: 1000;
+.navbar{
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:1200px;
+  background:rgba(0,0,0,0.95);
+  border-radius:20px;
+  padding:.7rem 1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:3000;
+  flex-wrap:wrap;
+  box-shadow:0 4px 15px rgba(0,0,0,.4);
 }
 
-.logo img {
-  height: 40px;
+.logo img{height:40px}
+
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 22px;
-  color: #fff;
-  cursor: pointer;
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:1.3rem;
+  flex-wrap:wrap;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.3rem;
+.navbar li{position:relative}
+
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  padding:.4rem 1rem;
+  border-radius:20px;
+  display:block;
 }
 
-.navbar ul li {
-  position: relative;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  transition: 0.3s;
-  display: block;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  background: #007bff;
+.navbar a:hover,
+.navbar a.active{
+  background:#007bff;
 }
 
 /* ================= DROPDOWN ================= */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 120%;
-  left: 0;
-  background: #000;
-  border-radius: 12px;
-  min-width: 200px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:45px;
+  left:0;
+  background:#000;
+  width:200px;
+  border-radius:10px;
+  z-index:4000;
 }
 
-.dropdown-menu a {
-  padding: 10px 15px;
+.dropdown-menu a{
+  padding:10px 15px;
 }
 
-.dropdown-menu a:hover {
-  background: #007bff;
+.dropdown-menu a:hover{
+  background:#007bff;
 }
 
-/* Desktop hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
+/* 👉 SPACE FIX WHEN PRODUCTS/ABOUT DROPDOWN OPENS */
+.navbar li.products-open{
+  margin-bottom:180px;
+}
+.navbar li.about-open{
+  margin-bottom:140px;
+}
+
+/* Desktop keeps original look */
+@media(min-width:769px){
+  .navbar li.products-open,
+  .navbar li.about-open{
+    margin-bottom:0;
+  }
 }
 
 /* ================= HEADER ================= */
-.header {
-  width: 100%;
-  height: 400px; /* taller for more impact */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  
-  /* High-resolution background image */
-  background-image: url('kaggle.jpg'); /* replace with your high-res image */
-  background-size: cover;       /* ensures it covers entire header */
-  background-position: center;  /* centers the image */
-  background-repeat: no-repeat; /* no tiling */
+.header{
+  width:100%;
+  height:400px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background-image:url('kaggle.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
-.header h1 {
-  color: #fff;
-  font-size: 48px;
-  background: rgba(0,0,0,0.5); /* semi-transparent overlay for readability */
-  padding: 15px 30px;
-  border-radius: 8px;
+.header h1{
+  color:#fff;
+  font-size:48px;
+  background:rgba(0,0,0,0.5);
+  padding:15px 30px;
+  border-radius:8px;
 }
 
 /* ================= PORTFOLIO ================= */
-.portfolio-section {
-  padding: 60px 40px;
-  text-align: center;
+.portfolio-section{
+  padding:140px 40px 60px;
+  text-align:center;
 }
 
-.portfolio-section h2 {
-  margin-bottom: 30px;
-  font-size: 32px;
+.portfolio-section h2{
+  font-size:2.2rem;
+  margin-bottom:40px;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
 
-.portfolio-item {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
+.portfolio-item{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  transition:.3s;
 }
 
-.portfolio-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.portfolio-item:hover{
+  transform:translateY(-6px);
 }
 
-.portfolio-item h3 {
-  padding: 15px;
-  font-size: 20px;
+.portfolio-item img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
 }
 
-.portfolio-item:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+.portfolio-item h3{
+  padding:15px;
+  font-size:20px;
+  color:#007bff;
 }
 
 /* ================= FOOTER ================= */
-footer {
-  margin-top: 60px;
-  background: #111;
-  color: #ddd;
-  padding: 50px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 30px;
-  border-top: 4px solid #007bff;
+footer{
+  background:#111;
+  color:#ddd;
+  padding:50px 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  border-top:4px solid #007bff;
 }
 
-footer .footer-section {
-  max-width: 300px;
+footer h3{color:#fff;margin-bottom:10px}
+
+.social-icons{
+  display:flex;
+  gap:15px;
 }
 
-footer h3 {
-  color: #fff;
-  margin-bottom: 15px;
+.social-icons a{
+  width:40px;
+  height:40px;
+  background:#222;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-footer p, footer a {
-  color: #bbb;
-  line-height: 1.6;
-  text-decoration: none;
-}
+.social-icons a i{color:#bbb}
+.social-icons a:hover{background:#007bff}
+.social-icons a:hover i{color:#fff}
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.social-icons a {
-  color: #bbb;
-  font-size: 22px;
-  transition: 0.3s;
-}
-
-.social-icons a:hover {
-  color: #007bff;
-  transform: scale(1.1);
-}
-
-.footer-bottom {
-  text-align: center;
-  background: #000;
-  padding: 15px;
-  color: #777;
-  margin-top: 20px;
+.footer-bottom{
+  background:#000;
+  color:#777;
+  text-align:center;
+  padding:15px;
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .menu-toggle { display: block; }
+@media(max-width:768px){
+  .menu-toggle{display:block}
 
-  .navbar ul {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #000;
-    flex-direction: column;
-    display: none;
-    border-radius: 15px;
-    padding: 1rem 0;
+  .navbar ul{
+    flex-direction:column;
+    display:none;
+    width:92%;
+    background:rgba(0,0,0,0.95);
+    border-radius:20px;
+    margin-top:10px;
+    padding:20px 0;
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
   }
 
-  .navbar ul.show {
-    display: flex;
+  .navbar ul.show{display:flex}
+
+  .navbar ul li{
+    width:100%;
+    text-align:center;
   }
 
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
+  .dropdown-menu{
+    position:relative;
+    width:100%;
+    background:transparent;
   }
 
-  .dropdown.open .dropdown-menu {
-    display: block;
+  .portfolio-section{
+    padding:120px 20px 50px;
   }
 
-  .dropdown:hover .dropdown-menu {
-    display: none;
-  }
-
-  .header h1 {
-    font-size: 34px;
+  .header h1{
+    font-size:34px;
   }
 }
 </style>
 </head>
-
 <body>
 
 <!-- ================= NAVBAR ================= -->
@@ -271,10 +259,10 @@ footer p, footer a {
   <ul id="navMenu">
     <li><a href="index.html">Home</a></li>
 
-    <li class="dropdown">
-      <a>Products ▾</a>
-      <div class="dropdown-menu">
-        <a href="mobile.html">Mobile Phones & Accessories</a>
+    <li>
+      <a id="productToggle">Products ▾</a>
+      <div class="dropdown-menu" id="productMenu">
+        <a href="mobile.html">Mobile Devices & Accessories</a>
         <a href="networking.html">Networking Devices</a>
         <a href="smartboards.html">Smart Boards</a>
         <a href="cctv.html">CCTV Cameras</a>
@@ -284,9 +272,9 @@ footer p, footer a {
 
     <li><a href="service.html">Services</a></li>
 
-    <li class="dropdown">
-      <a class="active">About Us ▾</a>
-      <div class="dropdown-menu">
+    <li>
+      <a id="aboutToggle" class="active">About Us ▾</a>
+      <div class="dropdown-menu" id="aboutMenu">
         <a href="portfolio.html" class="active">Portfolio</a>
         <a href="Reason.html">Why Choose Us</a>
         <a href="team.html">Our Team</a>
@@ -329,52 +317,69 @@ footer p, footer a {
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <div class="footer-section">
+  <div>
     <h3>Contact Us</h3>
-    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-    <p><strong>Email:</strong> info@airnetghana.com</p>
+    <p>+233 2433 45504<br>+233 20630 0038</p>
+    <p>info@airnetghana.com</p>
   </div>
 
-  <div class="footer-section">
+  <div>
     <h3>Our Locations</h3>
-    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
-    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+    <p>Pokuase – Near Lorry Station</p>
+    <p>Kokomlemle – Opposite King David Hotel</p>
   </div>
 
-  <div class="footer-section">
+  <div>
     <h3>About Airnet Ghana</h3>
-    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
-
-    <h3>Follow Us</h3>
+    <p>Providing innovative IT, networking & security solutions.</p>
     <div class="social-icons">
-      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
     </div>
   </div>
 </footer>
 
 <div class="footer-bottom">
-  © 2025 Airnet Ghana. All rights reserved.
+© 2025 Airnet Ghana. All rights reserved.
 </div>
 
-<!-- ================= JS ================= -->
+<!-- ================= SCRIPT ================= -->
 <script>
-const toggle = document.getElementById("menuToggle");
-const menu = document.getElementById("navMenu");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const productToggle = document.getElementById("productToggle");
+const productMenu = document.getElementById("productMenu");
+const aboutToggle = document.getElementById("aboutToggle");
+const aboutMenu = document.getElementById("aboutMenu");
 
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("show");
-});
+menuToggle.onclick = () => navMenu.classList.toggle("show");
 
-document.querySelectorAll(".dropdown > a").forEach(link => {
-  link.addEventListener("click", e => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      link.parentElement.classList.toggle("open");
-    }
-  });
-});
+productToggle.onclick = e => {
+  e.stopPropagation();
+  const parentLi = productToggle.parentElement;
+  const isOpen = productMenu.style.display === "block";
+  productMenu.style.display = isOpen ? "none" : "block";
+  parentLi.classList.toggle("products-open", !isOpen);
+};
+
+aboutToggle.onclick = e => {
+  e.stopPropagation();
+  const parentLi = aboutToggle.parentElement;
+  const isOpen = aboutMenu.style.display === "block";
+  aboutMenu.style.display = isOpen ? "none" : "block";
+  parentLi.classList.toggle("about-open", !isOpen);
+};
+
+document.onclick = e => {
+  if (!e.target.closest(".navbar")) {
+    productMenu.style.display = "none";
+    aboutMenu.style.display = "none";
+    productToggle.parentElement.classList.remove("products-open");
+    aboutToggle.parentElement.classList.remove("about-open");
+    navMenu.classList.remove("show");
+  }
+};
 </script>
 
 </body>
