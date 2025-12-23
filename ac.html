@@ -15,27 +15,27 @@ body {
 
 /* ================= NAVBAR ================= */
 .navbar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1200px;
+  background: rgba(0,0,0,0.95);
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  background: rgba(0,0,0,0.95);
-  border-radius: 20px;
-  padding: 0.7rem 2rem;
-  z-index: 1000;
+  z-index: 3000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
-.logo img {
-  height: 40px;
-}
+.logo img { height: 40px; }
 
 .menu-toggle {
   display: none;
-  font-size: 22px;
+  font-size: 28px;
   color: #fff;
   cursor: pointer;
 }
@@ -48,16 +48,13 @@ body {
   padding: 0;
 }
 
-.navbar ul li {
-  position: relative;
-}
+.navbar ul li { position: relative; }
 
 .navbar ul li a {
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
   padding: 0.4rem 1rem;
   border-radius: 20px;
-  transition: 0.3s;
   display: block;
 }
 
@@ -70,12 +67,13 @@ body {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 120%;
+  top: 45px;
   left: 0;
   background: #000;
-  min-width: 200px;
   border-radius: 12px;
+  min-width: 200px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 4000;
 }
 
 .dropdown-menu a {
@@ -181,37 +179,51 @@ footer h3 { color:#fff; }
 }
 
 /* ================= MOBILE ================= */
-@media (max-width:768px) {
+@media(max-width:768px) {
   .menu-toggle { display:block; }
 
   .navbar ul {
     position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #000;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    background: rgba(0,0,0,0.95);
     flex-direction: column;
     display: none;
-    border-radius: 15px;
-    padding: 1rem 0;
+    border-radius: 20px;
+    padding: 20px 0;
   }
 
   .navbar ul.show {
     display: flex;
   }
 
-  .dropdown-menu {
-    position: static;
-    display: none;
-    box-shadow: none;
+  .navbar ul li {
+    text-align: center;
+    width: 100%;
   }
 
-  .dropdown.open .dropdown-menu {
-    display: block;
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 0;
   }
 
   .dropdown:hover .dropdown-menu {
     display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
   }
 
   .products-section {
@@ -344,9 +356,9 @@ footer h3 { color:#fff; }
     <h3>About Airnet Ghana</h3>
     <p>Providing innovative IT, networking & security solutions.</p>
     <div class="social-icons">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-tiktok"></i></a>
+      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
     </div>
   </div>
 </footer>
@@ -356,20 +368,18 @@ footer h3 { color:#fff; }
 </div>
 
 <script>
-const toggle = document.getElementById("menuToggle");
-const menu = document.getElementById("navMenu");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("show");
-});
+menuToggle.onclick = () => navMenu.classList.toggle("show");
 
 document.querySelectorAll(".dropdown > a").forEach(link => {
-  link.addEventListener("click", e => {
+  link.onclick = e => {
     if (window.innerWidth <= 768) {
       e.preventDefault();
       link.parentElement.classList.toggle("open");
     }
-  });
+  };
 });
 </script>
 
