@@ -110,21 +110,56 @@ button{
 }
 
 /* ================= FOOTER ================= */
-footer{
+
+
+  footer{
   background:#111;
   color:#ddd;
   padding:50px 20px;
   display:flex;
-  justify-content:center;
-  text-align:center;
-  margin-top:80px
+  flex-wrap:wrap;
+  justify-content:space-around;
+  gap:30px;
+  border-top:4px solid #007bff;
 }
+
+.footer-section{
+  max-width:300px;
+}
+
+footer h3{
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.footer-section p{
+  line-height:1.6;
+}
+
+.social-icons{
+  display:flex;
+  gap:15px;
+  margin-top:10px;
+}
+
+.social-icons i{
+  color:#bbb;
+  font-size:22px;
+  transition:.3s;
+}
+
+.social-icons i:hover{
+  color:#007bff;
+}
+
 .footer-bottom{
   background:#000;
   text-align:center;
   padding:15px;
-  color:#777
+  color:#777;
+  font-size:14px;
 }
+
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
@@ -206,7 +241,46 @@ footer{
 </div>
 
 <footer>
-  <p>© 2025 Airnet Ghana. All rights reserved.</p>
+  <!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>
+      +233 2433 45504<br>
+      +233 20630 0038
+    </p>
+    <p><strong>Email:</strong> info@airnetghana.com</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2025 Airnet Ghana. All rights reserved.
+</div>
+
+
 </footer>
 
 <div class="footer-bottom">Designed by Airnet Ghana</div>
@@ -243,3 +317,4 @@ document.onclick=()=>{
 
 </body>
 </html>
+
