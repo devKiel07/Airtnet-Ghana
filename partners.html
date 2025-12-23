@@ -42,6 +42,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f4f4f4;
   display:flex;
   gap:1.3rem;
   flex-wrap:wrap;
+  justify-content:center; /* center content horizontally */
 }
 .navbar li{position:relative;}
 .navbar a{
@@ -148,7 +149,6 @@ footer h3{color:#fff;margin-bottom:10px;}
 .footer-bottom{background:#000;text-align:center;padding:15px;color:#777;}
 
 /* ================= MOBILE ================= */
-@media(max-width:1024px){.product-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:768px){
   .menu-toggle{display:block;}
   .navbar ul{
@@ -307,4 +307,3 @@ document.addEventListener('click', e => {
 
 </body>
 </html>
-
