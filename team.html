@@ -92,6 +92,13 @@
 
     .dropdown-menu a:hover { background: #007bff; }
 
+    /* Desktop hover */
+    @media (min-width: 769px) {
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
     /* ================= HERO ================= */
     .team-hero {
       margin-top: 7rem;
@@ -195,7 +202,7 @@
       .navbar ul {
         display: none;
         flex-direction: column;
-        align-items: center; /* Center links */
+        align-items: center;
         text-align: center;
         position: absolute;
         top: 100%;
@@ -217,7 +224,16 @@
         position: static;
         width: 100%;
         border-radius: 10px;
-        text-align: center; /* Center dropdown links */
+        text-align: center;
+        display: none;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: none;
       }
     }
   </style>
@@ -275,7 +291,6 @@
 <section class="team-section">
   <h2>Management</h2>
   <div class="team-grid">
-
     <div class="team-card">
       <img src="Wilberforce.jpeg" alt="Director">
       <div class="team-info">
@@ -283,7 +298,6 @@
         <p>Director</p>
       </div>
     </div>
-
     <div class="team-card">
       <img src="boss.jpg" alt="Director">
       <div class="team-info">
@@ -291,7 +305,6 @@
         <p>Director</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -335,6 +348,7 @@
     menu.classList.toggle("show");
   });
 
+  // Dropdown toggle on mobile
   document.querySelectorAll(".dropdown > a").forEach(link => {
     link.addEventListener("click", e => {
       if (window.innerWidth <= 768) {
@@ -344,6 +358,7 @@
     });
   });
 
+  // Close menu if clicked outside
   document.addEventListener("click", e => {
     if (!e.target.closest(".navbar")) {
       menu.classList.remove("show");
@@ -354,4 +369,3 @@
 
 </body>
 </html>
-
