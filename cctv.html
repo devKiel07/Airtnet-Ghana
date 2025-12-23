@@ -8,200 +8,258 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
   font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
   background:#fff;
 }
 
 /* ================= NAVBAR ================= */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:fixed;
-  top:10px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  background:rgba(0,0,0,0.95);
-  border-radius:20px;
-  padding:.7rem 2rem;
-  z-index:1000;
-  flex-wrap:wrap;
-  box-shadow:0 4px 15px rgba(0,0,0,0.4);
+.navbar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1200px;
+  background: rgba(0,0,0,0.95);
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3000;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
-.logo img{height:40px}
+.logo img { height: 40px; }
 
-.menu-toggle{
-  display:none;
-  font-size:28px;
-  color:#fff;
-  cursor:pointer;
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.navbar ul{
-  list-style:none;
-  display:flex;
-  gap:1.3rem;
-  flex-wrap:wrap;
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
+  flex-wrap: wrap;
 }
 
-.navbar li{position:relative}
+.navbar ul li { position: relative; }
 
-.navbar a{
-  color:#fff;
-  text-decoration:none;
-  padding:.4rem 1rem;
-  border-radius:20px;
-  display:block;
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  display: block;
 }
 
-.navbar a:hover,.navbar a.active{background:#007bff}
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background: #007bff;
+}
 
 /* Dropdown */
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:45px;
-  left:0;
-  background:#000;
-  width:200px;
-  border-radius:10px;
-  padding:10px 0;
-  z-index:1000;
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #000;
+  border-radius: 10px;
+  width: 180px;
+  z-index: 4000;
 }
 
-.dropdown-menu a{
-  display:block;
-  padding:10px 15px;
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
 }
 
-.dropdown-menu a:hover{background:#007bff}
+.dropdown-menu a:hover {
+  background: #007bff;
+}
 
 /* ================= PRODUCTS ================= */
-.products-section{
-  padding:140px 20px 60px;
-  text-align:center;
-}
-.products-section h2{
-  font-size:2.2rem;
-  margin-bottom:40px;
+.products-section {
+  padding: 140px 20px 60px;
+  text-align: center;
 }
 
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+.products-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
 }
 
-.product-card{
-  background:#fff;
-  border-radius:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transition:.3s;
-}
-.product-card:hover{transform:translateY(-6px)}
-
-.product-card img{
-  width:100%;
-  height:220px;
-  object-fit:contain;
-  background:#fff;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
-.product-info{
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  flex-grow:1;
-  justify-content:space-between;
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: .3s;
 }
 
-.product-info h3{
-  color:#007bff;
-  font-size:1.3rem;
-  margin-bottom:10px;
+.product-card:hover {
+  transform: translateY(-6px);
 }
 
-.product-info p{
-  font-size:.95rem;
-  color:#555;
-  flex-grow:1;
-  margin-bottom:15px;
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
 }
 
-.btn{
-  display:block;
-  width:100%;
-  text-align:center;
-  background:#007bff;
-  color:#fff;
-  padding:10px 0;
-  border-radius:25px;
-  text-decoration:none;
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-.btn:hover{background:#0056b3}
+
+.product-info h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: .95rem;
+  color: #555;
+  flex: 1;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 0;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
 
 /* ================= FOOTER ================= */
-footer{
-  background:#111;
-  color:#ddd;
-  padding:50px 20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:40px;
-  border-top:4px solid #007bff;
+footer {
+  background: #111;
+  color: #ddd;
+  padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+  border-top: 4px solid #007bff;
 }
-footer h3{color:#fff;margin-bottom:15px}
-footer p,footer a{color:#bbb;font-size:.95rem;text-decoration:none}
 
-.social-icons{
-  display:flex;
-  gap:15px;
-  margin-top:10px;
-}
-.social-icons a{
-  width:40px;
-  height:40px;
-  background:#222;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.social-icons a i{color:#bbb}
-.social-icons a:hover{background:#007bff}
-.social-icons a:hover i{color:#fff}
+.footer-section { max-width: 300px; }
 
-.footer-bottom{
-  background:#000;
-  color:#777;
-  text-align:center;
-  padding:15px;
+footer h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+footer p, footer a {
+  color: #bbb;
+  font-size: .95rem;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: #222;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a i { color: #bbb; }
+
+.social-icons a:hover {
+  background: #007bff;
+}
+
+.social-icons a:hover i {
+  color: #fff;
+}
+
+.footer-bottom {
+  background: #000;
+  color: #777;
+  text-align: center;
+  padding: 15px;
 }
 
 /* ================= MOBILE ================= */
-@media(max-width:768px){
-  .menu-toggle{display:block}
-  .navbar ul{
-    flex-direction:column;
-    width:100%;
-    display:none;
-    margin-top:10px;
+@media(max-width:768px) {
+  .menu-toggle { display: block; }
+
+  .navbar ul {
+    flex-direction: column;
+    display: none;
+    width: 92%;
+    background: rgba(0,0,0,0.95);
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 20px 0;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
   }
-  .navbar ul.show{display:flex}
-  .dropdown-menu{
-    position:relative;
-    width:100%;
-    top:0;
+
+  .navbar ul.show { display: flex; }
+
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
   }
-  .products-section{padding:120px 20px 50px}
+
+  .navbar ul li a {
+    padding: 12px 0;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 0;
+  }
 }
 </style>
 </head>
@@ -228,7 +286,7 @@ footer p,footer a{color:#bbb;font-size:.95rem;text-decoration:none}
         <a href="networking.html">Networking Devices</a>
         <a href="smartboards.html">Smart Boards</a>
         <a href="cctv.html">CCTV Cameras</a>
-        <a href="ac.html">Air-Conditioning</a>
+        <a href="ac.html">Air Conditioning</a>
       </div>
     </li>
 
@@ -250,83 +308,81 @@ footer p,footer a{color:#bbb;font-size:.95rem;text-decoration:none}
 
 <!-- ================= PRODUCTS ================= -->
 <section class="products-section">
-<h2>Our Featured Products</h2>
+<h2>CCTV Cameras</h2>
 
 <div class="product-grid">
 
-<div class="product-card">
-<img src="dahua bullet camera.jpg" alt="Dahua Bullet Camera">
-<div class="product-info">
-<h3>Dahua Bullet 2MP Camera</h3>
-<p>Perfect for outdoors with high night vision and a wide range of coverage.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
+  <div class="product-card">
+    <img src="dahua bullet camera.jpg" alt="Dahua Bullet Camera">
+    <div class="product-info">
+      <h3>Dahua Bullet 2MP Camera</h3>
+      <p>Perfect for outdoor surveillance with strong night vision and wide coverage.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
-<div class="product-card">
-<img src="hikvision 4mp dome camera.jpg" alt="Hikvision Dome Camera">
-<div class="product-info">
-<h3>Hikvision Dome Camera</h3>
-<p>Perfect for indoor use with excellent night vision quality and focused monitoring.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
+  <div class="product-card">
+    <img src="hikvision 4mp dome camera.jpg" alt="Hikvision Dome Camera">
+    <div class="product-info">
+      <h3>Hikvision Dome Camera</h3>
+      <p>Indoor dome camera offering clear night vision and discreet monitoring.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
-<div class="product-card">
-<img src="ezviz ip camera.jpg" alt="EZVIZ IP Camera">
-<div class="product-info">
-<h3>EZVIZ IP 4MP Camera</h3>
-<p>Ideal for indoor use, delivering high-quality video with remote access via the EZVIZ app.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
+  <div class="product-card">
+    <img src="ezviz ip camera.jpg" alt="EZVIZ IP Camera">
+    <div class="product-info">
+      <h3>EZVIZ IP 4MP Camera</h3>
+      <p>Smart IP camera with mobile access and cloud monitoring support.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
-<div class="product-card">
-<img src="dahua indoor.jpg" alt="Dahua Indoor Camera">
-<div class="product-info">
-<h3>Dahua Indoor 2MP Camera</h3>
-<p>Smart indoor camera with motion detection and clear video monitoring.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
+  <div class="product-card">
+    <img src="dahua indoor.jpg" alt="Dahua Indoor Camera">
+    <div class="product-info">
+      <h3>Dahua Indoor 2MP Camera</h3>
+      <p>Compact indoor camera with motion detection and sharp video quality.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
-<div class="product-card">
-<img src="hikbullet.jpg" alt="Hikvision Bullet Camera">
-<div class="product-info">
-<h3>Hikvision 2MP Bullet Camera</h3>
-<p>Reliable outdoor bullet camera offering sharp monitoring and remote access.</p>
-<a href="quote.html" class="btn">Request a Quote</a>
-</div>
-</div>
+  <div class="product-card">
+    <img src="hikbullet.jpg" alt="Hikvision Bullet Camera">
+    <div class="product-info">
+      <h3>Hikvision 2MP Bullet Camera</h3>
+      <p>Durable outdoor bullet camera designed for reliable 24/7 monitoring.</p>
+      <a href="quote.html" class="btn">Request a Quote</a>
+    </div>
+  </div>
 
 </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
-<div>
-<h3>Contact Us</h3>
-<p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-<p><strong>Email:</strong> info@airnetghana.com</p>
-</div>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
+    <p><strong>Email:</strong><br>info@airnetghana.com</p>
+  </div>
 
-<div>
-<h3>Our Locations</h3>
-<p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
-<p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
-</div>
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
+  </div>
 
-<div>
-<h3>About Airnet Ghana</h3>
-<p>Providing innovative IT, networking, and security solutions nationwide.</p>
-
-<h3>Follow Us</h3>
-<div class="social-icons">
-<a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
-<a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-<a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
-</div>
-</div>
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
 </footer>
 
 <div class="footer-bottom">
@@ -337,22 +393,32 @@ footer p,footer a{color:#bbb;font-size:.95rem;text-decoration:none}
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
+const productToggle = document.getElementById("productToggle");
+const productMenu = document.getElementById("productMenu");
+const aboutToggle = document.getElementById("aboutToggle");
+const aboutMenu = document.getElementById("aboutMenu");
+
 menuToggle.onclick = () => navMenu.classList.toggle("show");
 
-const productToggle=document.getElementById("productToggle");
-const productMenu=document.getElementById("productMenu");
-const aboutToggle=document.getElementById("aboutToggle");
-const aboutMenu=document.getElementById("aboutMenu");
+productToggle.onclick = e => {
+  e.stopPropagation();
+  productMenu.style.display =
+    productMenu.style.display === "block" ? "none" : "block";
+};
 
-productToggle.onclick=e=>{
+aboutToggle.onclick = e => {
   e.stopPropagation();
-  productMenu.style.display=productMenu.style.display==="block"?"none":"block";
+  aboutMenu.style.display =
+    aboutMenu.style.display === "block" ? "none" : "block";
 };
-aboutToggle.onclick=e=>{
-  e.stopPropagation();
-  aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
+
+document.onclick = e => {
+  if (!e.target.closest(".navbar")) {
+    productMenu.style.display = "none";
+    aboutMenu.style.display = "none";
+    navMenu.classList.remove("show");
+  }
 };
-document.onclick=()=>{productMenu.style.display="none";aboutMenu.style.display="none";}
 </script>
 
 </body>
