@@ -68,7 +68,6 @@ body{font-family:Arial,sans-serif;background:#f4f4f4}
 }
 .dropdown-menu a:hover{background:#007bff}
 
-/* Desktop hover */
 @media(min-width:769px){
   .dropdown:hover .dropdown-menu{display:block}
 }
@@ -125,6 +124,46 @@ footer{
   justify-content:space-around;
   gap:30px
 }
+
+.footer-section{
+  max-width:300px
+}
+
+.footer-section h3{
+  color:#fff;
+  margin-bottom:15px
+}
+
+.footer-section p{
+  line-height:1.7;
+  font-size:.95rem
+}
+
+.footer-section a{
+  color:#ddd;
+  text-decoration:none
+}
+
+.footer-section a:hover{
+  color:#007bff
+}
+
+.social-icons{
+  margin-top:15px;
+  display:flex;
+  gap:15px
+}
+
+.social-icons a{
+  color:#ddd;
+  font-size:22px;
+  transition:.3s
+}
+
+.social-icons a:hover{
+  color:#007bff
+}
+
 .footer-bottom{
   background:#000;
   text-align:center;
@@ -171,7 +210,7 @@ footer{
 <body>
 
 <nav class="navbar">
-  <div class="logo"><img src="airnet logo.png"></div>
+  <div class="logo"><img src="airnet logo.png" alt="Airnet Ghana"></div>
   <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
 
   <ul id="navMenu">
@@ -214,19 +253,44 @@ footer{
 </div>
 
 <div class="product-grid">
-  <div class="product-card"><img src="valuestek.png"></div>
-  <div class="product-card"><img src="samsung.jpg"></div>
-  <div class="product-card"><img src="LG.jpg"></div>
-  <div class="product-card"><img src="Dahua T.jpg"></div>
+  <div class="product-card"><img src="valuestek.png" alt="Valuestek"></div>
+  <div class="product-card"><img src="samsung.jpg" alt="Samsung"></div>
+  <div class="product-card"><img src="LG.jpg" alt="LG"></div>
+  <div class="product-card"><img src="Dahua T.jpg" alt="Dahua"></div>
 </div>
 
 <footer>
-  <div>
-    <h3>Contact</h3>
-    <p>+233 2433 45504</p>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>
+      +233 2433 45504<br>
+      +233 20630 0038
+    </p>
+    <p><strong>Email:</strong><br>
+      <a href="mailto:info@airnetghana.com">info@airnetghana.com</a>
+    </p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong><br>Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong><br>Opposite King David Hotel</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions across Ghana.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
   </div>
 </footer>
-<div class="footer-bottom">© 2025 Airnet Ghana</div>
+
+<div class="footer-bottom">
+  © 2025 Airnet Ghana. All rights reserved.
+</div>
 
 <script>
 const menuToggle=document.getElementById("menuToggle");
