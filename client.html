@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Clients | Airnet Ghana</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f4f4f4}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:1200px;
+  background:rgba(0,0,0,.95);
+  border-radius:20px;
+  padding:.7rem 1.5rem;
+  z-index:3000;
+  box-shadow:0 4px 15px rgba(0,0,0,.4)
+}
+.logo img{height:40px}
+
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer
+}
+
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:1.3rem
+}
+.navbar li{position:relative}
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  padding:.4rem 1rem;
+  border-radius:20px
+}
+.navbar a:hover,
+.navbar a.active{background:#007bff}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:45px;
+  left:0;
+  background:#000;
+  width:200px;
+  border-radius:12px;
+  overflow:hidden
+}
+.dropdown-menu a{
+  display:block;
+  padding:10px 15px
+}
+.dropdown-menu a:hover{background:#007bff}
+
+@media(min-width:769px){
+  .dropdown:hover .dropdown-menu{display:block}
+}
+
+/* ================= HEADER ================= */
+.header{
+  position:relative;
+  height:380px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  overflow:hidden;
+}
+
+.header img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.35);
+  z-index:1;
+}
+
+.header h1{
+  position:relative;
+  z-index:2;
+  font-size:3.2rem;
+}
+
+/* ================= CLIENTS ================= */
+.clients-section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+  text-align:center
+}
+
+.clients-section h2{margin-bottom:15px}
+.clients-section p{margin-bottom:40px;color:#555}
+
+.client-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px
+}
+
+.client-card{
+  background:#fff;
+  border-radius:15px;
+  padding:30px;
+  min-height:160px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s
+}
+
+.client-card img{
+  max-width:180px;
+  max-height:120px;
+  width:100%;
+  height:auto;
+  object-fit:contain
+}
+
+.client-card:hover{
+  transform:translateY(-6px)
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ddd;
+  padding:50px 20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  gap:30px
+}
+
+.footer-section{max-width:300px}
+
+.footer-section h3{
+  color:#fff;
+  margin-bottom:15px
+}
+
+.footer-section p{
+  line-height:1.7;
+  font-size:.95rem
+}
+
+.footer-section a{
+  color:#ddd;
+  text-decoration:none
+}
+
+.footer-section a:hover{
+  color:#007bff
+}
+
+.social-icons{
+  margin-top:15px;
+  display:flex;
+  gap:15px
+}
+
+.social-icons a{
+  color:#ddd;
+  font-size:22px;
+  transition:.3s
+}
+
+.social-icons a:hover{
+  color:#007bff
+}
+
+.footer-bottom{
+  background:#000;
+  text-align:center;
+  padding:15px;
+  color:#777
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+.client-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:768px){
+.menu-toggle{display:block}
+
+.navbar ul{
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  background:#000;
+  border-radius:20px;
+  padding:20px 0
+}
+.navbar ul.show{display:flex}
+
+.dropdown-menu{
+  position:static;
+  width:100%;
+  background:transparent
+}
+
+.client-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:500px){
+.client-grid{grid-template-columns:1fr}
+.header h1{font-size:2rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="airnet.png" alt="Airnet Ghana">
+  </div>
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a id="productsDropdown">Products ▾</a>
+      <div class="dropdown-menu">
+        <a href="#">Mobile Phones</a>
+        <a href="#">Networking</a>
+        <a href="#">Smart Boards</a>
+        <a href="#">CCTV</a>
+        <a href="#">Air Conditioning</a>
+      </div>
+    </li>
+
+    <li><a href="service.html">Services</a></li>
+
+    <li class="dropdown">
+      <a id="aboutDropdown">About Us ▾</a>
+      <div class="dropdown-menu">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="why.html">Why Choose Us</a>
+        <a href="clients.html" class="active">Clients</a>
+        <a href="partners.html">Partners</a>
+        <a href="team.html">Our Team</a>
+      </div>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="client.jpg" alt="Our Clients Background">
+  <h1>Our Clients</h1>
+</div>
+
+<!-- CLIENTS -->
+<section class="clients-section">
+  <h2>Trusted by Leading Organizations</h2>
+  <p>We are proud to work with businesses, institutions, and organizations across Ghana.</p>
+
+  <div class="client-grid">
+    <div class="client-card"><img src="fibrain.png" alt="Fibrain"></div>
+    <div class="client-card"><img src="cargill.png" alt="Cargill"></div>
+    <div class="client-card"><img src="upsa.png" alt="UPSA"></div>
+    <div class="client-card"><img src="KAIPTC.png" alt="KAIPTC"></div>
+    <div class="client-card"><img src="ghana rubber.png" alt="Ghana Rubber"></div>
+    <div class="client-card"><img src="MANET.png" alt="MANET"></div>
+    <div class="client-card"><img src="KASAPREKO.png" alt="Kasapreko"></div>
+    <div class="client-card"><img src="tesla.png" alt="Tesla"></div>
+    <div class="client-card"><img src="bond.jfif" alt="Bond"></div>
+    <div class="client-card"><img src="TIS.jfif" alt="TIS"></div>
+    <div class="client-card"><img src="TSL.jfif" alt="TSL"></div>
+    <div class="client-card"><img src="AIRTEL.png" alt="Airtel"></div>
+    <div class="client-card"><img src="TASTYTOM.png" alt="Tasty Tom"></div>
+    <div class="client-card"><img src="underground_mining_services_logo.jfif" alt="Underground Mining Services"></div>
+    <div class="client-card"><img src="atlantic_group.jpg" alt="Atlantic Group"></div>
+    <div class="client-card"><img src="ams.png" alt="AMS"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>
+      +233 2433 45504<br>
+      +233 20630 0038
+    </p>
+    <p><strong>Email:</strong><br>
+      <a href="mailto:info@airnetghana.com">info@airnetghana.com</a>
+    </p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong><br>Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong><br>Opposite King David Hotel</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions across Ghana.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2025 Airnet Ghana. All rights reserved.
+</div>
+
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+const products=document.getElementById("productsDropdown");
+const about=document.getElementById("aboutDropdown");
+
+menuToggle.onclick=e=>{
+  e.stopPropagation();
+  navMenu.classList.toggle("show");
+};
+
+products.onclick=e=>{
+  e.stopPropagation();
+  products.nextElementSibling.style.display =
+    products.nextElementSibling.style.display==="block"?"none":"block";
+};
+
+about.onclick=e=>{
+  e.stopPropagation();
+  about.nextElementSibling.style.display =
+    about.nextElementSibling.style.display==="block"?"none":"block";
+};
+
+document.onclick=()=>{
+  navMenu.classList.remove("show");
+  document.querySelectorAll(".dropdown-menu").forEach(m=>m.style.display="none");
+};
+</script>
+
+</body>
+</html>
