@@ -1,89 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Airnet Ghana - Products</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#fff;}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fff; }
 
 /* ================= NAVBAR ================= */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:fixed;
-  top:1rem;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:1200px;
-  background:rgba(0,0,0,0.95);
-  border-radius:20px;
-  padding:0.7rem 1.5rem;
-  z-index:1000;
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
+  width: 90%; max-width: 1200px;
+  background: rgba(0,0,0,0.95); border-radius: 20px; padding: 0.7rem 1.5rem;
+  z-index: 1000;
 }
 
-.logo img{height:40px;}
-.menu-toggle{display:none;font-size:26px;color:#fff;cursor:pointer;}
-.navbar ul{list-style:none;display:flex;gap:1rem;}
-.navbar li{position:relative;}
-.navbar a{color:#fff;text-decoration:none;padding:0.4rem 1rem;border-radius:20px;display:block;}
-.navbar a:hover,.navbar a.active{background:#007bff;}
+.logo img { height: 40px; }
+.menu-toggle { display: none; font-size: 26px; color: #fff; cursor: pointer; }
+.navbar ul { list-style: none; display: flex; gap: 1rem; }
+.navbar li { position: relative; }
+.navbar a { color: #fff; text-decoration: none; padding: 0.4rem 1rem; border-radius: 20px; display: block; }
+.navbar a:hover, .navbar a.active { background: #007bff; }
 
 /* Dropdown */
-.dropdown-menu{display:none;position:absolute;top:45px;left:0;background:#000;width:200px;border-radius:12px;overflow:hidden;}
-.dropdown-menu a{display:block;padding:10px 15px;}
-.dropdown-menu a:hover{background:#007bff;}
+.dropdown-menu { display: none; position: absolute; top: 45px; left: 0; background: #000; width: 200px; border-radius: 12px; overflow: hidden; }
+.dropdown-menu a { display: block; padding: 10px 15px; }
+.dropdown-menu a:hover { background: #007bff; }
 
 /* ================= MOBILE NAVBAR ================= */
 @media(max-width:768px){
-  .menu-toggle{display:block;}
-  .navbar ul{display:none;flex-direction:column;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:90%;background:#000;border-radius:20px;padding:10px 0;gap:0;text-align:center;}
-  .navbar ul.show{display:flex;}
-  .navbar li{width:100%;}
-  .navbar a{padding:12px;width:100%;}
-  .dropdown-menu{position:static;width:100%;background:#111;border-radius:10px;margin-top:5px;}
+  .menu-toggle { display: block; }
+  .navbar ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 90%; background: #000; border-radius: 20px; padding: 10px 0; gap: 0; text-align: center; }
+  .navbar ul.show { display: flex; }
+  .navbar li { width: 100%; }
+  .navbar a { padding: 12px; width: 100%; }
+  .dropdown-menu { position: static; width: 100%; background: #111; border-radius: 10px; margin-top: 5px; }
 }
 
 /* ================= PRODUCTS ================= */
-.products-section{
-  padding:140px 20px 60px;
-  text-align:center;
+.products-section { padding: 140px 20px 60px; text-align: center; }
+.products-section h2 { font-size: 2rem; margin-bottom: 30px; }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
 }
-.products-section h2{font-size:2rem;margin-bottom:30px;}
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:25px;
-  max-width:1200px;
-  margin:auto;
-}
-@media(max-width:1024px){.product-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.product-grid{grid-template-columns:1fr;}}
-.product-card{background:#fff;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);overflow:hidden;transition:0.3s;}
-.product-card:hover{transform:translateY(-6px);}
-.product-card img{width:100%;height:200px;object-fit:contain;padding:15px;}
-.product-info{padding:20px;text-align:left;}
-.product-info h3{color:#007bff;margin-bottom:10px;}
-.product-info p{font-size:0.95rem;color:#555;margin-bottom:15px;}
-.btn{display:inline-block;background:#007bff;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;font-size:14px;}
-.btn:hover{background:#0056b3;}
+@media(max-width:1024px) { .product-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:600px) { .product-grid { grid-template-columns: 1fr; } }
+
+.product-card { background: #fff; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; transition: 0.3s; }
+.product-card:hover { transform: translateY(-6px); }
+.product-card img { width: 100%; height: 200px; object-fit: contain; padding: 15px; }
+.product-info { padding: 20px; text-align: left; }
+.product-info h3 { color: #007bff; margin-bottom: 10px; }
+.product-info p { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
+.btn { display: inline-block; background: #007bff; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 14px; }
+.btn:hover { background: #0056b3; }
 
 /* ================= FOOTER ================= */
-footer{
-  background:#111;color:#ddd;padding:40px 20px;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;
-}
-.footer-section{max-width:300px;}
-footer h3{color:#fff;margin-bottom:15px;}
-footer p{line-height:1.6;}
-.social-icons{display:flex;gap:15px;}
-.social-icons i{font-size:20px;color:#bbb;}
-.footer-bottom{background:#000;color:#777;text-align:center;padding:15px;}
+footer { background: #111; color: #ddd; padding: 40px 20px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-around; }
+.footer-section { max-width: 300px; }
+footer h3 { color: #fff; margin-bottom: 15px; }
+footer p { line-height: 1.6; }
+.social-icons { display: flex; gap: 15px; }
+.social-icons i { font-size: 20px; color: #bbb; }
+.footer-bottom { background: #000; color: #777; text-align: center; padding: 15px; }
+
 </style>
 </head>
 
@@ -95,7 +85,6 @@ footer p{line-height:1.6;}
   <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
   <ul id="navMenu">
     <li><a href="index.html">Home</a></li>
-
     <li class="dropdown">
       <a href="#" id="productToggle">Products ▾</a>
       <div class="dropdown-menu" id="productMenu">
@@ -106,9 +95,7 @@ footer p{line-height:1.6;}
         <a href="ac.html">Air Conditioning</a>
       </div>
     </li>
-
     <li><a href="service.html">Services</a></li>
-
     <li class="dropdown">
       <a href="#" id="aboutToggle">About Us ▾</a>
       <div class="dropdown-menu" id="aboutMenu">
@@ -119,65 +106,60 @@ footer p{line-height:1.6;}
         <a href="partners.html">Partners</a>
       </div>
     </li>
-
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
 </nav>
 
 <!-- PRODUCTS SECTION -->
 <section class="products-section">
-<h2>Our Featured Products</h2>
-<div class="product-grid">
+  <h2>Our Featured Products</h2>
+  <div class="product-grid">
+    <div class="product-card"><img src="headphones.jpg"><div class="product-info"><h3>Headphones</h3><p>High-quality headphones for clear sound and comfort.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="iphone charger.jpg"><div class="product-info"><h3>iPhone Charger</h3><p>Fast and reliable charging solution.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="type c andriod.jpg"><div class="product-info"><h3>Android Charger</h3><p>Durable and long-lasting Type-C charger.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="wireless.jpg"><div class="product-info"><h3>Wired & Wireless Mouse</h3><p>Ergonomic mouse options for smooth navigation.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="smart phones.jpg"><div class="product-info"><h3>Smartphones</h3><p>Affordable smartphones with modern features.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="phone case.webp"><div class="product-info"><h3>Phone Cases</h3><p>Stylish and protective phone cases.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+  </div>
 
-<!-- Featured Products -->
-<div class="product-card"><img src="headphones.jpg"><div class="product-info"><h3>Headphones</h3><p>High-quality headphones for clear sound and comfort.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="iphone charger.jpg"><div class="product-info"><h3>iPhone Charger</h3><p>Fast and reliable charging solution.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="type c andriod.jpg"><div class="product-info"><h3>Android Charger</h3><p>Durable and long-lasting Type-C charger.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="wireless.jpg"><div class="product-info"><h3>Wired & Wireless Mouse</h3><p>Ergonomic mouse options for smooth navigation.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="smart phones.jpg"><div class="product-info"><h3>Smartphones</h3><p>Affordable smartphones with modern features.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="phone case.webp"><div class="product-info"><h3>Phone Cases</h3><p>Stylish and protective phone cases.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-
-<!-- New Arrivals -->
-<h2 style="margin-top:60px;">New Arrivals</h2>
-<div class="product-grid">
-<div class="product-card"><img src="refrigerator.jpg"><div class="product-info"><h3>Refrigerator</h3><p>Energy-efficient refrigerator with modern cooling technology.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="keyboard.jpg"><div class="product-info"><h3>Keyboard</h3><p>Comfortable keyboard with full key distribution.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="64gig.jpg"><div class="product-info"><h3>Sandisk 64GB Flash Drive</h3><p>Reliable high-speed portable storage.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="PHILIPS BLUETOOTH SPEAKER.jpg"><div class="product-info"><h3>Philips Bluetooth Speaker</h3><p>Portable speaker with excellent sound quality.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="LAPTOPS.jpg"><div class="product-info"><h3>Laptops</h3><p>High-performance laptops for work and entertainment.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="infinix X watch H4.jpg"><div class="product-info"><h3>Infinix X Watch H4</h3><p>Smartwatch with advanced health monitoring features.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="VOIP PHONES.jpg"><div class="product-info"><h3>VOIP Phones</h3><p>Professional VOIP phones for business communication.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="western blue 500gb.jpg"><div class="product-info"><h3>Western Blue 500GB</h3><p>Reliable high-speed portable storage.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-<div class="product-card"><img src="Western Digital 1TB.jpg"><div class="product-info"><h3>Western Digital 1TB</h3><p>Reliable high-speed portable Large storage.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
-</div>
-</div>
+  <h2 style="margin-top:60px;">New Arrivals</h2>
+  <div class="product-grid">
+    <div class="product-card"><img src="refrigerator.jpg"><div class="product-info"><h3>Refrigerator</h3><p>Energy-efficient refrigerator with modern cooling technology.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="keyboard.jpg"><div class="product-info"><h3>Keyboard</h3><p>Comfortable keyboard with full key distribution.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="64gig.jpg"><div class="product-info"><h3>Sandisk 64GB Flash Drive</h3><p>Reliable high-speed portable storage.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="PHILIPS BLUETOOTH SPEAKER.jpg"><div class="product-info"><h3>Philips Bluetooth Speaker</h3><p>Portable speaker with excellent sound quality.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="LAPTOPS.jpg"><div class="product-info"><h3>Laptops</h3><p>High-performance laptops for work and entertainment.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="infinix X watch H4.jpg"><div class="product-info"><h3>Infinix X Watch H4</h3><p>Smartwatch with advanced health monitoring features.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="VOIP PHONES.jpg"><div class="product-info"><h3>VOIP Phones</h3><p>Professional VOIP phones for business communication.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="western blue 500gb.jpg"><div class="product-info"><h3>Western Blue 500GB</h3><p>Reliable high-speed portable storage.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+    <div class="product-card"><img src="Western Digital 1TB.jpg"><div class="product-info"><h3>Western Digital 1TB</h3><p>Reliable high-speed portable large storage.</p><a href="quote.html" class="btn">Request a Quote</a></div></div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<div class="footer-section">
-<h3>Contact Us</h3>
-<p>+233 2433 45504<br>+233 20630 0038</p>
-<p>Email: info@airnetghana.com</p>
-</div>
-<div class="footer-section">
-<h3>Our Locations</h3>
-<p>Pokuase – Near Lorry Station</p>
-<p>Kokomlemle – Opposite King David Hotel</p>
-</div>
-<div class="footer-section">
-<h3>About Airnet Ghana</h3>
-<p>Providing innovative IT, networking, and security solutions nationwide.</p>
-<div class="social-icons">
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-linkedin"></i></a>
-<a href="#"><i class="fab fa-tiktok"></i></a>
-</div>
-</div>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p>+233 2433 45504<br>+233 20630 0038</p>
+    <p>Email: info@airnetghana.com</p>
+  </div>
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p>Pokuase – Near Lorry Station</p>
+    <p>Kokomlemle – Opposite King David Hotel</p>
+  </div>
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
 </footer>
 <div class="footer-bottom">© 2025 Airnet Ghana. All rights reserved.</div>
 
-<!-- SCRIPT -->
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
