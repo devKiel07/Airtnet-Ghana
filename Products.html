@@ -5,143 +5,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Airnet Ghana - Navbar</title>
 
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f4f4f4;
 }
 
-/* ---------------- NAVBAR ---------------- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92%;
-  max-width: 1200px;
-  background: rgba(0,0,0,0.95);
-  border-radius: 20px;
-  padding: 10px 20px;
-  z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:1200px;
+  background:rgba(0,0,0,.95);
+  border-radius:20px;
+  padding:10px 20px;
+  z-index:3000;
+  box-shadow:0 4px 15px rgba(0,0,0,.4)
 }
 
-.logo img {
-  height: 40px;
+.logo img{height:40px}
+
+/* Hamburger */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  color:#fff;
+  cursor:pointer
 }
 
-/* -------- HAMBURGER -------- */
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  color: #fff;
-  cursor: pointer;
+/* Desktop Menu */
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:1.3rem
 }
 
-/* -------- DESKTOP MENU -------- */
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.3rem;
-  margin: 0;
-  padding: 0;
+.navbar li{position:relative}
+
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:20px;
+  display:block
 }
 
-.navbar ul li {
-  position: relative;
+.navbar a:hover,
+.navbar a.active{background:#007bff}
+
+/* Dropdown */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:45px;
+  left:0;
+  background:#000;
+  width:200px;
+  border-radius:12px;
+  overflow:hidden;
+  z-index:4000
 }
 
-.navbar ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  padding: 8px 14px;
-  border-radius: 20px;
-  display: block;
-  transition: 0.2s;
+.dropdown-menu a{
+  padding:10px 15px
 }
 
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  background-color: #007bff;
+.dropdown-menu a:hover{background:#007bff}
+
+/* Desktop hover */
+@media(min-width:769px){
+  .dropdown:hover .dropdown-menu{
+    display:block
+  }
 }
 
-/* ---------------- DROPDOWN ---------------- */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 200px;
-  background: #000;
-  border-radius: 12px;
-  padding: 10px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 2000;
-}
+/* ================= MOBILE ================= */
+@media(max-width:768px){
 
-.dropdown-menu a {
-  display: block;
-  padding: 10px 15px;
-  color: #fff;
-  text-decoration: none;
-}
+  .menu-toggle{display:block}
 
-.dropdown-menu a:hover {
-  background: #007bff;
-}
-
-/* ---------------- MOBILE ---------------- */
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
+  .navbar ul{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    background:#000;
+    border-radius:20px;
+    padding:15px 0;
+    text-align:center
   }
 
-  /* hide desktop menu */
-  .navbar ul {
-    display: none;
+  .navbar ul.show{display:flex}
+
+  .navbar li{width:100%}
+
+  .navbar a{
+    padding:12px;
+    width:100%
   }
 
-  /* centered mobile menu */
-  .navbar ul.show {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 75px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    background: rgba(0,0,0,0.95);
-    border-radius: 20px;
-    padding: 12px 0;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .navbar ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar ul li a {
-    padding: 12px;
-  }
-
-  /* mobile dropdown fix */
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 10px;
+  /* Mobile dropdowns */
+  .dropdown-menu{
+    position:static;
+    width:100%;
+    background:#111;
+    border-radius:10px;
+    margin-top:5px;
+    display:none
   }
 }
 </style>
@@ -149,10 +131,9 @@ body {
 
 <body>
 
-<!-- ---------------- NAVBAR ---------------- -->
 <nav class="navbar">
   <div class="logo">
-    <img src="airnet logo.png" alt="Airnet Ghana Logo">
+    <img src="airnet logo.png" alt="Airnet Ghana">
   </div>
 
   <div class="menu-toggle" id="menuToggle">
@@ -180,6 +161,7 @@ body {
       <div class="dropdown-menu" id="aboutMenu">
         <a href="portfolio.html">Portfolio</a>
         <a href="Reason.html">Why Choose Us</a>
+        <a href="client.html">Clients</a>
         <a href="team.html">Our Team</a>
         <a href="partners.html">Partners</a>
       </div>
@@ -189,45 +171,43 @@ body {
   </ul>
 </nav>
 
-<!-- ---------------- SCRIPT ---------------- -->
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
-
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
-});
-
-/* dropdowns */
 const productToggle = document.getElementById("productToggle");
 const productMenu = document.getElementById("productMenu");
 const aboutToggle = document.getElementById("aboutToggle");
 const aboutMenu = document.getElementById("aboutMenu");
 
-productToggle.addEventListener("click", e => {
+/* Mobile menu */
+menuToggle.onclick = e => {
+  e.stopPropagation();
+  navMenu.classList.toggle("show");
+};
+
+/* Mobile dropdowns */
+productToggle.onclick = e => {
   e.preventDefault();
   e.stopPropagation();
   productMenu.style.display =
     productMenu.style.display === "block" ? "none" : "block";
   aboutMenu.style.display = "none";
-});
+};
 
-aboutToggle.addEventListener("click", e => {
+aboutToggle.onclick = e => {
   e.preventDefault();
   e.stopPropagation();
   aboutMenu.style.display =
     aboutMenu.style.display === "block" ? "none" : "block";
   productMenu.style.display = "none";
-});
+};
 
-/* close menus when clicking outside */
-document.addEventListener("click", e => {
-  if (!e.target.closest(".navbar")) {
-    navMenu.classList.remove("show");
-    productMenu.style.display = "none";
-    aboutMenu.style.display = "none";
-  }
-});
+/* Close everything */
+document.onclick = () => {
+  navMenu.classList.remove("show");
+  productMenu.style.display = "none";
+  aboutMenu.style.display = "none";
+};
 </script>
 
 </body>
