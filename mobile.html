@@ -8,166 +8,205 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-* { box-sizing: border-box; margin:0; padding:0; }
-body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#fff; }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:#fff;
+}
 
 /* ================= NAVBAR ================= */
-.navbar {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92%;
-  max-width: 1200px;
-  background: rgba(0,0,0,0.95);
-  border-radius: 20px;
-  padding: 0.7rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 3000;
-  flex-wrap: wrap;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:1rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:1200px;
+  background:rgba(0,0,0,0.95);
+  border-radius:20px;
+  padding:0.7rem 1.5rem;
+  z-index:1000;
 }
 
-.navbar .logo img { height: 40px; }
-
-.menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; }
-
-/* Desktop menu */
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.3rem;
-  flex-wrap: wrap;
+.logo img{
+  height:40px;
 }
 
-.navbar ul li { position: relative; }
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  display: block;
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
 }
 
-.navbar ul li a:hover,
-.navbar ul li a.active { background:#007bff; }
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  padding:0.4rem 1rem;
+  border-radius:20px;
+}
+
+.navbar a:hover,
+.navbar a.active{
+  background:#007bff;
+}
+
+.navbar li{
+  position:relative;
+}
 
 /* Dropdown */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  background: #000;
-  border-radius: 10px;
-  width: 180px;
-  z-index: 4000;
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:45px;
+  left:0;
+  background:#000;
+  width:200px;
+  border-radius:12px;
+  overflow:hidden;
 }
 
-.dropdown-menu a { display:block; padding:10px 15px; color:#fff; }
-.dropdown-menu a:hover { background:#007bff; }
+.dropdown-menu a{
+  display:block;
+  padding:10px 15px;
+}
+
+.dropdown-menu a:hover{
+  background:#007bff;
+}
 
 /* ================= PRODUCTS ================= */
-.products-section { padding:140px 20px 60px; text-align:center; }
-.products-section h2 { font-size:2rem; margin-bottom:30px; }
-
-.product-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+.products-section{
+  padding:140px 20px 60px;
+  text-align:center;
 }
 
-.product-card {
+.products-section h2{
+  font-size:2rem;
+  margin-bottom:30px;
+}
+
+/* === 3 PRODUCTS PER ROW === */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* Tablet */
+@media(max-width:1024px){
+  .product-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+.product-card{
   background:#fff;
   border-radius:15px;
   box-shadow:0 4px 12px rgba(0,0,0,0.1);
   overflow:hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  transition:0.3s;
 }
 
-.product-card img { width:100%; height:200px; object-fit:contain; }
-.product-info { padding:20px; text-align:left; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
-.product-info h3 { color:#007bff; }
-.product-info p { font-size:0.95rem; color:#555; margin:10px 0; }
+.product-card:hover{
+  transform:translateY(-6px);
+}
 
-.btn {
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  background:#ffffff;
+  padding:15px;
+}
+
+
+.product-info{
+  padding:20px;
+  text-align:left;
+}
+
+.product-info h3{
+  color:#007bff;
+  margin-bottom:10px;
+}
+
+.product-info p{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:15px;
+}
+
+.btn{
   display:inline-block;
   background:#007bff;
   color:#fff;
   padding:10px 20px;
   border-radius:25px;
   text-decoration:none;
-  text-align:center;
-  margin-top: auto;
+  font-size:14px;
 }
-.btn:hover { background:#0056b3; }
+
+.btn:hover{
+  background:#0056b3;
+}
 
 /* ================= FOOTER ================= */
-footer {
+footer{
   background:#111;
   color:#ddd;
   padding:40px 20px;
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
   gap:30px;
-  text-align:center;
-  border-top:4px solid #007bff;
+  justify-content:space-around;
 }
-footer h3 { color:#fff; margin-bottom:15px; }
-footer p, footer a { color:#bbb; line-height:1.6; text-decoration:none; }
 
-.social-icons {
+.footer-section{
+  max-width:300px;
+}
+
+footer h3{
+  color:#fff;
+  margin-bottom:15px;
+}
+
+footer p{
+  line-height:1.6;
+}
+
+.social-icons{
   display:flex;
-  justify-content:center;
   gap:15px;
-  margin-top:10px;
 }
 
-.footer-bottom { background:#000; color:#777; text-align:center; padding:15px; }
+.social-icons i{
+  font-size:20px;
+  color:#bbb;
+}
 
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  .menu-toggle { display:block; }
-
-  .navbar ul {
-    flex-direction: column;
-    display: none;
-    width: 92%;
-    background: rgba(0,0,0,0.95);
-    border-radius: 20px;
-    margin-top: 10px;
-    padding: 20px 0;
-    gap: 0;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3000;
-  }
-
-  .navbar ul.show { display: flex; }
-
-  .navbar ul li { width: 100%; text-align:center; }
-  .navbar ul li a { padding: 12px 0; }
-
-  .dropdown-menu {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: transparent;
-    box-shadow: none;
-    text-align:center;
-  }
-
-  .dropdown-menu a { padding: 10px 0; }
-
-  .products-section h2 { font-size:1.7rem; }
-  .product-card img { height:170px; }
+.footer-bottom{
+  background:#000;
+  color:#777;
+  text-align:center;
+  padding:15px;
 }
 </style>
 </head>
@@ -179,22 +218,17 @@ footer p, footer a { color:#bbb; line-height:1.6; text-decoration:none; }
   <div class="logo">
     <img src="airnet logo.png" alt="Airnet Ghana">
   </div>
-
-  <div class="menu-toggle" id="menuToggle">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <ul id="navMenu">
+  <ul>
     <li><a href="index.html">Home</a></li>
 
     <li>
       <a id="productToggle" class="active">Products ▾</a>
       <div class="dropdown-menu" id="productMenu">
-        <a href="mobile.html">Mobile Phones & Accessories</a>
+        <a href="mobile.html">Mobile Phones</a>
         <a href="networking.html">Networking Devices</a>
         <a href="smartboards.html">Smart Boards</a>
-        <a href="cctv.html">CCTV Cameras</a>
-        <a href="ac.html">Air-Conditioning</a>
+        <a href="cctv.html">CCTV</a>
+        <a href="ac.html">Air Conditioning</a>
       </div>
     </li>
 
@@ -205,7 +239,7 @@ footer p, footer a { color:#bbb; line-height:1.6; text-decoration:none; }
       <div class="dropdown-menu" id="aboutMenu">
         <a href="portfolio.html">Portfolio</a>
         <a href="Reason.html">Why Choose Us</a>
-                <a href="client.html">Client</a>
+             <a href="client.html">Clients</a>
         <a href="team.html">Our Team</a>
         <a href="partners.html">Partners</a>
       </div>
@@ -218,144 +252,199 @@ footer p, footer a { color:#bbb; line-height:1.6; text-decoration:none; }
 <!-- PRODUCTS -->
 <section class="products-section">
 <h2>Our Featured Products</h2>
+
 <div class="product-grid">
-  <!-- Product Cards -->
-  <div class="product-card">
-    <img src="headphones.jpg" alt="Headphones">
-    <div class="product-info">
-      <h3>Headphones</h3>
-      <p>High-performance headphones for fast and reliable connectivity.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
 
-  <div class="product-card">
-    <img src="iphone charger.jpg" alt="iPhone Charger">
-    <div class="product-info">
-      <h3>IPhone Charger</h3>
-      <p>Reliable and fast battery chargers.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="type c andriod.jpg" alt="Android Charger">
-    <div class="product-info">
-      <h3>Android Charger</h3>
-      <p>Affordable and reliable charger that lasts long.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="wireless.jpg" alt="Wired & Wireless Mouse">
-    <div class="product-info">
-      <h3>Wired & Wireless Mouse</h3>
-      <p>Durable and ergonomic mouse options for all computing needs.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="smart phones.jpg" alt="Smart Phones">
-    <div class="product-info">
-      <h3>Smart Phones</h3>
-      <p>Affordable and high-quality smartphones for all uses.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="phone case.webp" alt="Phone Cases">
-    <div class="product-info">
-      <h3>Phone Cases</h3>
-      <p>Durable and affordable phone cases that last long.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
+<div class="product-card">
+<img src="headphones.jpg">
+<div class="product-info">
+<h3>Headphones</h3>
+<p>High-quality headphones for clear sound and comfort.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
 </div>
 
-<h2 style="margin-top:50px;">New Arrivals</h2>
-<div class="product-grid">
-  <div class="product-card">
-    <img src="videobar.webp" alt="Videobar">
-    <div class="product-info">
-      <h3>Videobar</h3>
-      <p>4K camera + wireless MIC + speakers for smart conferencing.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
+<div class="product-card">
+<img src="iphone charger.jpg">
+<div class="product-info">
+<h3>iPhone Charger</h3>
+<p>Fast and reliable charging solution.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="wirelessmic.webp" alt="Wireless Mic">
-    <div class="product-info">
-      <h3>Wireless Mic</h3>
-      <p>Omnidirectional microphone with noise reduction.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
+<div class="product-card">
+<img src="type c andriod.jpg">
+<div class="product-info">
+<h3>Android Charger</h3>
+<p>Durable and long-lasting Type-C charger.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="wireless.jpg">
+<div class="product-info">
+<h3>Wired & Wireless Mouse</h3>
+<p>Ergonomic mouse options for smooth navigation.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="smart phones.jpg">
+<div class="product-info">
+<h3>Smartphones</h3>
+<p>Affordable smartphones with modern features.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="phone case.webp">
+<div class="product-info">
+<h3>Phone Cases</h3>
+<p>Stylish and protective phone cases.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+</div>
+
+<h2 style="margin-top:60px;">New Arrivals</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="refrigerator.jpg">
+<div class="product-info">
+<h3>Refrigerator</h3>
+<p>Energy-efficient refrigerator with modern cooling technology.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="keyboard.jpg">
+<div class="product-info">
+<h3>Keyboard</h3>
+<p>Comfortable keyboard with full key distribution.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="64gig.jpg">
+<div class="product-info">
+<h3>Sandisk 64GB Flash Drive</h3>
+<p>Reliable high-speed portable storage.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+<div class="product-card">
+<img src="PHILIPS BLUETOOTH SPEAKER.jpg">
+<div class="product-info">
+<h3>Philips Bluetooth Speaker</h3>
+<p>Portable speaker with excellent sound quality.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+<div class="product-card">
+<img src="LAPTOPS.jpg">
+<div class="product-info">
+<h3>Laptops</h3>
+<p>High-performance laptops for work and entertainment.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+<div class="product-card">
+<img src="infinix X watch H4.jpg">
+<div class="product-info">
+<h3>Infinix X Watch H4</h3>
+<p>Smartwatch with advanced health monitoring features.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+<div class="product-card">
+<img src="VOIP PHONES.jpg">
+<div class="product-info">
+<h3>VOIP Phones</h3>
+<p>Professional VOIP phones for business communication.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+<div class="product-card">
+<img src="western blue 500gb.jpg">
+<div class="product-info">
+<h3>Western Blue 500GB</h3>
+<p>Reliable high-speed portable storage.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+<div class="product-card">
+<img src="Western Digital 1TB.jpg">
+<div class="product-info">
+<h3>Western Digital 1TB</h3>
+<p>Reliable high-speed portable Large storage.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+
+
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-section">
-    <h3>Contact Us</h3>
-    <p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-    <p><strong>Email:</strong> info@airnetghana.com</p>
-  </div>
+<div class="footer-section">
+<h3>Contact Us</h3>
+<p>+233 2433 45504<br>+233 20630 0038</p>
+<p>Email: info@airnetghana.com</p>
+</div>
 
-  <div class="footer-section">
-    <h3>Our Locations</h3>
-    <p>Pokuase – Near Lorry Station</p>
-    <p>Kokomlemle – Opposite King David Hotel</p>
-  </div>
+<div class="footer-section">
+<h3>Our Locations</h3>
+<p>Pokuase – Near Lorry Station</p>
+<p>Kokomlemle – Opposite King David Hotel</p>
+</div>
 
-  <div class="footer-section">
-    <h3>About Airnet Ghana</h3>
-    <p>Providing innovative IT, networking, and security solutions nationwide.</p>
-    <div class="social-icons">
-      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
+<div class="footer-section">
+<h3>About Airnet Ghana</h3>
+<p>Providing innovative IT, networking, and security solutions nationwide.</p>
+<div class="social-icons">
+ <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
       <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </div>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
 </footer>
 
 <div class="footer-bottom">
-  © 2025 Airnet Ghana. All rights reserved.
+© 2025 Airnet Ghana. All rights reserved.
 </div>
 
 <script>
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
-const productToggle = document.getElementById("productToggle");
-const productMenu = document.getElementById("productMenu");
-const aboutToggle = document.getElementById("aboutToggle");
-const aboutMenu = document.getElementById("aboutMenu");
+const productToggle=document.getElementById("productToggle");
+const productMenu=document.getElementById("productMenu");
+const aboutToggle=document.getElementById("aboutToggle");
+const aboutMenu=document.getElementById("aboutMenu");
 
-menuToggle.onclick = () => navMenu.classList.toggle("show");
-
-productToggle.onclick = e => {
-  e.stopPropagation();
-  productMenu.style.display = productMenu.style.display === "block" ? "none" : "block";
+productToggle.onclick=e=>{
+e.stopPropagation();
+productMenu.style.display=productMenu.style.display==="block"?"none":"block";
 };
 
-aboutToggle.onclick = e => {
-  e.stopPropagation();
-  aboutMenu.style.display = aboutMenu.style.display === "block" ? "none" : "block";
+aboutToggle.onclick=e=>{
+e.stopPropagation();
+aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
 };
 
-document.onclick = e => {
-  if (!e.target.closest(".navbar")) {
-    productMenu.style.display = "none";
-    aboutMenu.style.display = "none";
-    navMenu.classList.remove("show");
-  }
+document.onclick=()=>{
+productMenu.style.display="none";
+aboutMenu.style.display="none";
 };
 </script>
 
 </body>
 </html>
-
-
