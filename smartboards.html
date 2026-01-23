@@ -8,227 +8,234 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
-  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:#fff;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
 }
 
 /* ================= NAVBAR ================= */
-.navbar{
-  position:fixed;
-  top:10px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  max-width:1200px;
-  background:rgba(0,0,0,.95);
-  border-radius:20px;
-  padding:.7rem 1.5rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:3000;
-  box-shadow:0 4px 15px rgba(0,0,0,.4)
+.navbar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1200px;
+  background: rgba(0,0,0,.95);
+  border-radius: 20px;
+  padding: .7rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3000;
+  box-shadow: 0 4px 15px rgba(0,0,0,.4);
 }
 
-.logo img{height:40px}
+.logo img { height: 40px; }
 
-.menu-toggle{
-  display:none;
-  font-size:28px;
-  color:#fff;
-  cursor:pointer
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.navbar ul{
-  list-style:none;
-  display:flex;
-  gap:1.3rem
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
 }
 
-.navbar li{position:relative}
+.navbar li { position: relative; }
 
-.navbar a{
-  color:#fff;
-  text-decoration:none;
-  padding:.4rem 1rem;
-  border-radius:20px;
-  display:block
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: .4rem 1rem;
+  border-radius: 20px;
+  display: block;
 }
 
 .navbar a:hover,
-.navbar a.active{background:#007bff}
+.navbar a.active { background: #007bff; }
 
 /* ================= DROPDOWN ================= */
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:45px;
-  left:0;
-  background:#000;
-  width:200px;
-  border-radius:12px;
-  overflow:hidden;
-  z-index:4000
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #000;
+  width: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 4000;
 }
 
-.dropdown-menu a{padding:10px 15px}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+}
 
-.dropdown-menu a:hover{background:#007bff}
+.dropdown-menu a:hover { background: #007bff; }
 
-@media(min-width:769px){
-  .dropdown:hover .dropdown-menu{display:block}
+@media(min-width: 769px){
+  .dropdown:hover .dropdown-menu { display: block; }
 }
 
 /* ================= PRODUCTS ================= */
-.products-section{
-  padding:140px 20px 60px;
-  text-align:center
+.products-section {
+  padding: 140px 20px 60px;
+  text-align: center;
 }
 
-.products-section h2{
-  font-size:2.2rem;
-  margin-bottom:40px
+.products-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
 }
 
-.section-title{
-  margin:80px 0 40px
+.section-title {
+  margin: 80px 0 40px;
 }
 
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px
+/* GRID FIX: 3 PER ROW ON DESKTOP */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+  gap: 30px;
 }
 
-.product-card{
-  background:#fff;
-  border-radius:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
-  overflow:hidden;
-  transition:.3s;
-  display:flex;
-  flex-direction:column
+@media(max-width:1024px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.product-card:hover{transform:translateY(-8px)}
-
-.product-card img{
-  width:100%;
-  height:220px;
-  object-fit:contain
+@media(max-width:768px) {
+  .product-grid { grid-template-columns: 1fr; }
 }
 
-.product-info{
-  padding:20px;
-  flex:1
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  overflow: hidden;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
 }
 
-.product-info h3{
-  color:#007bff;
-  margin-bottom:10px
+.product-card:hover { transform: translateY(-8px); }
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
 }
 
-.product-info p{
-  font-size:.95rem;
-  color:#555
+.product-info {
+  padding: 20px;
+  flex: 1;
 }
 
-.btn{
-  display:block;
-  width:100%;
-  background:#007bff;
-  color:#fff;
-  padding:12px 0;
-  border-radius:25px;
-  text-decoration:none;
-  margin-top:15px
+.product-info h3 {
+  color: #007bff;
+  margin-bottom: 10px;
 }
 
-.btn:hover{background:#0056b3}
+.product-info p {
+  font-size: .95rem;
+  color: #555;
+}
 
+.btn {
+  display: block;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 0;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 15px;
+}
 
+.btn:hover { background: #0056b3; }
 
 /* ================= FOOTER ================= */
-footer{
-  background:#111;
-  color:#ddd;
-  padding:50px 20px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-around;
-  gap:30px
+footer {
+  background: #111;
+  color: #ddd;
+  padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
 }
 
-.footer-section{max-width:300px}
+.footer-section { max-width: 300px; }
 
-.footer-section h3{
-  color:#fff;
-  margin-bottom:15px
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 15px;
 }
 
-.footer-section p{
-  line-height:1.7;
-  font-size:.95rem
+.footer-section p {
+  line-height: 1.7;
+  font-size: .95rem;
 }
 
-.footer-section a{
-  color:#ddd;
-  text-decoration:none
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
 }
 
-.footer-section a:hover{
-  color:#007bff
+.footer-section a:hover { color: #007bff; }
+
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
 }
 
-.social-icons{
-  margin-top:15px;
-  display:flex;
-  gap:15px
+.social-icons a {
+  color: #ddd;
+  font-size: 22px;
+  transition: .3s;
 }
 
-.social-icons a{
-  color:#ddd;
-  font-size:22px;
-  transition:.3s
+.social-icons a:hover { color: #007bff; }
+
+.footer-bottom {
+  background: #000;
+  text-align: center;
+  padding: 15px;
+  color: #777;
 }
 
-.social-icons a:hover{
-  color:#007bff
-}
-
-.footer-bottom{
-  background:#000;
-  text-align:center;
-  padding:15px;
-  color:#777
-}
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-  .menu-toggle{display:block}
+  .menu-toggle { display: block; }
 
-  .navbar ul{
-    display:none;
-    flex-direction:column;
-    align-items:center;
-    position:absolute;
-    top:100%;
-    left:50%;
-    transform:translateX(-50%);
-    width:90%;
-    background:#000;
-    border-radius:20px;
-    padding:20px 0
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: #000;
+    border-radius: 20px;
+    padding: 20px 0;
   }
 
-  .navbar ul.show{display:flex}
+  .navbar ul.show { display: flex; }
 
-  .dropdown-menu{
-    position:static;
-    width:100%;
-    background:transparent
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    background: transparent;
   }
 }
 </style>
@@ -283,6 +290,7 @@ footer{
 <h2>Smart Boards</h2>
 
 <div class="product-grid">
+  <!-- Smart Boards -->
   <div class="product-card">
     <img src="Valuestek art series.webp">
     <div class="product-info">
@@ -314,6 +322,7 @@ footer{
 <h2 class="section-title">Accessories</h2>
 
 <div class="product-grid">
+  <!-- Accessories -->
   <div class="product-card">
     <img src="stand.webp">
     <div class="product-info">
@@ -389,9 +398,9 @@ footer{
     <h3>About Airnet Ghana</h3>
     <p>Providing innovative IT, networking, smart classroom and security solutions across Ghana.</p>
     <div class="social-icons">
-      <a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
     </div>
   </div>
 </footer>
@@ -409,25 +418,30 @@ const productMenu=document.getElementById("productMenu");
 const aboutToggle=document.getElementById("aboutToggle");
 const aboutMenu=document.getElementById("aboutMenu");
 
-menuToggle.onclick=e=>{
+/* Hamburger toggle */
+menuToggle.onclick = e => {
   e.stopPropagation();
   navMenu.classList.toggle("show");
 };
 
-productToggle.onclick=e=>{
+/* Dropdown toggle */
+productToggle.onclick = e => {
   e.stopPropagation();
-  productMenu.style.display=productMenu.style.display==="block"?"none":"block";
+  productMenu.style.display = productMenu.style.display === "block" ? "none" : "block";
+  aboutMenu.style.display = "none";
 };
 
-aboutToggle.onclick=e=>{
+aboutToggle.onclick = e => {
   e.stopPropagation();
-  aboutMenu.style.display=aboutMenu.style.display==="block"?"none":"block";
+  aboutMenu.style.display = aboutMenu.style.display === "block" ? "none" : "block";
+  productMenu.style.display = "none";
 };
 
-document.onclick=()=>{
+/* Close menus when clicking outside */
+document.onclick = () => {
   navMenu.classList.remove("show");
-  productMenu.style.display="none";
-  aboutMenu.style.display="none";
+  productMenu.style.display = "none";
+  aboutMenu.style.display = "none";
 };
 </script>
 
