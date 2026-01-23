@@ -3,194 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Airnet Ghana - Products</title>
+<title>Products | Airnet Ghana</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-* { box-sizing: border-box; margin:0; padding:0; }
-body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#fff; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f4f4f4}
 
 /* ================= NAVBAR ================= */
-.navbar {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92%;
-  max-width: 1200px;
-  background: rgba(0,0,0,0.95);
-  border-radius: 20px;
-  padding: 0.7rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 3000;
-  flex-wrap: wrap;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:1200px;
+  background:rgba(0,0,0,.95);
+  border-radius:20px;
+  padding:.7rem 1.5rem;
+  z-index:3000;
+  box-shadow:0 4px 15px rgba(0,0,0,.4)
+}
+.logo img{height:40px}
+
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer
 }
 
-.navbar .logo img { height: 40px; }
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:1.3rem
+}
+.navbar li{position:relative}
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  padding:.4rem 1rem;
+  border-radius:20px
+}
+.navbar a:hover,
+.navbar a.active{background:#007bff}
 
-.menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; }
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:45px;
+  left:0;
+  background:#000;
+  width:200px;
+  border-radius:12px;
+  overflow:hidden
+}
+.dropdown-menu a{
+  display:block;
+  padding:10px 15px;
+  color:#fff;
+}
+.dropdown-menu a:hover{background:#007bff}
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.3rem;
-  flex-wrap: wrap;
+@media(min-width:769px){
+  .dropdown:hover .dropdown-menu{display:block}
 }
 
-.navbar ul li { position: relative; }
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  display: block;
+/* ================= HEADER ================= */
+.header{
+  position:relative;
+  height:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  overflow:hidden;
+  margin-top:60px;
 }
 
-.navbar ul li a:hover,
-.navbar ul li a.active { background:#007bff; }
-
-/* Dropdown */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  background: #000;
-  border-radius: 10px;
-  width: 180px;
-  z-index: 4000;
+.header img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.35);
+  z-index:1;
 }
 
-.dropdown-menu a { display:block; padding:10px 15px; color:#fff; }
-.dropdown-menu a:hover { background:#007bff; }
+.header h1{
+  position:relative;
+  z-index:2;
+  font-size:2.5rem;
+  color: #000;
+}
 
 /* ================= PRODUCTS ================= */
-.products-section { padding:140px 20px 60px; text-align:center; }
-.products-section h2 { margin-bottom:40px; }
-
-.product-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+.products-section{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+  text-align:center;
 }
 
-.product-card {
+.products-section h2{
+  margin-bottom:40px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.product-card{
   background:#fff;
   border-radius:15px;
   box-shadow:0 4px 12px rgba(0,0,0,.1);
   overflow:hidden;
   transition:.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
 }
 
-.product-card:hover { transform: translateY(-6px); }
+.product-card:hover{
+  transform:translateY(-6px);
+}
 
-.product-card img {
+.product-card img{
   width:100%;
   height:200px;
-  object-fit: contain;
+  object-fit:contain;
+  padding:15px;
 }
 
-.product-info {
+.product-info{
   padding:20px;
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
 }
 
-.product-info h3 { color:#007bff; margin-bottom:10px; }
-.product-info p { font-size:.95rem; color:#555; flex: 1; }
-
-.btn {
-  display: block;          /* Make button span full width */
-  width: 100%;             /* Full width of its container */
-  background: #007bff;
-  color: #fff;
-  padding: 12px 0;         /* Adjust padding for consistent height */
-  border-radius: 25px;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 15px;
-  font-weight: 500;
-  transition: 0.3s;
+.product-info h3{
+  color:#007bff;
+  margin-bottom:10px;
 }
 
-.btn:hover {
-  background: #0056b3;
+.product-info p{
+  color:#555;
+  font-size:14px;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  background:#007bff;
+  color:#fff;
+  padding:12px 0;
+  border-radius:25px;
+  text-align:center;
+  text-decoration:none;
+  margin-top:15px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#0056b3;
 }
 
 /* ================= FOOTER ================= */
-footer {
+footer{
   background:#111;
   color:#ddd;
   padding:50px 20px;
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-  text-align:center;
-  border-top:4px solid #007bff;
+  justify-content:space-around;
+  gap:30px
 }
-.footer-section { max-width:300px; }
-footer h3 { color:#fff; }
-footer p, footer a { color:#bbb; text-decoration:none; }
-.social-icons { display:flex; justify-content:center; gap:15px; margin-top:10px; }
-.social-icons i { font-size:22px; }
 
-.footer-bottom { background:#000; color:#777; text-align:center; padding:15px; }
+.footer-section{max-width:300px}
+
+.footer-section h3{
+  color:#fff;
+  margin-bottom:15px
+}
+
+.footer-section p{
+  line-height:1.7;
+  font-size:.95rem
+}
+
+.footer-section a{
+  color:#ddd;
+  text-decoration:none
+}
+
+.footer-section a:hover{
+  color:#007bff
+}
+
+.social-icons{
+  margin-top:15px;
+  display:flex;
+  gap:15px
+}
+
+.social-icons a{
+  color:#ddd;
+  font-size:22px;
+  transition:.3s
+}
+
+.social-icons a:hover{
+  color:#007bff
+}
+
+.footer-bottom{
+  background:#000;
+  text-align:center;
+  padding:15px;
+  color:#777
+}
 
 /* ================= MOBILE ================= */
-@media(max-width:768px) {
-  .menu-toggle { display:block; }
-  .navbar ul {
-    flex-direction: column;
-    display: none;
-    width: 92%;
-    background: rgba(0,0,0,0.95);
-    border-radius: 20px;
-    margin-top: 10px;
-    padding: 20px 0;
-    gap: 0;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3000;
-  }
-  .navbar ul.show { display: flex; }
-  .navbar ul li { width: 100%; text-align:center; }
-  .navbar ul li a { padding: 12px 0; }
-  .dropdown-menu {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: transparent;
-    box-shadow: none;
+@media(max-width:900px){
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:768px){
+  .menu-toggle{display:block}
+
+  .navbar ul{
+    display:none;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    background:#000;
+    border-radius:20px;
+    padding:20px 0
   }
-  .dropdown-menu a { padding: 10px 0; }
-  .products-section h2 { font-size:1.7rem; }
-  .product-card img { height:170px; }
+  .navbar ul.show{display:flex}
+
+  .dropdown-menu{
+    position:static;
+    width:100%;
+    background:transparent
+  }
+}
+
+@media(max-width:500px){
+  .product-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
-    <img src="airnet logo.png" alt="Airnet Ghana Logo">
+    <img src="airnet.png" alt="Airnet Ghana">
   </div>
-
   <div class="menu-toggle" id="menuToggle">
     <i class="fas fa-bars"></i>
   </div>
@@ -198,9 +279,9 @@ footer p, footer a { color:#bbb; text-decoration:none; }
   <ul id="navMenu">
     <li><a href="index.html">Home</a></li>
 
-    <li>
-      <a id="productToggle" class="active">Products ▾</a>
-      <div class="dropdown-menu" id="productMenu">
+    <li class="dropdown">
+      <a id="productsDropdown" class="active">Products ▾</a>
+      <div class="dropdown-menu">
         <a href="mobile.html">Mobile Devices & Accessories</a>
         <a href="networking.html">Networking Devices</a>
         <a href="smartboards.html">Smart Boards</a>
@@ -211,121 +292,221 @@ footer p, footer a { color:#bbb; text-decoration:none; }
 
     <li><a href="service.html">Services</a></li>
 
-    <li>
-      <a id="aboutToggle">About Us ▾</a>
-      <div class="dropdown-menu" id="aboutMenu">
+    <li class="dropdown">
+      <a id="aboutDropdown">About Us ▾</a>
+      <div class="dropdown-menu">
         <a href="portfolio.html">Portfolio</a>
-        <a href="Reason.html">Why Choose Us</a>
-           <a href="Client.html">Client</a>
-        <a href="team.html">Our Team</a>
+        <a href="why.html">Why Choose Us</a>
+        <a href="client.html">Clients</a>
         <a href="partners.html">Partners</a>
+        <a href="team.html">Our Team</a>
       </div>
     </li>
 
-    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ================= PRODUCTS ================= -->
+<!-- HEADER -->
+<div class="header">
+
+<h1>Featured Products</h1>
+</div>
+
+<!-- PRODUCTS -->
 <section class="products-section">
-<h2>Our Featured Products</h2>
+
+
 <div class="product-grid">
+
+<div class="product-card">
+<img src="router.jpg" alt="Network Router">
+<div class="product-info">
+<h3>Network Routers</h3>
+<p>High-performance routers for fast and reliable connectivity.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="POE Switch 24 port.jpg" alt="POE Switch">
+<div class="product-info">
+<h3>POE Switch 24 Port</h3>
+<p>Reliable Ethernet connectivity for enterprise networks.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="dahua.jpg" alt="Dahua Access Point">
+<div class="product-info">
+<h3>Dahua Access Point</h3>
+<p>Reliable, high-speed wireless access points.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="usb A to ethernet adapter.jpg" alt="USB Ethernet Adapter">
+<div class="product-info">
+<h3>USB Ethernet Adapter</h3>
+<p>Allows USB devices to connect to wired Ethernet networks.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="dahua NV24 CHANNEL.png" alt="Dahua NV24 CHANNEL">
+<div class="product-info">
+<h3>Dahua NV24 CHANNEL</h3>
+<p>Network video recorder with 24 channels for surveillance.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="Dahua NVR 16CH.png" alt="Dahua NVR 16CH">
+<div class="product-info">
+<h3>Dahua NVR 16CH</h3>
+<p>Network video recorder with 16 channels for surveillance.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="DAHUA 8CH.png" alt="Dahua NVR 8CH">
+<div class="product-info">
+<h3>Dahua NVR 8CH</h3>
+<p>Network video recorder with 8 channels for surveillance.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="fiber optic pigtails.jpg" alt="Fiber Optic Pigtails">
+<div class="product-info">
+<h3>Fiber Optic Pigtails</h3>
+<p>High-quality fiber optic cables for reliable data transmission.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="24port patch panel.jpg" alt="24 Port Patch Panel">
+<div class="product-info">
+<h3>24 Port Patch Panel</h3>
+<p>Manage network cables efficiently.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="DVR 4CH.jpg" alt="DVR 4CH">
+<div class="product-info">
+<h3>DVR 4CH</h3>
+<p>Network video recorder with 4 channels for surveillance.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="DVR 8CH.jpg" alt="DVR 8CH">
+<div class="product-info">
+<h3>DVR 8CH</h3>
+<p>Network video recorder with 8 channels for surveillance.</p>
+<a href="quote.html" class="btn">Request a Quote</a>
+</div>
+</div>
   <div class="product-card">
-    <img src="router.jpg" alt="Network Router">
-    <div class="product-info">
-      <h3>Network Routers</h3>
-      <p>High-performance routers for fast and reliable connectivity.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
+  <img src="hdmi cable.jpg" alt="HDMI Cable">
+  <div class="product-info">
+  <h3>HDMI Cable</h3>
+  <p>High-quality HDMI cables for connecting devices.</p>
+  <a href="quote.html" class="btn">Request a Quote</a>
+  </div>
+  </div>
+    <div class="product-card">
+  <img src="16PORT SWITCH.webp" alt="16 Port Switch">
+  <div class="product-info">
+  <h3>16 Port Switch</h3>
+  <p>Reliable Ethernet connectivity for enterprise networks.</p>
+  <a href="quote.html" class="btn">Request a Quote</a>
+  </div>
+  </div>
+   <div class="product-card">
+  <img src="8PORT SWITCH.webp" alt="8 Port Switch">
+  <div class="product-info">
+  <h3>8 Port Switch</h3>
+  <p>Reliable Ethernet connectivity for enterprise networks.</p>
+  <a href="quote.html" class="btn">Request a Quote</a>
+  </div>
   </div>
 
-  <div class="product-card">
-    <img src="POE Switch 24 port.jpg" alt="POE Switch 24 Port">
-    <div class="product-info">
-      <h3>POE Switch 24 Port</h3>
-      <p>Provides twenty-four Ethernet ports for efficient LAN communication.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="dahua.jpg" alt="Dahua Access Point">
-    <div class="product-info">
-      <h3>Dahua Access Point</h3>
-      <p>Reliable, high-speed wireless access points.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="usb A to ethernet adapter.jpg" alt="USB Ethernet Adapter">
-    <div class="product-info">
-      <h3>USB Ethernet Adapter</h3>
-      <p>Allows USB devices to connect to wired Ethernet networks.</p>
-      <a href="quote.html" class="btn">Request a Quote</a>
-    </div>
-  </div>
 </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer>
-<div class="footer-section">
-<h3>Contact Us</h3>
-<p><strong>Phone:</strong><br>+233 2433 45504<br>+233 20630 0038</p>
-<p><strong>Email:</strong><br>info@airnetghana.com</p>
-</div>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p><strong>Phone:</strong><br>
+      +233 2433 45504<br>
+      +233 20630 0038
+    </p>
+    <p><strong>Email:</strong><br>
+      <a href="mailto:info@airnetghana.com">info@airnetghana.com</a>
+    </p>
+  </div>
 
-<div class="footer-section">
-<h3>Our Locations</h3>
-<p><strong>Pokuase:</strong> Near Pokuase Lorry Station</p>
-<p><strong>Kokomlemle:</strong> Opposite King David Hotel</p>
-</div>
+  <div class="footer-section">
+    <h3>Our Locations</h3>
+    <p><strong>Pokuase:</strong><br>Near Pokuase Lorry Station</p>
+    <p><strong>Kokomlemle:</strong><br>Opposite King David Hotel</p>
+  </div>
 
-<div class="footer-section">
-<h3>About Airnet Ghana</h3>
-<p>Providing innovative IT, networking, and security solutions across Ghana.</p>
-<div class="social-icons">
-<a href="https://instagram.com/airnet_limited"><i class="fab fa-instagram"></i></a>
-<a href="https://www.linkedin.com/in/airnet-limited-71166a362/"><i class="fab fa-linkedin"></i></a>
-<a href="https://www.tiktok.com/@airnetlimited"><i class="fab fa-tiktok"></i></a>
-</div>
-</div>
+  <div class="footer-section">
+    <h3>About Airnet Ghana</h3>
+    <p>Providing innovative IT, networking, and security solutions across Ghana.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/airnet_limited" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/airnet-limited-71166a362/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@airnetlimited" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
 </footer>
 
 <div class="footer-bottom">
-© 2025 Airnet Ghana. All rights reserved.
+  © 2025 Airnet Ghana. All rights reserved.
 </div>
 
 <script>
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
-const productToggle = document.getElementById("productToggle");
-const productMenu = document.getElementById("productMenu");
-const aboutToggle = document.getElementById("aboutToggle");
-const aboutMenu = document.getElementById("aboutMenu");
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+const products=document.getElementById("productsDropdown");
+const about=document.getElementById("aboutDropdown");
 
-menuToggle.onclick = () => navMenu.classList.toggle("show");
-
-productToggle.onclick = e => {
+menuToggle.onclick=e=>{
   e.stopPropagation();
-  productMenu.style.display = productMenu.style.display === "block" ? "none" : "block";
+  navMenu.classList.toggle("show");
 };
 
-aboutToggle.onclick = e => {
+products.onclick=e=>{
   e.stopPropagation();
-  aboutMenu.style.display = aboutMenu.style.display === "block" ? "none" : "block";
+  products.nextElementSibling.style.display =
+    products.nextElementSibling.style.display==="block"?"none":"block";
 };
 
-document.onclick = e => {
-  if (!e.target.closest(".navbar")) {
-    productMenu.style.display = "none";
-    aboutMenu.style.display = "none";
-    navMenu.classList.remove("show");
-  }
+about.onclick=e=>{
+  e.stopPropagation();
+  about.nextElementSibling.style.display =
+    about.nextElementSibling.style.display==="block"?"none":"block";
+};
+
+document.onclick=()=> {
+  navMenu.classList.remove("show");
+  document.querySelectorAll(".dropdown-menu").forEach(m=>m.style.display="none");
 };
 </script>
 
 </body>
 </html>
-
